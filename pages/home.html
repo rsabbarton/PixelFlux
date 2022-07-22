@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>PixelFlux</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/pixelfluxicon.png?v=1646003849640"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script>
+      exports = {}
+    </script>
+    <script
+      src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
+      charset="utf-8"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQX9CSMKF4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QQX9CSMKF4');
+</script>
+  </head>
+  <body>
+
+    <div class="siteheader">
+      <div class="accountinfo" id="accountinfo">
+        <a class="sitemenuitem" href="/signup">Sign Up</a>
+        <a class="sitemenuitem" href="/signin">Sign In</a>
+        
+      </div>
+      <div class="headerlogo">
+        PixelFlux
+        <div class="headertagline">Create Animiate Save Share Export</div>
+      </div>
+      <div class="sitemenu">
+        <a class="sitemenuitem" href="https://pixelflux.boards.net" tartet="_blank">Discussion</a>
+        <a class="sitemenuitem" href="/content?type=tutorial">Tutorials</a>
+        <a class="sitemenuitem" href="/content?type=documentation">Docs</a>
+        <a class="sitemenuitem" href="/content?type=static">About</a>
+        <a class="sitemenuitem" href="/content?type=blog">Blog</a>
+        <a class="sitemenuitem" style="color: green; font-weight: bolder;" href="/app">Start drawing</a>
+        <span id="scaredyball"></span>
+      </div>
+    </div>
+
+
+
+    <div class="sitecontent" style="text-align: center;">
+      PixelFlux is a Pixel Art browser application for generating game and site resources. <br>
+      Design, create, animate and export your creations
+    </div>
+
+    <div class="sitecontent" style="width: fit-content;">
+      <img align="center" src="https://images.ctfassets.net/9smwd7qs44mw/4UCKlidPJkmEDGWbaoNkHv/1eaffae5e712412b0a5198fa857d1fa9/Screenshot_2022-03-27_153153.png" id="frontpagescreenshot">
+    </div>
+    <div class="sitecontent">
+      PixelFlux is still at the early stages of development.  Sign up for free to get involved and help shape the future 
+      of PixelFlux.  With a free account you will also be able to save your work online in future versions.  Don't worry though, you can
+      save in your local browser or download your work if you want to try it out first.  This doesn't require an account.
+    </div>
+
+  <script>
+    renderSpriteSheet("scaredyball", "/resources/scaredyball_spritesheet.png", 78, 78, 14)
+  </script>
+  <script src="/js/account/account.js"></script>
+  </body>  
+</html>

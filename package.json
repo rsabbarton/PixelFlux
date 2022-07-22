@@ -1,0 +1,27 @@
+{
+  "name": "hello-express-basic",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "contentful": "^9.1.18",
+    "contentful-management": "^8.2.2",
+    "cookie-parser": "",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.7.3",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

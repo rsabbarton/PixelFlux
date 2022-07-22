@@ -1,0 +1,202 @@
+
+
+.siteheader {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.accountinfo {
+    width: 100%;
+    height: 40px;
+    background-color:lemonchiffon ;
+    text-align: right;
+    padding: 4px;
+}
+
+.accountinfo > a {
+    line-height: 30px;
+}
+
+.accountinfo > span > a, span {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color:darkslateblue;
+}
+
+.accountinfo > span > img {
+    margin-left: 0px;
+    margin-right: 20px;
+    text-decoration: none;
+    line-height: 0px;
+    vertical-align: middle;
+}
+
+
+
+.headerlogo {
+    width: 100%;
+    height: 180px;
+    font-family: Courier;
+    font-size: 140px;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    background-color: darkslateblue;
+    line-height: 150px;
+}
+.headertagline {
+    font-family: Courier;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    line-height: 0px;
+}
+
+.sitemenu {
+
+    width: 100%;
+    height: 40px;
+    background-color: lightcyan;
+    text-align: center;
+    padding: 12px;
+
+}
+
+.sitemenuitem {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color:darkslateblue;
+
+}
+
+#scaredyball {
+    position: relative;
+    vertical-align: top;
+    top: -26px;
+}
+
+.sitemenuitem:hover {
+    color:teal;
+}
+
+#frontpagescreenshot {
+    width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.sitecontent {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.fitcontent {
+    width: fit-content;
+}
+
+.indexitem {
+    color: darkslateblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+.indexitem > a {
+    line-height: 24px;
+    color: darkslateblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+.indexitem > a:hover {
+    color: green;
+}
+input.siteform {
+    margin: 20px;
+    width: 300px;
+    height: 40px;
+}
+
+button.siteform {
+    width: 180px;
+    margin: 20px;
+    border-style: double;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+
+
+
+.embeddedimageasset {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
+.commentbody {
+    width: 100%;
+    height: 100px;
+}
+
+.commentsubmit {
+    width: 30%;
+}
+
+
+.commentdate {
+  margin-left: 20px;
+  font-size: small;
+}
+
+.commentauthor {
+    font-weight: bold;
+    font-size:small;
+}
+
+.commentdisplay {
+    font-family: 'Courier New', Courier, monospace;
+    padding:10px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+
+
+
+.gallerypreview {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    width: 150px;
+    height: 220px;
+    overflow: hidden;
+}
+
+.gallerynamedisplay {
+    padding:5px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.gallerypreviewcanvas {
+
+}
+
+.gallerydatedisplay {
+    font-size: x-small;
+}
