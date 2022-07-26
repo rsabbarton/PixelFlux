@@ -98,11 +98,13 @@
          "menuItems": [
         {"id": "ARRANGECLASSIC", "display": "Arrange Windows - Classic", "type": "CLICKABLE"},
         {"id": "ARRANGEWIDE", "display": "Arrange Windows - Wide", "type": "CLICKABLE"},
+        {"id": "ARRANGETILECREATOR", "display": "Arrange Windows - Tile Creator", "type": "CLICKABLE"},
         {"id": "SAVEWINDOWARRANGEMENT", "display": "Save Window Arrangement", "type": "CLICKABLE"},
         {"id": "RESTOREWINDOWARRANGEMENT", "display": "Restore Window Arrangement", "type": "CLICKABLE"}
            ]
         },
         {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
+        {"id": "TOGGLETILEPREVIEW", "display": "Toggle Tile Preview", "type": "CLICKABLE"},
         {"id": "SETBACKGROUNDCOLOR", "display": "Set Background Colour (Current Primary Colour)", "type": "CLICKABLE"}
       ]
     },

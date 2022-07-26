@@ -8,6 +8,7 @@ class PixelEditor {
     this.animationPreviewScale = 2
     this.animating = false
     this.currentTool = false
+    this.tilePreview = false
     // TODO - Remove this when drrawing is implemented
     //log("randomising new sprite on inception... ")
     //this.sprite.randomise()
@@ -65,16 +66,7 @@ class PixelEditor {
   
   addEventListeners(){
     document.addEventListener("fluxWindowResize", (event)=>{
-      if(event.detail.srcElementId == "WORKSPACE"){
-        var canvas = document.getElementById("DRAWINGCANVAS")
-        canvas.parentElement.style.width = "100%"
-        canvas.parentElement.style.height = "100%"
-      }
-      if(event.detail.srcElementId == "PREVIEW"){
-        var canvas = document.getElementById("PREVIEWCANVAS")
-        canvas.parentElement.style.width = "100%"
-        canvas.parentElement.style.height = "100%"
-      }
+      this.resizeContentCanvases()
       this.updateCanvasAndPreview()
     })
     
@@ -116,8 +108,23 @@ class PixelEditor {
   }
   
   
+  resizeContentCanvases(){
+    var canvas = document.getElementById("DRAWINGCANVAS")
+    canvas.parentElement.style.width = "100%"
+    canvas.parentElement.style.height = "100%"
+    canvas = document.getElementById("PREVIEWCANVAS")
+    canvas.parentElement.style.width = "100%"
+    canvas.parentElement.style.height = "100%"      
+    canvas = document.getElementById("PREVIEWCANVAS")
+    canvas.parentElement.style.width = "100%"
+    canvas.parentElement.style.height = "100%"
+    this.updateCanvasAndPreview()
+  }
   
-  
+  toggleTilePreview(){
+    this.tilePreview = !this.tilePreview
+  }
+
   createWorkspaceWindow(){
     //console.log(this.ui)
     flux.createWindow("WORKSPACE", "Workspace", 200, 60, 600, 620)
@@ -446,17 +453,35 @@ class PixelEditor {
     ctx.rect(imageOriginX-1, imageOriginY-1, (this.sprite.width * scale)+2, (this.sprite.height * scale)+2)
     ctx.stroke()
     
-    scale = this.previewScale
-    canvasWidth = previewCanvas.clientWidth
-    canvasHeight = previewCanvas.clientHeight - 20  
-    imageOriginX = (canvasWidth/2) - ((this.sprite.width/2) * scale)
-    imageOriginY = (canvasHeight/2) - ((this.sprite.height/2) * scale)
-    pctx.clearRect(0, 0, this.width, this.height)
-    pctx.drawImage(this.sprite.canvas, 0, 0, this.sprite.width, this.sprite.height, imageOriginX, imageOriginY, this.sprite.width * scale, this.sprite.height * scale)
-    pctx.beginPath()
-    pctx.rect(imageOriginX-1, imageOriginY-1, (this.sprite.width * scale)+2, (this.sprite.height * scale)+2)
-    pctx.stroke()
-    
+    if(this.tilePreview){
+
+      scale = this.previewScale
+      canvasWidth = previewCanvas.clientWidth
+      canvasHeight = previewCanvas.clientHeight - 20  
+      imageOriginX = (canvasWidth/2) - ((this.sprite.width/2) * scale)
+      imageOriginY = (canvasHeight/2) - ((this.sprite.height/2) * scale)
+
+      var pattern = pctx.createPattern(this.sprite.canvas, "repeat")
+
+      pctx.clearRect(0, 0, this.width, this.height)
+      pctx.scale(scale,scale)
+      pctx.fillStyle = pattern
+      pctx.fillRect(0,0,canvasWidth / scale, canvasHeight / scale)
+      pctx.scale(1,1) // restore the scale to original value for when tile preview is turned off
+
+    } else {
+      scale = this.previewScale
+      canvasWidth = previewCanvas.clientWidth
+      canvasHeight = previewCanvas.clientHeight - 20  
+      imageOriginX = (canvasWidth/2) - ((this.sprite.width/2) * scale)
+      imageOriginY = (canvasHeight/2) - ((this.sprite.height/2) * scale)
+      pctx.clearRect(0, 0, this.width, this.height)
+      pctx.drawImage(this.sprite.canvas, 0, 0, this.sprite.width, this.sprite.height, imageOriginX, imageOriginY, this.sprite.width * scale, this.sprite.height * scale)
+      pctx.beginPath()
+      pctx.rect(imageOriginX-1, imageOriginY-1, (this.sprite.width * scale)+2, (this.sprite.height * scale)+2)
+      pctx.stroke()
+    }
+
     if(fullUpdate){
       this.renderLayersWindow()
       this.updateFrameNumberDisplay()

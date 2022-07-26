@@ -167,6 +167,8 @@ const builtInWindowArrangements = {
         "width": "800px",
         "height": "600px"
     }
+  ],
+  TILECREATOR: [{"id":"WORKSPACE","top":"32px","left":"146px","width":"600px","height":"600px"},{"id":"COLOURPALLET","top":"296px","left":"749px","width":"180px","height":"284px"},{"id":"TOOLBAR","top":"32px","left":"1px","width":"142px","height":"600px"},{"id":"PREVIEW","top":"32px","left":"932px","width":"400px","height":"394px"},{"id":"ANIMATIONPREVIEW","top":"430px","left":"932px","width":"175px","height":"185px"},{"id":"ANIMATIONTOOLS","top":"585px","left":"749px","width":"180px","height":"42px"},{"id":"TOOLOPTIONS","top":"635px","left":"508px","width":"188px","height":"121px"},{"id":"LAYERS","top":"32px","left":"748px","width":"181px","height":"262px"},{"id":"FRAMES","top":"430px","left":"1112px","width":"171px","height":"319px"},{"id":"DEBUG","top":"636px","left":"4px","width":"500px","height":"120px"},{"id":"OPENGALLERY","top":"200px","left":"200px","width":"800px","height":"600px"}
   ]
 }
 

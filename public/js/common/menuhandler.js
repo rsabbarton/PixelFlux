@@ -251,11 +251,21 @@ document.addEventListener("menuButtonClicked", (event)=>{
     case "SETBACKGROUNDCOLOR":
       pixelFlux.setBackgroundColour()
       break
+    case "TOGGLETILEPREVIEW":
+      pixelFlux.toggleTilePreview()
+      break
     case "ARRANGECLASSIC": 
       flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC)
+      pixelFlux.resizeContentCanvases()
       break
     case "ARRANGEWIDE": 
       flux.restoreWindowArrangement(builtInWindowArrangements.WIDE)
+      pixelFlux.resizeContentCanvases()
+      break
+    case "ARRANGETILECREATOR": 
+      flux.restoreWindowArrangement(builtInWindowArrangements.TILECREATOR)
+      pixelFlux.tilePreview = true
+      pixelFlux.resizeContentCanvases()
       break
     case "SAVEWINDOWARRANGEMENT": 
       var arrangement = flux.getWindowArrangement()
