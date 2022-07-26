@@ -61,7 +61,11 @@ class Sprite {
   }
   
   insertFrameBeforeCurrent(){
-    
+    var p = this.currentFrame
+    var frame = new Frame(this.width, this.height)
+    this.frames.splice(p, 0, frame)
+    this.currentFrame = p
+    this.updateCanvasChain()
   }
   
   insertFrameAfter(n){

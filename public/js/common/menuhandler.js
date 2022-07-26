@@ -185,8 +185,14 @@ document.addEventListener("menuButtonClicked", (event)=>{
       break
     case "": break
     case "": break
-    case "": break
-    case "": break
+    case "DUPLICATECURRENTFRAME": 
+      pixelFlux.sprite.copyFrame(pixelFlux.sprite.currentFrame)
+      pixelFlux.updateCanvasAndPreview()
+      break
+    case "DELETECURRENTFRAME": 
+      pixelFlux.sprite.deleteFrame(pixelFlux.sprite.currentFrame)
+      pixelFlux.updateCanvasAndPreview()
+      break
     case "": break
     case "": break
     case "": break
