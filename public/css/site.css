@@ -108,6 +108,7 @@
 .indexitem {
     color: darkslateblue;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
 }
 .indexitem > a {
     line-height: 24px;
@@ -199,4 +200,33 @@ button.siteform {
 
 .gallerydatedisplay {
     font-size: x-small;
+}
+
+
+.ghhidden {
+    display: none;
+}
+
+.ghtitle {
+    display: inline;
+}
+.ghlabels {
+    display: inline;
+}
+
+.ghmoreinfo {
+    cursor: pointer;
+    display: inline;
+}
+
+.ghinfo {
+    display: block;
+    font-size: small;
+    font-weight: normal;
+}
+
+.ghbodytext {
+    font-size: small;
+    width: 100%;
+    height: 160px;
 }

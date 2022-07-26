@@ -11193,3 +11193,2441 @@ undefined
 6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
 undefined
 undefined
+6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
+6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
+No folder/file at: /home/richard/pixelflux/data/usersessions/6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
+No folder/file at: /home/richard/pixelflux/data/usersessions/6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
+No folder/file at: /home/richard/pixelflux/data/usersessions/6fdb0cb8d69ed44ada86ab93a804e60cb5b50fc514094fd25e018119845c3b7f73d55cbf49b248bfb59bd0a8a26bf656
+undefined
+undefined
+{ email: 'richard.sabbarton@gmail.com', password: 'qwerty' }
+{ email: 'richard.sabbarton@gmail.com', password: 'qwerty' }
+/home/richard/pixelflux/data
+/home/richard/pixelflux/data
+usersessions
+usersessions
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+{
+  id: '65a481dd-1c4c-4d0a-a2d0-9450df66d4a3',
+  email: 'richard.sabbarton@gmail.com',
+  hashedPassword: 'REDACTED',
+  first: 'Richard',
+  last: 'Sabbarton',
+  displayname: 'Richard',
+  emailtoken: '5b7108a6c1e0cb6fa7adcc52f727a901e2709943c024c9842b4b459ccb142b1ee066fd9265dd8b3a48f673ec189611a4',
+  emailvalidated: true,
+  authToken: '040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3'
+}
+{
+  id: '65a481dd-1c4c-4d0a-a2d0-9450df66d4a3',
+  email: 'richard.sabbarton@gmail.com',
+  hashedPassword: 'REDACTED',
+  first: 'Richard',
+  last: 'Sabbarton',
+  displayname: 'Richard',
+  emailtoken: '5b7108a6c1e0cb6fa7adcc52f727a901e2709943c024c9842b4b459ccb142b1ee066fd9265dd8b3a48f673ec189611a4',
+  emailvalidated: true,
+  authToken: '040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3'
+}
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+richard.sabbarton@gmail.com
+richard.sabbarton@gmail.com
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '4rQTm0RtEtbC6c8DeEhaMR',
+    type: 'Entry',
+    createdAt: '2022-04-04T18:31:52.057Z',
+    updatedAt: '2022-04-07T21:11:44.631Z',
+    environment: { sys: [Object] },
+    publishedVersion: 7,
+    publishedAt: '2022-04-07T21:11:44.631Z',
+    firstPublishedAt: '2022-04-07T21:05:52.127Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 2,
+    version: 8,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '4rQTm0RtEtbC6c8DeEhaMR',
+    type: 'Entry',
+    createdAt: '2022-04-04T18:31:52.057Z',
+    updatedAt: '2022-04-07T21:11:44.631Z',
+    environment: { sys: [Object] },
+    publishedVersion: 7,
+    publishedAt: '2022-04-07T21:11:44.631Z',
+    firstPublishedAt: '2022-04-07T21:05:52.127Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 2,
+    version: 8,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5PmCOBWsNPVj0diHxbkRR9',
+    type: 'Entry',
+    createdAt: '2022-04-04T20:44:09.769Z',
+    updatedAt: '2022-04-07T20:31:57.228Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:57.228Z',
+    firstPublishedAt: '2022-04-07T20:31:57.228Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary Talking' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5PmCOBWsNPVj0diHxbkRR9',
+    type: 'Entry',
+    createdAt: '2022-04-04T20:44:09.769Z',
+    updatedAt: '2022-04-07T20:31:57.228Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:57.228Z',
+    firstPublishedAt: '2022-04-07T20:31:57.228Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary Talking' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5xcbx3YlT36TDWZL30L9Xg',
+    type: 'Entry',
+    createdAt: '2022-04-03T19:57:27.697Z',
+    updatedAt: '2022-04-07T20:31:34.268Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:34.268Z',
+    firstPublishedAt: '2022-04-07T20:31:34.268Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'glasses' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5xcbx3YlT36TDWZL30L9Xg',
+    type: 'Entry',
+    createdAt: '2022-04-03T19:57:27.697Z',
+    updatedAt: '2022-04-07T20:31:34.268Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:34.268Z',
+    firstPublishedAt: '2022-04-07T20:31:34.268Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'glasses' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest2',
+    type: 'Entry',
+    createdAt: '2022-04-01T16:07:40.155Z',
+    updatedAt: '2022-04-07T20:02:21.855Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 3,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest2' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest2',
+    type: 'Entry',
+    createdAt: '2022-04-01T16:07:40.155Z',
+    updatedAt: '2022-04-07T20:02:21.855Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 3,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest2' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest1',
+    type: 'Entry',
+    createdAt: '2022-04-01T15:52:01.053Z',
+    updatedAt: '2022-04-07T20:02:10.642Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 4,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest1' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest1',
+    type: 'Entry',
+    createdAt: '2022-04-01T15:52:01.053Z',
+    updatedAt: '2022-04-07T20:02:10.642Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 4,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest1' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '1CRQf8YG1WF7zKOhOLeAs9',
+    type: 'Entry',
+    createdAt: '2022-04-05T11:19:18.064Z',
+    updatedAt: '2022-04-07T19:59:51.585Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 2,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'test' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '1CRQf8YG1WF7zKOhOLeAs9',
+    type: 'Entry',
+    createdAt: '2022-04-05T11:19:18.064Z',
+    updatedAt: '2022-04-07T19:59:51.585Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 2,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'test' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+040cf491ea45f5255a3db5fe8dbe6cb79660e0d335422df48769426d9957869f7378f8865e3873bb69f30a78abc7ffd3
+undefined
+undefined
+creating site map
+creating site map
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+creating site map
+creating site map
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+creating site map
+creating site map
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+creating site map
+creating site map
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+creating site map
+creating site map
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+{ email: 'richard.sabbarton@gmail.com', password: 'qwerty' }
+{ email: 'richard.sabbarton@gmail.com', password: 'qwerty' }
+/home/richard/pixelflux/data
+/home/richard/pixelflux/data
+usersessions
+usersessions
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+{
+  id: '65a481dd-1c4c-4d0a-a2d0-9450df66d4a3',
+  email: 'richard.sabbarton@gmail.com',
+  hashedPassword: 'REDACTED',
+  first: 'Richard',
+  last: 'Sabbarton',
+  displayname: 'Richard',
+  emailtoken: '5b7108a6c1e0cb6fa7adcc52f727a901e2709943c024c9842b4b459ccb142b1ee066fd9265dd8b3a48f673ec189611a4',
+  emailvalidated: true,
+  authToken: 'a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329'
+}
+{
+  id: '65a481dd-1c4c-4d0a-a2d0-9450df66d4a3',
+  email: 'richard.sabbarton@gmail.com',
+  hashedPassword: 'REDACTED',
+  first: 'Richard',
+  last: 'Sabbarton',
+  displayname: 'Richard',
+  emailtoken: '5b7108a6c1e0cb6fa7adcc52f727a901e2709943c024c9842b4b459ccb142b1ee066fd9265dd8b3a48f673ec189611a4',
+  emailvalidated: true,
+  authToken: 'a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329'
+}
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+richard.sabbarton@gmail.com
+richard.sabbarton@gmail.com
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '4rQTm0RtEtbC6c8DeEhaMR',
+    type: 'Entry',
+    createdAt: '2022-04-04T18:31:52.057Z',
+    updatedAt: '2022-04-07T21:11:44.631Z',
+    environment: { sys: [Object] },
+    publishedVersion: 7,
+    publishedAt: '2022-04-07T21:11:44.631Z',
+    firstPublishedAt: '2022-04-07T21:05:52.127Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 2,
+    version: 8,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '4rQTm0RtEtbC6c8DeEhaMR',
+    type: 'Entry',
+    createdAt: '2022-04-04T18:31:52.057Z',
+    updatedAt: '2022-04-07T21:11:44.631Z',
+    environment: { sys: [Object] },
+    publishedVersion: 7,
+    publishedAt: '2022-04-07T21:11:44.631Z',
+    firstPublishedAt: '2022-04-07T21:05:52.127Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 2,
+    version: 8,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5PmCOBWsNPVj0diHxbkRR9',
+    type: 'Entry',
+    createdAt: '2022-04-04T20:44:09.769Z',
+    updatedAt: '2022-04-07T20:31:57.228Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:57.228Z',
+    firstPublishedAt: '2022-04-07T20:31:57.228Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary Talking' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5PmCOBWsNPVj0diHxbkRR9',
+    type: 'Entry',
+    createdAt: '2022-04-04T20:44:09.769Z',
+    updatedAt: '2022-04-07T20:31:57.228Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:57.228Z',
+    firstPublishedAt: '2022-04-07T20:31:57.228Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary Talking' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5xcbx3YlT36TDWZL30L9Xg',
+    type: 'Entry',
+    createdAt: '2022-04-03T19:57:27.697Z',
+    updatedAt: '2022-04-07T20:31:34.268Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:34.268Z',
+    firstPublishedAt: '2022-04-07T20:31:34.268Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'glasses' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5xcbx3YlT36TDWZL30L9Xg',
+    type: 'Entry',
+    createdAt: '2022-04-03T19:57:27.697Z',
+    updatedAt: '2022-04-07T20:31:34.268Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:34.268Z',
+    firstPublishedAt: '2022-04-07T20:31:34.268Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'glasses' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest2',
+    type: 'Entry',
+    createdAt: '2022-04-01T16:07:40.155Z',
+    updatedAt: '2022-04-07T20:02:21.855Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 3,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest2' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest2',
+    type: 'Entry',
+    createdAt: '2022-04-01T16:07:40.155Z',
+    updatedAt: '2022-04-07T20:02:21.855Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 3,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest2' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest1',
+    type: 'Entry',
+    createdAt: '2022-04-01T15:52:01.053Z',
+    updatedAt: '2022-04-07T20:02:10.642Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 4,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest1' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest1',
+    type: 'Entry',
+    createdAt: '2022-04-01T15:52:01.053Z',
+    updatedAt: '2022-04-07T20:02:10.642Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 4,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest1' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '1CRQf8YG1WF7zKOhOLeAs9',
+    type: 'Entry',
+    createdAt: '2022-04-05T11:19:18.064Z',
+    updatedAt: '2022-04-07T19:59:51.585Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 2,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'test' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '1CRQf8YG1WF7zKOhOLeAs9',
+    type: 'Entry',
+    createdAt: '2022-04-05T11:19:18.064Z',
+    updatedAt: '2022-04-07T19:59:51.585Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 2,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'test' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+richard.sabbarton@gmail.com
+richard.sabbarton@gmail.com
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '4rQTm0RtEtbC6c8DeEhaMR',
+    type: 'Entry',
+    createdAt: '2022-04-04T18:31:52.057Z',
+    updatedAt: '2022-04-07T21:11:44.631Z',
+    environment: { sys: [Object] },
+    publishedVersion: 7,
+    publishedAt: '2022-04-07T21:11:44.631Z',
+    firstPublishedAt: '2022-04-07T21:05:52.127Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 2,
+    version: 8,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5PmCOBWsNPVj0diHxbkRR9',
+    type: 'Entry',
+    createdAt: '2022-04-04T20:44:09.769Z',
+    updatedAt: '2022-04-07T20:31:57.228Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:57.228Z',
+    firstPublishedAt: '2022-04-07T20:31:57.228Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary Talking' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5xcbx3YlT36TDWZL30L9Xg',
+    type: 'Entry',
+    createdAt: '2022-04-03T19:57:27.697Z',
+    updatedAt: '2022-04-07T20:31:34.268Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:34.268Z',
+    firstPublishedAt: '2022-04-07T20:31:34.268Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'glasses' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '4rQTm0RtEtbC6c8DeEhaMR',
+    type: 'Entry',
+    createdAt: '2022-04-04T18:31:52.057Z',
+    updatedAt: '2022-04-07T21:11:44.631Z',
+    environment: { sys: [Object] },
+    publishedVersion: 7,
+    publishedAt: '2022-04-07T21:11:44.631Z',
+    firstPublishedAt: '2022-04-07T21:05:52.127Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 2,
+    version: 8,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5PmCOBWsNPVj0diHxbkRR9',
+    type: 'Entry',
+    createdAt: '2022-04-04T20:44:09.769Z',
+    updatedAt: '2022-04-07T20:31:57.228Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:57.228Z',
+    firstPublishedAt: '2022-04-07T20:31:57.228Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'Gary Talking' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '5xcbx3YlT36TDWZL30L9Xg',
+    type: 'Entry',
+    createdAt: '2022-04-03T19:57:27.697Z',
+    updatedAt: '2022-04-07T20:31:34.268Z',
+    environment: { sys: [Object] },
+    publishedVersion: 2,
+    publishedAt: '2022-04-07T20:31:34.268Z',
+    firstPublishedAt: '2022-04-07T20:31:34.268Z',
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 1,
+    version: 3,
+    publishedBy: { sys: [Object] },
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'glasses' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest2',
+    type: 'Entry',
+    createdAt: '2022-04-01T16:07:40.155Z',
+    updatedAt: '2022-04-07T20:02:21.855Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 3,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest2' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest2',
+    type: 'Entry',
+    createdAt: '2022-04-01T16:07:40.155Z',
+    updatedAt: '2022-04-07T20:02:21.855Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 3,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest2' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest1',
+    type: 'Entry',
+    createdAt: '2022-04-01T15:52:01.053Z',
+    updatedAt: '2022-04-07T20:02:10.642Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 4,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest1' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: 'ctftest1',
+    type: 'Entry',
+    createdAt: '2022-04-01T15:52:01.053Z',
+    updatedAt: '2022-04-07T20:02:10.642Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 4,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'ctftest1' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '1CRQf8YG1WF7zKOhOLeAs9',
+    type: 'Entry',
+    createdAt: '2022-04-05T11:19:18.064Z',
+    updatedAt: '2022-04-07T19:59:51.585Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 2,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'test' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+{
+  metadata: { tags: [] },
+  sys: {
+    space: { sys: [Object] },
+    id: '1CRQf8YG1WF7zKOhOLeAs9',
+    type: 'Entry',
+    createdAt: '2022-04-05T11:19:18.064Z',
+    updatedAt: '2022-04-07T19:59:51.585Z',
+    environment: { sys: [Object] },
+    createdBy: { sys: [Object] },
+    updatedBy: { sys: [Object] },
+    publishedCounter: 0,
+    version: 2,
+    contentType: { sys: [Object] }
+  },
+  fields: {
+    type: { 'en-US': 'sprite' },
+    name: { 'en-US': 'test' },
+    owner: { 'en-US': 'richard.sabbarton@gmail.com' },
+    ownerDisplayName: { 'en-US': 'Richard' },
+    public: { 'en-US': false },
+    deleted: { 'en-US': false },
+    objectData: { 'en-US': [Object] }
+  }
+}
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+a5e3bbf8f5b468262cce710a445dceefd896eaf966401d132f69a09398d215fbfe9105f92a65ed70409c9bb1fb831329
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+Auth Token Not provided
+Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined
+No folder/file at: /home/richard/pixelflux/data/usersessions/Auth Token Not provided
+undefined

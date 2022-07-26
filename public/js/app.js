@@ -145,3 +145,6 @@ document.addEventListener('paste', function (evt) {
 
 // Prevent right-click default action when using app
 window.addEventListener("contextmenu", e => e.preventDefault());
+
+
+const keyboard = new KeyboardHandler()

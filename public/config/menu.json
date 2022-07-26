@@ -37,9 +37,6 @@
         {"id": "UNDO", "display": "Undo (Ctrl+z)", "type": "CLICKABLE"},
         {"id": "REDO", "display": "Redo (Alt+r)", "type": "CLICKABLE"},
         {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
-        {"id": "COPY", "display": "Copy", "type": "CLICKABLE"},
-        {"id": "PASTE", "display": "Paste", "type": "CLICKABLE"},
-        {"id": "CUT", "display": "Cut", "type": "CLICKABLE"},
         {"id": "SELECTALL", "display": "Select All", "type": "CLICKABLE"},
         {"id": "SELECTNONE", "display": "Select None", "type": "CLICKABLE"}
       ]
@@ -103,15 +100,24 @@
         {"id": "ARRANGEWIDE", "display": "Arrange Windows - Wide", "type": "CLICKABLE"},
         {"id": "SAVEWINDOWARRANGEMENT", "display": "Save Window Arrangement", "type": "CLICKABLE"},
         {"id": "RESTOREWINDOWARRANGEMENT", "display": "Restore Window Arrangement", "type": "CLICKABLE"}
-           ]}
+           ]
+        },
+        {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
+        {"id": "SETBACKGROUNDCOLOR", "display": "Set Background Colour (Current Primary Colour)", "type": "CLICKABLE"}
       ]
     },
     {"id": "COLOURS", "display": "Colours", "type": "MENU",
       "menuItems": [
-        {"id": "LOADPALLETDEFAULT", "display": "Load Default Pallet", "type": "CLICKABLE"},
-        {"id": "LOADPALLETWOODLAND", "display": "Load Pallet - Woodland Journey", "type": "CLICKABLE"},
-        {"id": "LOADPALLET", "display": "Load Pallet - ", "type": "CLICKABLE"},
-        {"id": "LOADPALLET", "display": "Load Pallet - ", "type": "CLICKABLE"}
+        {"id": "LOADPALLETDEFAULT", "display": "Load Default Palette", "type": "CLICKABLE"},
+        {"id": "LOADPALLETWOODLAND", "display": "Load Palette - Woodland Journey", "type": "CLICKABLE"},
+        {"id": "LOADPALLETPASTELDREAMS", "display": "Load Palette - Pastel Dreams", "type": "CLICKABLE"},
+        {"id": "LOADPALLETHIGHCONTRAST", "display": "Load Palette - High Contrast", "type": "CLICKABLE"},
+        {"id": "LOADPALLETCYBERPUNKNEON", "display": "Load Palette - Cyberpunk Neon", "type": "CLICKABLE"},
+        {"id": "LOADPALLETDRAGONFIRE", "display": "Load Palette - Dragon Fire", "type": "CLICKABLE"},
+        {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
+        {"id": "CLEARPALLET", "display": "Clear Current Palette", "type": "CLICKABLE"},
+        {"id": "REDUCEPALLET", "display": "Reduce Current Palette", "type": "CLICKABLE"},
+        {"id": "GETPALLETFROMLAYER", "display": "Create Palette from Current Layer", "type": "CLICKABLE"}
       ]
     },
     {"id": "HELP", "display": "Help", "type": "MENU",

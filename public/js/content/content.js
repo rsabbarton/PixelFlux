@@ -1,4 +1,6 @@
 
+let ghRepoUrl = "https://api.github.com/repos/rsabbarton/PixelFlux/"
+const github = new GitHub(ghRepoUrl)
 
 
 
@@ -27,27 +29,38 @@ var order = "-sys.createdAt"
 if(documentType == "task")
   order = "fields.title"
 
-  if(documentType == "tutorial" || documentType == "documentation" || documentType == "static")
+if(documentType == "tutorial" || documentType == "documentation" || documentType == "static")
   order = "sys.createdAt"
 
 
 var container = document.getElementById('content')
 
-if(indexDisplay){
-    cc.getEntries({
-    content_type: documentType,
-    order: order
-    })
-    .then(function(entries) {
-    container.innerHTML = renderIndex(entries.items)
-    });
+
+// Begin Contentful Rendering if not using GitHub
+if(documentType === "task"){
+  github.renderIssuesIndex(container)
 } else {
-    cc.getEntry(documentId).then(function (entry) {
-        // logs the entry metadata
-        console.log(entry.sys)
-        container.innerHTML = renderPage(entry)
-        renderComments(entry.sys.id)
+  contentfulRender()
+}
+
+
+function contentfulRender(){
+  if(indexDisplay){
+      cc.getEntries({
+      content_type: documentType,
+      order: order
+      })
+      .then(function(entries) {
+      container.innerHTML = renderIndex(entries.items)
       });
+  } else {
+      cc.getEntry(documentId).then(function (entry) {
+          // logs the entry metadata
+          console.log(entry.sys)
+          container.innerHTML = renderPage(entry)
+          renderComments(entry.sys.id)
+        });
+  }
 }
 
 function renderIndex(items){

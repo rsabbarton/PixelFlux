@@ -201,7 +201,7 @@ class Pencil {
     var col = pri
     if(btn == 2)
       col = sec
-    if(btn == 4){
+    if(btn == 4 || keyboard.isDown(VK_SHIFT)){
       col = "#000000"
       this.alpha = 0
     }
@@ -220,7 +220,7 @@ class Pencil {
     var col = pri
     if(btn == 2)
       col = sec
-    if(btn == 4){
+    if(btn == 4 || keyboard.isDown(VK_SHIFT)){
       col = "#000000"
       this.alpha = 0
     }

@@ -359,6 +359,56 @@ class PixelEditor {
     
   }
   
+  reduceColourPalette(threshold){
+    var colours = []
+    var elements = document.querySelectorAll(".flux-palletcolour")
+    for(var i = 0; i<elements.length; i++){
+      let colour = elements[i].style.backgroundColor
+      let rgb = rgb2intArray(colour)
+      let include = true
+
+      colours.forEach(c => {
+        let r1=c[0], g1=c[1], b1=c[2]
+        let r2=rgb[0], g2=rgb[1], b2=rgb[2]
+
+        if(
+          r1-r2 < threshold && r1-r2 > -threshold &&
+          g1-g2 < threshold && g1-g2 > -threshold &&
+          b1-b2 < threshold && b1-b2 > -threshold 
+          ){
+            include = false
+          }
+
+      })
+      
+      if (include) colours.push(rgb)
+    }
+
+    colours.sort()
+
+    this.clearColourPallet()
+
+    colours.forEach(c => {
+      let r = parseInt(c[0], 10).toString(16).padStart(2, "0")
+      let g = parseInt(c[1], 10).toString(16).padStart(2, "0")
+      let b = parseInt(c[2], 10).toString(16).padStart(2, "0")
+      let hex = `#${r}${g}${b}`
+      console.log(hex)
+      this.addColourToPallet(hex)
+    })
+  }
+
+  createPaletteFromCurrentLayer(){
+    var colours = new Set()
+    this.sprite.getCurrentFrame().getCurrentLayer().pixels.forEach(pixel => {
+      colours.add(pixel.getHTMLHex())
+    })
+    //console.log(colours)
+    colours.forEach(colour => {
+      this.addColourToPallet(colour)
+    })
+  }
+
   clearColourPallet(){
     document.getElementById("COLOURPALLETSTORE").innerHTML = ""
   }
@@ -903,6 +953,17 @@ class PixelEditor {
     
   }
   
+  setSpriteName(){
+    return new Promise((resolve, reject)=>{
+      flux.showModalQuestionWindow("Please enter a name for your Sprite...", this.sprite.name, "Save", "cancel", (response)=>{
+        if(response){
+          this.sprite.name = response
+          resolve(true)
+        }
+      })
+    })
+    
+  }
   
   saveSprite(){
     flux.showModalQuestionWindow("Please enter a name for your Sprite...", this.sprite.name, "Save", "cancel", (response)=>{
@@ -910,6 +971,7 @@ class PixelEditor {
         var spriteData = new Sprite()
         spriteData.loadFromSprite(this.sprite)
         spriteData.name = response
+        this.sprite.name = response
         var save = {
           isSprite: true,
           name: response,
@@ -1143,6 +1205,14 @@ class PixelEditor {
   }
   
   
+  setBackgroundColour(){
+    var priColour = document.getElementById("PRIMARYCOLOURPICKER").value
+    var elements = document.getElementsByClassName('flux-windowchequered');
+
+    for(var i = 0; i < elements.length; i++) {
+      elements[i].style.backgroundColor = priColour;
+    }
+  }
   
 }
 

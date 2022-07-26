@@ -84,25 +84,32 @@ document.addEventListener("menuButtonClicked", (event)=>{
     case "SAVEONLINE": 
       pixelFlux.saveSpriteOnline()
       break
-      case "DOWNLOAD": 
-      var url = pixelFlux.sprite.canvas.toDataURL("image/png")
-      if(pixelFlux.sprite.name.length == 0)
-        download(url, "pixelFlux-download.png")
-      else
-        download(url, pixelFlux.sprite.name + ".png")
-      break
+      case "DOWNLOAD":
+        pixelFlux.setSpriteName().then(()=>{      
+          var url = pixelFlux.sprite.canvas.toDataURL("image/png")
+          if(pixelFlux.sprite.name.length == 0)
+            download(url, "pixelFlux-download.png")
+          else
+            download(url, pixelFlux.sprite.name + ".png")
+        })
+        break
       case "DOWNLOADPIXELFILE": 
-      var url = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pixelFlux.sprite));
+      pixelFlux.setSpriteName().then(()=>{
+        var url = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pixelFlux.sprite));
+        
+        if(pixelFlux.sprite.name.length == 0)
+          download(url, "pixelFlux-download.pixel")
+        else
+          download(url, pixelFlux.sprite.name + ".pixel")
+      })
       
-      if(pixelFlux.sprite.name.length == 0)
-        download(url, "pixelFlux-download.pixel")
-      else
-        download(url, pixelFlux.sprite.name + ".pixel")
       break
     case "DOWNLOADSPRITESHEET": 
-      pixelFlux.sprite.updateSpriteSheetCanvas()
-      var dataUrl = pixelFlux.sprite.spriteSheetCanvas.toDataURL("image/png")
-      download(dataUrl, pixelFlux.sprite.name + "_spritesheet.png")
+      pixelFlux.setSpriteName().then(()=>{     
+        pixelFlux.sprite.updateSpriteSheetCanvas()
+        var dataUrl = pixelFlux.sprite.spriteSheetCanvas.toDataURL("image/png")
+        download(dataUrl, pixelFlux.sprite.name + "_spritesheet.png")
+      })
       break
     case "": break
     case "UNDO": 
@@ -241,6 +248,9 @@ document.addEventListener("menuButtonClicked", (event)=>{
       flux.showWindow("ANIMATIONTOOLS")
       flux.showWindow("FRAMES")
       break
+    case "SETBACKGROUNDCOLOR":
+      pixelFlux.setBackgroundColour()
+      break
     case "ARRANGECLASSIC": 
       flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC)
       break
@@ -265,13 +275,38 @@ document.addEventListener("menuButtonClicked", (event)=>{
       pixelFlux.clearColourPallet()
       pixelFlux.loadColours(builtInColourPallets.WOODLANDJOURNEY)
       break
+    case "LOADPALLETPASTELDREAMS": 
+      pixelFlux.clearColourPallet()
+      pixelFlux.loadColours(builtInColourPallets.PASTELDREAMS)
+      break
+    case "LOADPALLETHIGHCONTRAST": 
+      pixelFlux.clearColourPallet()
+      pixelFlux.loadColours(builtInColourPallets.HIGHCONTRAST)
+      break
+      case "LOADPALLETCYBERPUNKNEON": 
+      pixelFlux.clearColourPallet()
+      pixelFlux.loadColours(builtInColourPallets.CYBERPUNKNEON)
+      break
+      case "LOADPALLETDRAGONFIRE": 
+      pixelFlux.clearColourPallet()
+      pixelFlux.loadColours(builtInColourPallets.DRAGONFIRE)
+      break
     case "LOADPALLET": break
     case "LOADPALLET": break
     case "LOADPALLET": break
     case "LOADPALLET": break
     case "LOADPALLET": break
     case "LOADPALLET": break
-    case "LOADPALLET": break
+    case "CLEARPALLET": 
+      pixelFlux.clearColourPallet()
+      break
+      case "REDUCEPALLET": 
+      pixelFlux.reduceColourPalette(30)
+      break
+    case "GETPALLETFROMLAYER":
+      pixelFlux.clearColourPallet()
+      pixelFlux.createPaletteFromCurrentLayer()
+      break
     case "": break
     case "ABOUTPIXELFLUX": window.open("/content?type=static"); break;
     case "TODOLIST": window.open("/content?type=task"); break;

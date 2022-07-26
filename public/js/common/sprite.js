@@ -6,6 +6,7 @@ class Sprite {
     this.width = width
     this.height = height
     this.name = ""
+    this.nameSet = false
     
     this.frames = new Array()
     this.frames[0] = new Frame(width, height)
@@ -365,6 +366,10 @@ class Frame {
     this.currentLayer = n
   }
   
+  getCurrentLayer(){
+    return this.layers[this.currentLayer]
+  }
+
   reInitCanvas(){
     this.canvas = document.createElement("canvas")
     this.canvas.width = this.width
@@ -665,6 +670,13 @@ class Pixel {
             g: ~~this.green,
             b: ~~this.blue,
             a: ~~this.alpha}
+  }
+
+  getHTMLHex(){
+    let r = parseInt(this.red, 10).toString(16).padStart(2, '0')
+    let g = parseInt(this.green, 10).toString(16).padStart(2, '0')
+    let b = parseInt(this.blue, 10).toString(16).padStart(2, '0')
+    return `#${r}${g}${b}`
   }
   
   getRGBAArray(){
