@@ -148,9 +148,21 @@ document.addEventListener("menuButtonClicked", (event)=>{
       pixelFlux.sprite.nextLayerDown()
       pixelFlux.renderLayersWindow()
       break
-    case "LAYERTOGGLEVISIBLE": break
-    case "LAYERTOGGLELOCKED": break
-    case "LAYERCLEAR": break
+    case "LAYERTOGGLEVISIBLE": 
+      pixelFlux.sprite.getCurrentFrame().getCurrentLayer().toggleVisible()
+      pixelFlux.sprite.updateCanvasChain()
+      pixelFlux.updateCanvasAndPreview()
+      break
+    case "LAYERTOGGLELOCKED": 
+      pixelFlux.sprite.getCurrentFrame().getCurrentLayer().toggleLocked()
+      pixelFlux.sprite.updateCanvasChain()
+      pixelFlux.updateCanvasAndPreview()
+      break
+    case "LAYERCLEAR": 
+      pixelFlux.sprite.getCurrentFrame().getCurrentLayer().clear()
+      pixelFlux.sprite.updateCanvasChain()
+      pixelFlux.updateCanvasAndPreview()
+      break
     case "": break
     case "": break
     case "": break
@@ -307,12 +319,19 @@ document.addEventListener("menuButtonClicked", (event)=>{
       pixelFlux.clearColourPallet()
       pixelFlux.loadColours(builtInColourPallets.DRAGONFIRE)
       break
-    case "LOADPALLET": break
-    case "LOADPALLET": break
-    case "LOADPALLET": break
-    case "LOADPALLET": break
-    case "LOADPALLET": break
-    case "LOADPALLET": break
+    
+    case "LOADPALETTE": 
+      pixelFlux.selectSavedPalette()
+      break
+    case "SAVEPALETTE": 
+      pixelFlux.saveColourPaletteAs()
+      break
+    case "EXPORTPALETTE": 
+      break
+    case "IMPORTPALETTE": 
+      break
+    
+    
     case "CLEARPALLET": 
       pixelFlux.clearColourPallet()
       break

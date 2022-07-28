@@ -24,8 +24,6 @@
           "menuItems": [
             {"id": "OPENPIXELFILE", "display": "", "type": "FILESELECT"}
           ]},
-        {"id": "IMPORT", "display": "Import", "type": "CLICKABLE"},
-        {"id": "EXPORT", "display": "Export", "type": "CLICKABLE"},
         {"id": "SAVE", "display": "Save in Browser (local)", "type": "CLICKABLE"},
         {"id": "DOWNLOAD", "display": "Download .png file (current frame)", "type": "CLICKABLE"},
         {"id": "DOWNLOADPIXELFILE", "display": "Download .pixel file (all frames)", "type": "CLICKABLE"},
@@ -116,6 +114,11 @@
         {"id": "LOADPALLETHIGHCONTRAST", "display": "Load Palette - High Contrast", "type": "CLICKABLE"},
         {"id": "LOADPALLETCYBERPUNKNEON", "display": "Load Palette - Cyberpunk Neon", "type": "CLICKABLE"},
         {"id": "LOADPALLETDRAGONFIRE", "display": "Load Palette - Dragon Fire", "type": "CLICKABLE"},
+        {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
+        {"id": "SAVEPALETTE", "display": "Save Palette (Local Browser)", "type": "CLICKABLE"},
+        {"id": "LOADPALETTE", "display": "Load Saved Palette (Local Browser)", "type": "CLICKABLE"},
+        {"id": "EXPORTPALETTE", "display": "Export Palette (.palette file)", "type": "CLICKABLE"},
+        {"id": "IMPORTPALETTE", "display": "Import Palette (.palette file)", "type": "CLICKABLE"},
         {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
         {"id": "CLEARPALLET", "display": "Clear Current Palette", "type": "CLICKABLE"},
         {"id": "REDUCEPALLET", "display": "Reduce Current Palette", "type": "CLICKABLE"},

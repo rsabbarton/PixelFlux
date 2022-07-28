@@ -293,3 +293,12 @@ input[type="text"]{
   background-color: blue;
   color: white;
 }
+
+
+.flux-select {
+  margin: 30px;
+    width: 80%;
+    font-family: sans-serif;
+    font-size: large;
+    padding: 5px;
+}

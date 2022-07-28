@@ -340,21 +340,34 @@ class PixelEditor {
     this.saveColourPallet()
   }
   
+
+  saveColourPaletteAs(){
+    console.log("Saving Colour Palette")
+    flux.showModalQuestionWindow("Please enter a name for your Palette...", "", "Save", "cancel", (response)=>{
+      if(response){
+        this.saveColourPallet(response)
+      }
+    })
+  }
   
   saveColourPallet(name){
     if(!name) name = "defaultColourPallet"
-    var colours = []
+    var palette = {
+      type: "palette"
+    }
+    palette.colours = []
+    
     var elements = document.querySelectorAll(".flux-palletcolour")
     for(var i = 0; i<elements.length; i++){
       var col = elements[i].style.backgroundColor
-      colours.push(col)
+      palette.colours.push(col)
     }
-    localStorage.setItem(name, JSON.stringify(colours))
+    localStorage.setItem(name, JSON.stringify(palette))
   }
   
   loadColourPallet(palletName){
     if(localStorage.getItem(palletName)){
-      var colours = JSON.parse(localStorage.getItem(palletName))
+      var colours = JSON.parse(localStorage.getItem(palletName)).colours
       this.loadColours(colours)
     }
   }
@@ -420,6 +433,32 @@ class PixelEditor {
     document.getElementById("COLOURPALLETSTORE").innerHTML = ""
   }
   
+  selectSavedPalette(){
+    flux.showModalSelectionWindow("Please select your Palette to load...", this.getSavedPaletteList(), "Load", "cancel", (response)=>{
+      if(response){
+        this.clearColourPallet()
+        this.loadColourPallet(response)
+      }
+    })
+  }
+
+  getSavedPaletteList(){
+    let palettes = new Array()
+    console.log(localStorage.length)
+    for(let i = 0; i < localStorage.length; i++){
+      
+      let key = localStorage.key(i)             // Get key as localStorage index key
+      let o = JSON.parse(localStorage.getItem(key))  // Get o as the object in storage
+      if(o.type == "palette" && 
+        key != "defaultColourPallet"){         // defaultColourPallet is used for colour persistence between sessions
+        palettes.push(key)                      // add palette name to the return array
+      }
+    }
+    return palettes                             // return an array of palette names
+  }
+
+
+
   updateCanvasAndPreview(fullUpdate){
     
     var now = Date.now()
@@ -663,8 +702,7 @@ class PixelEditor {
       if(i>0){
         mergedown.onclick = (event)=>{
           var id = event.srcElement.zIndex
-          var frame = pixelFlux.sprite.getCurrentFrame()
-          frame.mergerLayerDown(id)
+          pixelFlux.sprite.getCurrentFrame().mergeLayerDown(id)
           pixelFlux.sprite.updateCanvasChain()
           pixelFlux.updateCanvasAndPreview()
           pixelFlux.sprite.pushToUndoHistory()
@@ -754,7 +792,8 @@ class PixelEditor {
         var frame = pixelFlux.sprite.getCurrentFrame()
         pixelFlux.showLayerSettings(id)
       }
-      layercontrols.appendChild(layersettings)
+      // Commenting out the addition of the layer settings icon so that it can be re-added in a future version when implemented.
+      //layercontrols.appendChild(layersettings)
       //--------------------------------------------------------------------
       
       

@@ -138,6 +138,64 @@ class FluxUI {
     container.style.display = "block"
   }
   
+  
+  showModalSelectionWindow(question, answers, buttonYes, buttonNo, callback){
+    var dimmer = document.createElement("div")
+    dimmer.classList.add("flux-dimmer")
+    
+    var w = new FluxWindow(FLUXTYPE_WINDOW_CHILD,"QUESTIONWINDOW", "", 50, 50, 500,200)
+    var container = document.getElementById("QUESTIONWINDOW")
+    container.classList.add("flux-messagebox")
+    var content = document.getElementById("QUESTIONWINDOWCONTENT")
+    var msg = document.createElement("div")
+    msg.classList.add("flux-messageboxmessage")
+    msg.innerHTML = question
+    
+    var answerBox = document.createElement("select")
+    //answerBox.type = "text"
+    //answerBox.value = defaultAnswer
+    answerBox.id = "QUESTIONWINDOWRESPONSE"
+    answerBox.classList.add("flux-select")
+    
+    console.log(answers)
+    answers.forEach(a => {
+      var option = document.createElement("option");
+      option.value = a;
+      option.text = a;
+      answerBox.appendChild(option);
+    })
+    
+    var noButton = document.createElement("button")
+    noButton.innerText = buttonNo
+    noButton.classList.add("flux-messagenobutton")
+    noButton.onclick = ()=>{ 
+      callback(false)
+      container.style.display = "none"
+      container.remove()
+      dimmer.remove()
+    }
+    
+    var yesButton = document.createElement("button")
+    yesButton.innerText = buttonYes
+    yesButton.classList.add("flux-messageyesbutton")
+    yesButton.onclick = ()=>{ 
+      callback(document.getElementById("QUESTIONWINDOWRESPONSE").value)
+      container.style.display = "none"
+      container.remove()
+      dimmer.remove()
+    }
+    
+    content.appendChild(msg)
+    content.appendChild(answerBox)
+    content.appendChild(noButton)
+    content.appendChild(yesButton)
+    
+    document.body.appendChild(dimmer)
+    container.style.display = "block"
+  }
+  
+  
+  
   setWindowContent(id, html){
     this.getObjectById(id).setWindowContent(html)
   }

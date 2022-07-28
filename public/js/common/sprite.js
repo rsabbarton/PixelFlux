@@ -497,6 +497,13 @@ class Frame {
   getCurrentCanvasContext(){
     return this.layers[this.currentLayer].context
   }
+
+
+  mergeLayerDown(n){
+    this.layers[n].mergeInto(this.layers[n-1])
+    this.deleteLayer(n)
+  }
+
 }
 
 
@@ -531,6 +538,10 @@ class Layer {
     this.updateCanvas()
   }
   
+  toggleVisible(){
+    this.visible = !this.visible
+    this.updateCanvas()
+  }
   
   lock(){
     this.locked = true
@@ -540,7 +551,12 @@ class Layer {
     this.locked = false
   }
   
+  toggleLocked(){
+    this.locked = !this.locked
+  }
+
   clear(){
+    if(this.locked) return
     for(var i = 0; i<this.pixels.length; i++){
       this.pixels[i].setRGBA(0,0,0,0)
     }
@@ -548,13 +564,22 @@ class Layer {
   }
   
   copyFromLayer(src){
+    if(this.locked) return
     for(var i = 0;i<src.width * src.height; i++){
       this.pixels[i].copyFromPixel(src.pixels[i])
     }
     this.updateCanvas()
   }
   
+  mergeInto(destination){
+    this.updateCanvas()
+    destination.updateCanvas()
+    destination.context.drawImage(this.canvas, 0, 0)
+    destination.updatePixelArray()
+  }
+
   setPixelRGBA(x,y,r,g,b,a){
+    if(this.locked) return
     var i = (y * this.width) + x
     this.pixels[i].setColour(r,g,b,a)
     this.updateCanvas()
@@ -569,6 +594,7 @@ class Layer {
   }
   
   setPixelHex(x,y, col, a){
+    if(this.locked) return
     if(x<0||x>this.width-1||y<0||y>this.height-1)
       return
     var i = (y * this.width) + x
@@ -584,6 +610,7 @@ class Layer {
   // setPixelHexInterim does not call updateInternalCanvas
   // Needs to be called manually
   setPixelHexInterim(x,y, col, a){
+    if(this.locked) return
     if(x<0||x>this.width-1||y<0||y>this.height-1)
       return
     var i = (y * this.width) + x
@@ -596,10 +623,12 @@ class Layer {
   }
   
   clearLayer(){
+    if(this.locked) return
     this.context.clearRect(0,0,this.width, this.height)
   }
   
   reducePixelAlpha(x,y,amt){
+    if(this.locked) return
     var i = (y * this.width) + x
     this.pixels[i].alpha = this.pixels[i].alpha - (amt)
     if(this.pixels[i].alpha < 0)
@@ -608,6 +637,7 @@ class Layer {
   }
   
   randomise(){
+    if(this.locked) return
     for(var i = 0; i < this.width * this.height; i++){
       this.pixels[i].setRandomColour()
     }
