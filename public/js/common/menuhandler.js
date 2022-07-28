@@ -327,8 +327,31 @@ document.addEventListener("menuButtonClicked", (event)=>{
       pixelFlux.saveColourPaletteAs()
       break
     case "EXPORTPALETTE": 
+      pixelFlux.exportCurrentPalette()
       break
-    case "IMPORTPALETTE": 
+    case "IMPORTPALETTEFILE": 
+      var selector = document.getElementById("IMPORTPALETTEFILEFILESELECT")
+      selector.onchange = (e)=>{
+        log("Importing: " + selector.value)
+        var filename = selector.value
+        var file = selector.files[0]
+        if (file) {
+            var reader = new FileReader()
+            reader.readAsText(file, "UTF-8")
+            reader.onload = function (evt) {
+                var contents = evt.target.result
+                var palette = JSON.parse(contents)
+                pixelFlux.clearColourPallet()
+                pixelFlux.loadColours(palette.colours)
+                pixelFlux.updateCanvasAndPreview()
+            }
+            reader.onerror = function (evt) {
+                window.alert("Error Reading File!")
+                console.log(evt)
+            }
+        }
+      }
+      selector.value = ""
       break
     
     

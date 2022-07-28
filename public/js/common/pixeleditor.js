@@ -458,6 +458,40 @@ class PixelEditor {
   }
 
 
+  exportCurrentPalette(){
+
+    console.log("Exporting Current Palette")
+    flux.showModalQuestionWindow("Please enter a name for your Palette...", "", "Export", "cancel", (response)=>{
+      if(response){
+        var palette = {
+          type: "palette"
+        }
+        palette.colours = []
+        
+        var elements = document.querySelectorAll(".flux-palletcolour")
+        for(var i = 0; i<elements.length; i++){
+          var col = elements[i].style.backgroundColor
+          palette.colours.push(col)
+        }
+
+        var url = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(palette));
+        
+        if(response.length == 0)
+          download(url, "pixelFlux-download.palette")
+        else
+          download(url, response + ".palette")
+      }
+      
+    })
+
+  }
+
+  importPaletteFile(){
+
+
+
+  }
+
 
   updateCanvasAndPreview(fullUpdate){
     

@@ -118,8 +118,10 @@
         {"id": "SAVEPALETTE", "display": "Save Palette (Local Browser)", "type": "CLICKABLE"},
         {"id": "LOADPALETTE", "display": "Load Saved Palette (Local Browser)", "type": "CLICKABLE"},
         {"id": "EXPORTPALETTE", "display": "Export Palette (.palette file)", "type": "CLICKABLE"},
-        {"id": "IMPORTPALETTE", "display": "Import Palette (.palette file)", "type": "CLICKABLE"},
-        {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
+        {"id": "IMPORTPALETTE", "display": "Import .palette file", "type": "SUBMENU",
+          "menuItems": [
+            {"id": "IMPORTPALETTEFILE", "display": "", "type": "FILESELECT"}
+          ]},{"id": "null", "display": "<hr>", "type": "SEPARATOR"},
         {"id": "CLEARPALLET", "display": "Clear Current Palette", "type": "CLICKABLE"},
         {"id": "REDUCEPALLET", "display": "Reduce Current Palette", "type": "CLICKABLE"},
         {"id": "GETPALLETFROMLAYER", "display": "Create Palette from Current Layer", "type": "CLICKABLE"}
