@@ -42,6 +42,10 @@ app.get('/app', (req, res) => {
   res.send(loadHTMLPage('app.html'))
 })
 
+app.get('/app-dev', (req, res) => {
+  res.send(loadDevHTMLPage('app-dev.html'))
+})
+
 
 app.get('/content', (req, res) => {
   res.send(loadHTMLPage('content.html'))
@@ -412,6 +416,39 @@ function loadHTMLPage(page){
   cssfiles.forEach((f)=>{
     if(path.extname(f.toString()).toLowerCase() == '.css'){
       headerJS += "<link rel='stylesheet' href='/css/" + path.basename(f) + "'>"
+    }
+    
+  })
+    
+
+  
+  html = fs.readFileSync('./pages/' + page).toString()
+  html = html.replace("</head>", headerJS + "</head>")
+  
+  
+  
+  return html
+}
+
+
+function loadDevHTMLPage(page){
+  
+  var html = ""
+  var headerJS = ""
+  
+  var files = fs.readdirSync("./public/dev/js/common")
+  files.forEach((f)=>{
+    if(path.extname(f.toString()).toLowerCase() == '.js'){
+      headerJS += "<script src='/dev/js/common/" + path.basename(f) + "'></script>"
+    }
+    
+  })
+    
+
+  var cssfiles = fs.readdirSync("./public/dev/css")
+  cssfiles.forEach((f)=>{
+    if(path.extname(f.toString()).toLowerCase() == '.css'){
+      headerJS += "<link rel='stylesheet' href='/dev/css/" + path.basename(f) + "'>"
     }
     
   })
