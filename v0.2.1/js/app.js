@@ -142,8 +142,6 @@ document.addEventListener('paste', function (evt) {
   
 });
 
-
-
 // Prevent right-click default action when using app
 window.addEventListener("contextmenu", e => e.preventDefault());
 var DEVPREVIEW = false

@@ -373,6 +373,7 @@ class PixelEditor {
   }
   
   loadColours(colours){
+    if(colours === undefined) return false
     for(var i=0; i<colours.length; i++){
       this.addColourToPallet(colours[i])
     }
