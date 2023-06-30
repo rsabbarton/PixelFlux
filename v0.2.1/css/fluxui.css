@@ -9,6 +9,11 @@ html, body {
 }
 
 
+div#google-button {
+  margin-top: 4px;
+  margin-right: 4px;
+}
+
 
 .flux-menucontainer {
   background-color: black;

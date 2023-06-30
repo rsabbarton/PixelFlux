@@ -39,7 +39,11 @@ class PixelEditor {
   
   setupUI(){
     flux.createFullScreenUI()
-    flux.loadMenu("/config/menu.json", (id)=>{
+    let menuUrl = "/config/menu.json"
+    if(DEVPREVIEW) menuUrl = "/dev" + menuUrl
+    console.log(DEVPREVIEW)
+    console.log("LOADING MENU: ", menuUrl)
+    flux.loadMenu(menuUrl, (id)=>{
       const postEvent = new CustomEvent('menuButtonClicked', { detail: {srcElementId: id}})
       document.dispatchEvent(postEvent)
       log("MENU ID: " +id + " CLICKED")
@@ -1118,6 +1122,10 @@ class PixelEditor {
     
     var container = document.getElementById("OPENGALLERYCONTENT")
     container.innerHTML = ""
+    let spanBrowserStore = document.createElement("h3")
+    spanBrowserStore.classList.add("load-screen-title")
+    spanBrowserStore.innerHTML += "Local Browser Storage"
+    container.appendChild(spanBrowserStore)
     var count = localStorage.length
     for (var i = 0; i < count; i++){
       var key = localStorage.key(i)
@@ -1146,6 +1154,7 @@ class PixelEditor {
         }
         
         var pallet = document.createElement("img")
+        //TODO: Remove CDN.GLITCH.GLOBAL reference 
         pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
         pallet.classList.add("gallerypalleticon")
         pallet.onclick = (event)=>{
@@ -1156,6 +1165,7 @@ class PixelEditor {
         }
         
         var bg = document.createElement("img")
+        //TODO: Remove CDN.GLITCH.GLOBAL reference 
         bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
         bg.classList.add("gallerybgicon")
         bg.onclick = (event)=>{
@@ -1190,9 +1200,10 @@ class PixelEditor {
           flux.hideWindow("OPENGALLERY")
         }
         s.drawToCanvasId(key, 0,0,64/s.height)
-      }
-      
+      } 
+    
     }
+
     
     flux.showWindow("OPENGALLERY")
     this.appendServerSpritesToOpenGallery()
@@ -1200,85 +1211,99 @@ class PixelEditor {
   
   
   appendServerSpritesToOpenGallery(){
-    get('/get-my-sprites')
+    get('/mysprites')
     .then((response)=>{
-      //console.log(response)
+      console.log(response)
       var container = document.getElementById("OPENGALLERYCONTENT")
+      let spanServerStore = document.createElement("h3")
+      spanServerStore.classList.add("load-screen-title")
+      spanServerStore.innerHTML += "PixelFlux Server Storage"
+      container.appendChild(spanServerStore)
       var spriteList = JSON.parse(response)
       if(spriteList.length > 0){
         spriteList.forEach((entry)=>{
           console.log(entry)
-          var key = entry.sys.id
-          var item = entry.fields.objectData['en-US']
-          if(item.isSprite){
-            var s = new Sprite(64,64)
-            s.loadFromSprite(item.spriteData)
-            var div = document.createElement("div")
-            div.classList.add("gallerydiv")
-            var canvas = document.createElement("canvas")
-            canvas.width = 64
-            canvas.height = 64
-            canvas.classList.add("gallerycanvas")
-            canvas.id = key
-            //var ctx = canvas.getContext2d()
-    
-            /* var del = document.createElement("div")
-            del.classList.add("gallerydelete")
-            del.innerHTML = "x"
-            
-            del.onclick = (event)=>{
-              var key = event.srcElement.parentElement.firstChild.id
-              localStorage.removeItem(key)
-              event.srcElement.parentElement.remove()
-              
-            } */
-            
-            var pallet = document.createElement("img")
-            pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
-            pallet.classList.add("gallerypalleticon")
-            pallet.onclick = (event)=>{
-              var key = event.srcElement.parentElement.firstChild.id
-              var load = item
-              pixelFlux.importPalletFromPixelArray(load.pixelArray)
-              flux.hideWindow("OPENGALLERY")
-            }
-            
-            var bg = document.createElement("img")
-            bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
-            bg.classList.add("gallerybgicon")
-            bg.onclick = (event)=>{
-              var key = event.srcElement.parentElement.firstChild.id
-              var load = item
-              
-              var s = new Sprite(64,64)
-              s.importPixelArray(load.pixelArray, load.width, load.height)
-              var bgurl = s.internalCanvas.toDataURL()
-              var ls = document.querySelectorAll(".flux-windowchequered")
-              for(var i=0; i<ls.length; i++){
-                ls[i].style.backgroundImage = "url(" + bgurl + ")"
-              }
-              flux.hideWindow("OPENGALLERY")
-            }
-            
-            
-            
-            
-            
-            div.appendChild(canvas)
-            div.appendChild(pallet)
-            div.appendChild(bg)
-            container.appendChild(div)
-            
-            canvas.onclick = (event)=>{
-              var load = item
-              load.spriteData.name = load.name
-              pixelFlux.sprite.loadFromSprite(load.spriteData)
-              pixelFlux.updateCanvasAndPreview()
-              flux.hideWindow("OPENGALLERY")
-            }
-            s.drawToCanvasId(key, 0,0,64/s.height)
-          }
+          let spriteId = entry.id
+
+          get("/load?id=" + spriteId)
+          .then(res=>{
+            let loadResponse = JSON.parse(res)
+            console.log(loadResponse)
+            let item = loadResponse.spriteData
           
+            if(item.isSprite){
+              var s = new Sprite(64,64)
+              s.loadFromSprite(item.spriteData)
+              var div = document.createElement("div")
+              div.classList.add("gallerydiv")
+              var canvas = document.createElement("canvas")
+              canvas.width = 64
+              canvas.height = 64
+              canvas.classList.add("gallerycanvas")
+              canvas.id = spriteId
+              //var ctx = canvas.getContext2d()
+      
+              /* var del = document.createElement("div")
+              del.classList.add("gallerydelete")
+              del.innerHTML = "x"
+              
+              del.onclick = (event)=>{
+                var key = event.srcElement.parentElement.firstChild.id
+                localStorage.removeItem(key)
+                event.srcElement.parentElement.remove()
+                
+              } */
+              
+              var pallet = document.createElement("img")
+              //TODO: Remove Glitch CDN reference
+              pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
+              pallet.classList.add("gallerypalleticon")
+              pallet.onclick = (event)=>{
+                var key = event.srcElement.parentElement.firstChild.id
+                var load = item
+                pixelFlux.importPalletFromPixelArray(load.pixelArray)
+                flux.hideWindow("OPENGALLERY")
+              }
+              
+              var bg = document.createElement("img")
+              //TODO: Remove Glitch CDN reference
+              bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
+              bg.classList.add("gallerybgicon")
+              bg.onclick = (event)=>{
+                var key = event.srcElement.parentElement.firstChild.id
+                var load = item
+                
+                var s = new Sprite(64,64)
+                s.importPixelArray(load.pixelArray, load.width, load.height)
+                var bgurl = s.internalCanvas.toDataURL()
+                var ls = document.querySelectorAll(".flux-windowchequered")
+                for(var i=0; i<ls.length; i++){
+                  ls[i].style.backgroundImage = "url(" + bgurl + ")"
+                }
+                flux.hideWindow("OPENGALLERY")
+              }
+              
+              
+              
+              
+              
+              div.appendChild(canvas)
+              div.appendChild(pallet)
+              div.appendChild(bg)
+              container.appendChild(div)
+              
+              canvas.onclick = (event)=>{
+                var load = item
+                load.spriteData.name = load.name
+                pixelFlux.sprite.loadFromSprite(load.spriteData)
+                pixelFlux.updateCanvasAndPreview()
+                flux.hideWindow("OPENGALLERY")
+              }
+              s.drawToCanvasId(spriteId, 0,0,64/s.height)
+            }
+            
+
+          })
         
 
 

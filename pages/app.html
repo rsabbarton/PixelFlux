@@ -16,9 +16,32 @@
     </script>
   </head>
   <body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+        let googleToken = {googleToken: response.credential}
+        post("/googleValidate", googleToken)
+        .then((res, rej)=>{
+          console.log(res)
+        })
+
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "166137424043-3aul3cvcfkuhjriajmpp7p3jt9tdmhm7.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          { theme: "outline", size: "small" }  // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      }
+    </script>
+
     <div class="inappaccountinfo" id="accountinfo">
-      <a class="inappsitemenuitem" href="/signup">Sign Up</a>
-      <a class="inappsitemenuitem" href="/signin">Sign In</a>
+      <div id="buttonDiv"></div> 
     </div>
     <script src="/js/app.js"></script>
     <script src="/js/account/account.js"></script>

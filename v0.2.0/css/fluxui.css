@@ -11,7 +11,7 @@ html, body {
 
 
 .flux-menucontainer {
-  background-color: black;
+  background-color: none;
 }
 
 .flux-menucontainer:after {
@@ -25,6 +25,7 @@ html, body {
 
 .flux-menu {
   display: inline-block;
+  border-radius: 0px 0px 30px 0px;
 
 }
 .flux-submenu {

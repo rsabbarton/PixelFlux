@@ -1,3 +1,7 @@
+let DEVPREVIEW = false
+if(window.location.href.includes('app-dev')) {
+  DEVPREVIEW = true
+}
 
   
 showLoadingAnimation()
@@ -144,8 +148,6 @@ document.addEventListener('paste', function (evt) {
 
 // Prevent right-click default action when using app
 window.addEventListener("contextmenu", e => e.preventDefault());
-var DEVPREVIEW = false
-if(window.location.href.includes('app-dev')) DEVPREVIEW = true
 
 const keyboard = new KeyboardHandler()
 var config = {}

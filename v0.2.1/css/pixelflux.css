@@ -118,6 +118,12 @@ body {
     cursor: pointer;
 }
 
+.load-screen-title {
+    margin: 4px;
+    color: black;
+    background: darkgray;
+    height: 36px;
+}
 
 #COLOURPALLETSTORE {
   overflow-y: scroll;

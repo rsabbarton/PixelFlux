@@ -1,3 +1,2 @@
-!#/bin/bash
-forever restart server.js
+forever restart pixelflux
 forever list
