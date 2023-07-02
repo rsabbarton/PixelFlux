@@ -1161,7 +1161,7 @@ class PixelEditor {
         pallet.onclick = (event)=>{
           var key = event.srcElement.parentElement.firstChild.id
           var load = JSON.parse(localStorage.getItem(key))
-          pixelFlux.importPalletFromPixelArray(load.pixelArray)
+          pixelFlux.importPalletFromSprite(s)
           flux.hideWindow("OPENGALLERY")
         }
         
@@ -1261,8 +1261,8 @@ class PixelEditor {
               pallet.classList.add("gallerypalleticon")
               pallet.onclick = (event)=>{
                 var key = event.srcElement.parentElement.firstChild.id
-                var load = item
-                pixelFlux.importPalletFromPixelArray(load.pixelArray)
+                var load = item.spriteData
+                pixelFlux.importPalletFromSprite(s)
                 flux.hideWindow("OPENGALLERY")
               }
               
@@ -1272,8 +1272,10 @@ class PixelEditor {
               bg.classList.add("gallerybgicon")
               bg.onclick = (event)=>{
                 var key = event.srcElement.parentElement.firstChild.id
-                var load = item
+                var load = item.spriteData
                 
+                console.log(load)
+
                 var s = new Sprite(64,64)
                 s.importPixelArray(load.pixelArray, load.width, load.height)
                 var bgurl = s.internalCanvas.toDataURL()
@@ -1316,20 +1318,37 @@ class PixelEditor {
 
 
   
-  importPalletFromPixelArray(pa){
-    //pa = JSON.parse(pa)
+  // importPalletFromPixelArray(pa){
+  //   //pa = JSON.parse(pa)
+  //   var added = new Array()
+  //   document.getElementById("COLOURPALLETSTORE").innerHTML = ""
+  //   for(var i = 0; i< pa.length; i++){
+  //     var colour = "rgb(" + pa[i][0] + "," + pa[i][1] + "," + pa[i][2] + ")"
+  //     if(!added.includes(colour)){
+  //       this.addColourToPallet(colour)
+  //       added.push(colour)
+  //     }
+  //   }
+  // }
+  
+  
+  importPalletFromSprite(s){
     var added = new Array()
     document.getElementById("COLOURPALLETSTORE").innerHTML = ""
-    for(var i = 0; i< pa.length; i++){
-      var colour = "rgb(" + pa[i][0] + "," + pa[i][1] + "," + pa[i][2] + ")"
-      if(!added.includes(colour)){
-        this.addColourToPallet(colour)
-        added.push(colour)
-      }
-    }
+    s.frames.forEach(f=>{
+      f.layers.forEach(l=>{
+        l.pixels.forEach(p=>{
+          var colour = "rgb(" + p.red + "," + p.green + "," + p.blue + ")"
+          if(!added.includes(colour)){
+            this.addColourToPallet(colour)
+            added.push(colour)
+          }
+        })
+      })
+    })
   }
-  
-  
+
+
   setBackgroundColour(){
     var priColour = document.getElementById("PRIMARYCOLOURPICKER").value
     var elements = document.getElementsByClassName('flux-windowchequered');
