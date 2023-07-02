@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow:
+Sitemap: pixelflux.me/sitemap.xml
