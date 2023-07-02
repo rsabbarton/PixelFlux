@@ -2,5 +2,6 @@
   "appName": "PixelFlux",
   "fullWindow": true,
   "Description": "A pixel editor for Pixel Art and game Sprite Generation",
-  "version": "v0.2.1"
+  "version": "v0.2.1",
+  "releaseDate": "2-Jul-2023"
 }

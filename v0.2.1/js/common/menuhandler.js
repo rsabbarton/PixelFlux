@@ -5,7 +5,7 @@ document.addEventListener("menuButtonClicked", (event)=>{
       window.open("https://pixelflux.me")
       break
     case "FORUM":
-      window.open("https://pixelflux.boards.net")
+      window.open("https://github.com/rsabbarton/PixelFlux/discussions")
       break
     case "NEW6X6": 
       pixelFlux.createNewSprite(6,6)
@@ -367,7 +367,15 @@ document.addEventListener("menuButtonClicked", (event)=>{
       break
     case "": break
     case "ABOUTPIXELFLUX":
-      let aboutInfo = `Version: ${config.version}<br>Developer Preview: ${DEVPREVIEW}`
+      let aboutInfo = `
+          Version: ${config.version}<br>
+          Release Date: ${config.releaseDate}<br>
+          Developer Preview: ${DEVPREVIEW}<br>
+          .pixel Filespec: v2.0.0<br>
+          <br>
+          &copy; Richard Sabbarton
+
+          `
       flux.showModalMessageBox('About PixelFlux', aboutInfo, ()=>{})
       break
     case "TODOLIST": window.open("/content?type=task"); break;

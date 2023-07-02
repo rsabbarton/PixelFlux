@@ -24,6 +24,7 @@
         post("/googleValidate", googleToken)
         .then((res, rej)=>{
           console.log(res)
+          siteUser.import(JSON.parse(res))
         })
 
       }
@@ -33,18 +34,18 @@
           callback: handleCredentialResponse
         });
         google.accounts.id.renderButton(
-          document.getElementById("buttonDiv"),
+          document.getElementById("google-button"),
           { theme: "outline", size: "small" }  // customization attributes
         );
-        google.accounts.id.prompt(); // also display the One Tap dialog
+        //google.accounts.id.prompt(); // also display the One Tap dialog
       }
     </script>
 
     <div class="inappaccountinfo" id="accountinfo">
-      <div id="buttonDiv"></div> 
+      <div id="google-button"></div> 
     </div>
-    <script src="/js/app.js"></script>
-    <script src="/js/account/account.js"></script>
+    <script src="/dev/js/app.js"></script>
+    <script src="/dev/js/account/account.js"></script>
   
   </body>  
 </html>
