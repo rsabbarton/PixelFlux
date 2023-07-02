@@ -1159,8 +1159,8 @@ class PixelEditor {
         pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
         pallet.classList.add("gallerypalleticon")
         pallet.onclick = (event)=>{
-          var key = event.srcElement.parentElement.firstChild.id
-          var load = JSON.parse(localStorage.getItem(key))
+          //var key = event.srcElement.parentElement.firstChild.id
+          //var load = JSON.parse(localStorage.getItem(key))
           pixelFlux.importPalletFromSprite(s)
           flux.hideWindow("OPENGALLERY")
         }
@@ -1170,12 +1170,7 @@ class PixelEditor {
         bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
         bg.classList.add("gallerybgicon")
         bg.onclick = (event)=>{
-          var key = event.srcElement.parentElement.firstChild.id
-          var load = JSON.parse(localStorage.getItem(key))
-          
-          var s = new Sprite(64,64)
-          s.importPixelArray(load.pixelArray, load.width, load.height)
-          var bgurl = s.internalCanvas.toDataURL()
+          var bgurl = s.canvas.toDataURL()
           var ls = document.querySelectorAll(".flux-windowchequered")
           for(var i=0; i<ls.length; i++){
             ls[i].style.backgroundImage = "url(" + bgurl + ")"
@@ -1260,8 +1255,8 @@ class PixelEditor {
               pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
               pallet.classList.add("gallerypalleticon")
               pallet.onclick = (event)=>{
-                var key = event.srcElement.parentElement.firstChild.id
-                var load = item.spriteData
+                //var key = event.srcElement.parentElement.firstChild.id
+                //var load = item.spriteData
                 pixelFlux.importPalletFromSprite(s)
                 flux.hideWindow("OPENGALLERY")
               }
@@ -1271,14 +1266,10 @@ class PixelEditor {
               bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
               bg.classList.add("gallerybgicon")
               bg.onclick = (event)=>{
-                var key = event.srcElement.parentElement.firstChild.id
-                var load = item.spriteData
+                //var key = event.srcElement.parentElement.firstChild.id
+                //var load = item.spriteData
                 
-                console.log(load)
-
-                var s = new Sprite(64,64)
-                s.importPixelArray(load.pixelArray, load.width, load.height)
-                var bgurl = s.internalCanvas.toDataURL()
+                var bgurl = s.canvas.toDataURL()
                 var ls = document.querySelectorAll(".flux-windowchequered")
                 for(var i=0; i<ls.length; i++){
                   ls[i].style.backgroundImage = "url(" + bgurl + ")"
