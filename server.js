@@ -146,13 +146,7 @@ app.post('/comment', (req, res)=>{
 app.get('/mysprites', (req, res)=>{
   
   var token = req.cookies.googleToken ? req.cookies.googleToken : false
-
-  if(!token){
-    console.log("Token not provided.", req.cookies)
-    res.send("Token Not Set")
-    return
-  }
-
+  
   var e400 = {
     errorCode: 400,
     errorMessage: "Sprite ID Not provided in URL Params"
@@ -162,6 +156,20 @@ app.get('/mysprites', (req, res)=>{
     errorCode: 404,
     errorMessage: "Sprite ID Not found"
   }
+
+  var e403 = {
+    errorCode: 403,
+    errorMessage: "Not Logged In"
+  }
+
+  
+  if(!token){
+    console.log("Token not provided.", req.cookies)
+    res.send(JSON.stringify(e403))
+    return
+  }
+
+  
 
   verifyGoogleToken(token)
   .then((tokenResponse)=>{

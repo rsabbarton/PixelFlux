@@ -497,6 +497,9 @@ class PixelEditor {
 
   }
 
+  refresh(){
+    this.updateCanvasAndPreview(true)
+  }
 
   updateCanvasAndPreview(fullUpdate){
     
@@ -1209,7 +1212,12 @@ class PixelEditor {
   appendServerSpritesToOpenGallery(){
     get('/mysprites')
     .then((response)=>{
-      console.log(response)
+      if(JSON.parse(response).errorCode > 0){
+        console.log("Failed to load server side sprite list")
+        console.log(response)
+        return
+      }
+      //console.log(response)
       var container = document.getElementById("OPENGALLERYCONTENT")
       let spanServerStore = document.createElement("h3")
       spanServerStore.classList.add("load-screen-title")
@@ -1218,13 +1226,13 @@ class PixelEditor {
       var spriteList = JSON.parse(response)
       if(spriteList.length > 0){
         spriteList.forEach((entry)=>{
-          console.log(entry)
+          //console.log(entry)
           let spriteId = entry.id
 
           get("/load?id=" + spriteId)
           .then(res=>{
             let loadResponse = JSON.parse(res)
-            console.log(loadResponse)
+            // console.log(loadResponse)
             let item = loadResponse.spriteData
           
             if(item.isSprite){

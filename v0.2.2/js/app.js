@@ -8,6 +8,8 @@ showLoadingAnimation()
 
 const flux = new FluxUI()
 const pixelFlux = new PixelEditor()
+const app = pixelFlux
+
 pixelFlux.init(hideLoadingAnimation)
 
 setTimeout(flux.menu.onClickCallback("SHOWALL"))
