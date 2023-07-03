@@ -10,7 +10,7 @@ class KeyboardHandler {
         })
         document.addEventListener('keyup', (event)=>{
             this.keys[event.keyCode] = false
-            console.log(event.keyCode)
+            // console.log(event.keyCode)
         }) 
     }
 
