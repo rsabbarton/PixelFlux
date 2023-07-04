@@ -1215,6 +1215,8 @@ class PixelEditor {
       if(JSON.parse(response).errorCode > 0){
         console.log("Failed to load server side sprite list")
         console.log(response)
+        google.accounts.id.prompt()
+
         return
       }
       //console.log(response)

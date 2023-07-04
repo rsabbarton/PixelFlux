@@ -8,7 +8,10 @@ showLoadingAnimation()
 
 const flux = new FluxUI()
 const pixelFlux = new PixelEditor()
+
+//constant globals for the scripting engine and automation
 const app = pixelFlux
+const sprite = app.sprite
 
 pixelFlux.init(hideLoadingAnimation)
 
