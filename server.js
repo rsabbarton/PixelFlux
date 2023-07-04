@@ -32,7 +32,7 @@ var stashdoc = require('./modules/stashdoc.js')
 var sd = new stashdoc.stashdoc(dataPath)
 
 app.use(express.static('public'))
-app.use(bodyParser.json({ limit: '10mb' })) // To parse the incoming requests with JSON payloads
+app.use(bodyParser.json({ limit: '50mb' })) // To parse the incoming requests with JSON payloads
 app.use(cookieParser())
 
 app.get('/', (req, res) => {
