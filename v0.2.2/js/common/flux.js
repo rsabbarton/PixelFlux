@@ -447,6 +447,9 @@ class Menu {
           menu.classList.add("flux-clickable")
           menu.innerHTML = config.display
           menu.onclick = ()=>{
+            if(config.onclick){
+              eval(config.onclick)
+            }
             this.menuClicked(config.id)
             menu.parentElement.style.display = "none"
           }

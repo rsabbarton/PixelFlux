@@ -111,6 +111,9 @@ class PixelEditor {
     })
   }
   
+  setFramerate(fps){
+    return this.sprite.setFramerate(fps)
+  }
   
   resizeContentCanvases(){
     var canvas = document.getElementById("DRAWINGCANVAS")

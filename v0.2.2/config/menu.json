@@ -64,8 +64,20 @@
         {"id": "DELETECURRENTFRAME", "display": "Delete Current Frame", "type": "CLICKABLE"},
         {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
         {"id": "STARTANIMATION", "display": "Start Animation Preview", "type": "CLICKABLE"},
-        {"id": "STOPANIMATION", "display": "Stop Animation Preview", "type": "CLICKABLE"}
-        
+        {"id": "STOPANIMATION", "display": "Stop Animation Preview", "type": "CLICKABLE"},
+        {"id": "SETFRAMERATE", "display": "Set Animation Framerate", "type": "SUBMENU",
+        "menuItems": [
+          {"id": "1FPS", "display": "1 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(1);"},
+          {"id": "2FPS", "display": "2 fps", "type": "CLICKABLE"},
+          {"id": "4FPS", "display": "4 fps", "type": "CLICKABLE"},
+          {"id": "6FPS", "display": "6 fps", "type": "CLICKABLE"},
+          {"id": "7FPS", "display": "7 fps", "type": "CLICKABLE"},
+          {"id": "12FPS", "display": "12 fps (default)", "type": "CLICKABLE"},
+          {"id": "14FPS", "display": "14 fps", "type": "CLICKABLE"},
+          {"id": "24FPS", "display": "24 fps", "type": "CLICKABLE"},
+          {"id": "28FPS", "display": "28 fps", "type": "CLICKABLE"},
+          {"id": "30FPS", "display": "30 fps", "type": "CLICKABLE"}
+        ]}        
       ]
     },
     {"id": "VIEW", "display": "View", "type": "MENU",

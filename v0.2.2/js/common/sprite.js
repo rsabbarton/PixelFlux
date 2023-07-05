@@ -20,11 +20,19 @@ class Sprite {
     this.history = new Array()
     this.redoArray = new Array()
     
-    this.fps = 14
+    this.fps = 12
     
     this.spriteSheetCanvas = null
   }
   
+  setFramerate(fps){
+    if(fps > 0 && fps <= 60){
+      this.fps = fps
+    } else {
+      console.log(`Selected Framerate (${fps}) not valid`)
+    }
+    return this.fps
+  }
   
   addFrame(){
     var frame = new Frame(this.width, this.height)
