@@ -21,14 +21,24 @@ class PixelEditor {
       y2: 0
     }
     
+    this.preferences = {}
   }
   
   init(callback){
     // DO INIT STUFF AND THEN CALLBACK THEN START EDITOR
     this.setupUI()
     this.addEventListeners()
-    callback()
-    this.start()
+    this.loadUserPreferences()
+    .then((prefs)=>{
+      callback()
+      this.start()
+    })
+    .catch((error)=>{
+      console.log(error)
+      callback()
+      this.start()
+    })
+    
     return    
   }
   
@@ -493,6 +503,22 @@ class PixelEditor {
     })
 
   }
+
+
+  loadUserPreferences(){
+    return new Promise ((resolve, reject)=>{
+      get("/user-preferences")
+      .then(result=>{
+        let prefs = JSON.parse(result)
+        this.preferences = prefs
+        resolve(prefs)
+      })
+      .catch(error=>{
+        reject(error)
+      })
+    })
+  }
+
 
   importPaletteFile(){
 

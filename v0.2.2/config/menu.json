@@ -68,15 +68,15 @@
         {"id": "SETFRAMERATE", "display": "Set Animation Framerate", "type": "SUBMENU",
         "menuItems": [
           {"id": "1FPS", "display": "1 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(1);"},
-          {"id": "2FPS", "display": "2 fps", "type": "CLICKABLE"},
-          {"id": "4FPS", "display": "4 fps", "type": "CLICKABLE"},
-          {"id": "6FPS", "display": "6 fps", "type": "CLICKABLE"},
-          {"id": "7FPS", "display": "7 fps", "type": "CLICKABLE"},
-          {"id": "12FPS", "display": "12 fps (default)", "type": "CLICKABLE"},
-          {"id": "14FPS", "display": "14 fps", "type": "CLICKABLE"},
-          {"id": "24FPS", "display": "24 fps", "type": "CLICKABLE"},
-          {"id": "28FPS", "display": "28 fps", "type": "CLICKABLE"},
-          {"id": "30FPS", "display": "30 fps", "type": "CLICKABLE"}
+          {"id": "2FPS", "display": "2 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(2);"},
+          {"id": "4FPS", "display": "4 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(4);"},
+          {"id": "6FPS", "display": "6 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(6);"},
+          {"id": "7FPS", "display": "7 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(7);"},
+          {"id": "12FPS", "display": "12 fps (default)", "type": "CLICKABLE", "onclick": "app.setFramerate(12);"},
+          {"id": "14FPS", "display": "14 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(14);"},
+          {"id": "24FPS", "display": "24 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(24);"},
+          {"id": "28FPS", "display": "28 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(28);"},
+          {"id": "30FPS", "display": "30 fps", "type": "CLICKABLE", "onclick": "app.setFramerate(30);"}
         ]}        
       ]
     },

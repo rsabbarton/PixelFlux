@@ -426,6 +426,27 @@ app.get('/profile', (req, res) => {
   res.end(responseOBJ)
 })
 
+app.get('/user-preferences', (req, res) => {
+  let responseOBJ = {}
+  var token = req.cookies.googleToken ? req.cookies.googleToken : false
+  if(!token){
+    console.log("Token not provided.", req.cookies)
+    res.send("Token Not Set")
+    return
+  }
+  verifyGoogleToken(token)
+  .then(response=>{
+    console.log("Loading User Preferences",response)
+    let userId = response.userId
+    console.log("UserId:", userId)
+    responseOBJ = sd.loadFrom(path.join("users", userId), "preferences")
+    res.send(responseOBJ)
+  })
+})
+
+
+
+
 app.get('/profile-info',(req, res)=> {
   var token = "Auth Token Not provided"
   var hasToken = false
@@ -469,7 +490,6 @@ app.post('/googleValidate',(req, res)=>{
   res.cookie('googleToken', googleToken, { path: "/", maxAge: 9000000, httpOnly: true });  
   verifyGoogleToken(googleToken)
   .then(response=>{
-    console.log("googleValidate(): response: ", response)
     res.send(response)
   })
 
