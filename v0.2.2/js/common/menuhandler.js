@@ -137,7 +137,11 @@ document.addEventListener("menuButtonClicked", (event)=>{
     case "": break
     case "": break
     case "ADDLAYERCURRENTFRAME": 
-      pixelFlux.sprite.addLayer()
+      if(pixelFlux.preferences.preserveLayerConinuity){
+        pixelFlux.sprite.addLayerAllFrames()
+      } else {
+        pixelFlux.sprite.addLayer()
+      }
       pixelFlux.renderLayersWindow()
       break
     case "UPLAYERSTACK": 

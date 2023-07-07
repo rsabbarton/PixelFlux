@@ -52,6 +52,7 @@ class Sprite {
     this.currentFrame = f
     this.updateCanvasChain()
   }
+
   selectPreviousFrame(){
     var f = this.currentFrame - 1
     if(f<0)
@@ -122,7 +123,17 @@ class Sprite {
   addLayer(){
     this.frames[this.currentFrame].addLayer()
   }
+
+  addLayerAllFrames(){
+    this.frames.forEach(frame=>{frame.addLayer()})
+  }
   
+  setLayerNameAllFrames(layerIndex, name){
+    this.frames.forEach(frame=>{
+      frame.layers[layerIndex].name = name
+    })
+  }
+
   nextLayerUp(){
     this.frames[this.currentFrame].nextLayer(1)
   }
