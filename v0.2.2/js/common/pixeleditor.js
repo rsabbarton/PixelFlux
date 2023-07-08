@@ -21,7 +21,10 @@ class PixelEditor {
       y2: 0
     }
     
-    this.preferences = {}
+    this.preferences = {
+      "preserveLayerContinuity": true,
+      "undoHistorySize": 20
+    }
   }
   
   init(callback){
@@ -672,7 +675,12 @@ class PixelEditor {
         var frame = pixelFlux.sprite.getCurrentFrame()
         flux.showModalQuestionWindow("Edit Layer Name:", frame.layers[id].name, "Save", "Cancel",(response)=>{
           if(response){
-            frame.layers[id].name = response
+            if(this.preferences.preserveLayerContinuity){
+              this.sprite.setLayerNameAllFrames(id,response)
+            } else {
+              frame.layers[id].name = response
+            
+            }
             pixelFlux.renderLayersWindow()
             pixelFlux.sprite.pushToUndoHistory()
           }
@@ -696,13 +704,21 @@ class PixelEditor {
         var frame = pixelFlux.sprite.getCurrentFrame()
         var visible = frame.layers[id].visible
         if(visible){
-          frame.layers[id].hide()
+          if(this.preferences.preserveLayerContinuity){
+            this.sprite.setLayerVisible(id,false)
+          } else {
+            frame.layers[id].hide()
+          }
           event.srcElement.classList.add("buttonfeatureenabled")
           pixelFlux.updateCanvasAndPreview()
           pixelFlux.sprite.pushToUndoHistory()
 
         } else {
-          frame.layers[id].show()
+          if(this.preferences.preserveLayerContinuity){
+            this.sprite.setLayerVisible(id,true)
+          } else {
+            frame.layers[id].show()
+          }
           event.srcElement.classList.add("buttonfeaturedisabled")
           pixelFlux.sprite.pushToUndoHistory()
         }

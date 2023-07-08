@@ -62,6 +62,13 @@ document.addEventListener("mousemove", (event)=>{
   debug.layerX = dX
   debug.layerY = dY
   
+  // UPDATE MEMORY USAGE INFO IN DEBUG WINDOW
+  debug.mSize = window.performance.memory.totalJSHeapSize / 1024
+  debug.mUsed = window.performance.memory.usedJSHeapSize / 1024
+  debug.mMax = window.performance.memory.jsHeaSizeLimit / 1024
+  
+
+
   if(srcElement.matches(".drawingcanvas")){  
     pixelFlux.updateCanvasAndPreview()
     

@@ -117,7 +117,12 @@ class Sprite {
   }
   
   setCurrentLayer(n){
-    this.frames[this.currentFrame].setCurrentLayer(n)
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      //log("setting current layer to " + n + " for all frames")
+      this.frames.forEach(f=>{f.setCurrentLayer(n)})
+    } else {
+      this.frames[this.currentFrame].setCurrentLayer(n)
+    }
   }
   
   addLayer(){
@@ -134,6 +139,16 @@ class Sprite {
     })
   }
 
+  setLayerVisible(layerId, visible){
+    this.frames.forEach(f=>{
+      f.layers[layerId].visible = visible
+      f.layers[layerId].updateCanvas()
+      f.updateCanvasChain()
+    })
+    this.updateCanvasChain()
+    pixelFlux.updateCanvasAndPreview()
+  }
+
   nextLayerUp(){
     this.frames[this.currentFrame].nextLayer(1)
   }
@@ -148,11 +163,19 @@ class Sprite {
   }
   
   moveLayerUp(n){
-    this.frames[this.currentFrame].moveLayerUp(n)
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.moveLayerUp(n)})
+    } else {
+      this.frames[this.currentFrame].moveLayerUp(n)
+    }
   }
   
   moveLayerDown(n){
-    this.frames[this.currentFrame].moveLayerDown(n)
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.moveLayerDown(n)})
+    } else {
+      this.frames[this.currentFrame].moveLayerDown(n)
+    }
   }
   
   setPixelRGBA(x,y,r,g,b,a){
@@ -341,6 +364,9 @@ class Sprite {
     s.loadFromSprite(this)
     this.history.push(s)
     this.redoArray = new Array()
+    if(this.history.length > pixelFlux.preferences.undoHistorySize){
+      this.history = this.history.slice(-pixelFlux.preferences.undoHistorySize, this.history.length)
+    }
   }  
   undo(){
     if(this.history.length > 0){

@@ -7,6 +7,9 @@ var debug = {
   "elementY": 0,
   "srcElementId": "",
   "counter": 0,
+  mSize: 0,
+  mUsed: 0,
+  mMax: 0,
   "events": [
     "DEBUG STARTED",
     "Use LOG(string) to log information here..."
@@ -23,7 +26,8 @@ function log(str){
 
 function printlog(){
   var out = "Mouse position: " + debug.mouseX + "," + debug.mouseY + " - src: " + debug.srcElementId + " - Elem Coords: " + debug.elementX + "," + debug.elementY + "<br>" +
-            "Layer position: " + debug.layerX + "," + debug.layerY + " - Debug Counter: " + debug.counter + "<br>"
+  "Layer position: " + debug.layerX + "," + debug.layerY + " - Debug Counter: " + debug.counter + "<br>" +
+  "Memory Total: " + debug.mSize + " - Memory Used: " + debug.mUsed + "<br>"
             ""
   var evtlog = ""
   debug.events.forEach((evt)=>{
