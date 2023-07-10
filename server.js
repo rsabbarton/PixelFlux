@@ -27,6 +27,7 @@ var transporter = nodemailer.createTransport({
 });
 
 const dataPath = fs.realpathSync("./data")
+const sessionDBPath = path.join(dataPath, "sessions", "db.json")
 
 var stashdoc = require('./modules/stashdoc.js')
 var sd = new stashdoc.stashdoc(dataPath)
@@ -436,9 +437,9 @@ app.get('/user-preferences', (req, res) => {
   }
   verifyGoogleToken(token)
   .then(response=>{
-    console.log("Loading User Preferences",response)
+    //console.log("Loading User Preferences",response)
     let userId = response.userId
-    console.log("UserId:", userId)
+    //console.log("UserId:", userId)
     responseOBJ = sd.loadFrom(path.join("users", userId), "preferences")
     res.send(responseOBJ)
   })
@@ -461,7 +462,7 @@ app.get('/profile-info',(req, res)=> {
   }
   
   if(hasToken){
-    console.log(token)
+    //console.log(token)
     verifyGoogleToken(token)
     .then(response=>{
       res.send(response)
@@ -500,34 +501,30 @@ app.post('/googleValidate',(req, res)=>{
 function verifyGoogleToken(googleToken) {
 
   async function verify(token){
-    console.log("verifying google token")
-    let response = {}
+    console.log("Verifying google token")
+    let response = alreadySignedIn(token)
     
-    
-    let ticket = await oa2client.verifyIdToken({
-      idToken: googleToken,
-      audience: "166137424043-3aul3cvcfkuhjriajmpp7p3jt9tdmhm7.apps.googleusercontent.com", 
-    })
-    
-    //if(!ticket.getPayload()){
-    //  console.log(ticket.getPayload())
-    //  return false
-    //}
-    
+    if(!response){
+      response = {}
+      console.log("User not logged in so response reset!")
+      let ticket = await oa2client.verifyIdToken({
+        idToken: googleToken,
+        audience: "166137424043-3aul3cvcfkuhjriajmpp7p3jt9tdmhm7.apps.googleusercontent.com", 
+      })
 
-    const payload = ticket.getPayload();
-    const userid = payload['sub'];
-  
-    response.payload = payload
-    response.userId = userid
-    response.result = true
-  
-    let u = new user(dataPath)
-  
+      response.payload = ticket.getPayload()
+      response.userId = response.payload['sub']
+      response.timeStamp = Date.now()
+      response.result = true
+      console.log("Response now populated from Google Auth")
+      //console.log(response)
+    }
     //console.log(response)
-  
-    if(!u.load(userid)){
-      u.createNewUser(userid, payload.email, payload.given_name, payload.family_name)
+    sd.updateJSONFile(sessionDBPath, "add", token, response)
+
+    let u = new user(dataPath)
+    if(!u.load(response.userId)){
+      u.createNewUser(response.userId, response.payload.email, response.payload.given_name, response.payload.family_name)
       u.save()
     }   
     console.log("Verify Response: ", response)
@@ -539,6 +536,28 @@ function verifyGoogleToken(googleToken) {
 }
   
 
+function alreadySignedIn(token){
+
+  console.log("Checking Login Status")
+  let db = JSON.parse(fs.readFileSync(sessionDBPath))
+  console.log("DB LOADED")
+  console.log(db[token])
+  if(db[token]){
+    console.log("Token found in stash!")
+    let date = Date.now()
+    console.log("Timestamp NOW: " + date)
+    let tokenDate = db[token].timeStamp
+    console.log("Token Timestamp: " + tokenDate)
+    let tokenAge = date - tokenDate
+    console.log("Token Age: " + tokenAge)
+    if(tokenAge < 90000000){
+      console.log("already signed in as: " + db[token].userId)
+      return db[token]
+    }
+  }
+  console.log("USER NOT LOGGED IN ALREADY")
+  return false
+}
  
 
 

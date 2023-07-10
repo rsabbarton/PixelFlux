@@ -156,10 +156,50 @@ class Sprite {
   nextLayerDown(){
     this.frames[this.currentFrame].nextLayer(-1)
   }
+
+  lockLayer(n){
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.layers[n].lock()})
+    } else {
+      this.frames[this.currentFrame].layers[n].lock()
+    }
+  }
+
+  unlockLayer(n){
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.layers[n].unlock()})
+    } else {
+      this.frames[this.currentFrame].layers[n].unlock()
+    }
+  }
   
   clearLayer(i){
     this.frames[this.currentFrame].clearLayer(i)
     this.pushToUndoHistory()
+  }
+
+  moveLayerDown(n){
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.moveLayerDown(n)})
+    } else {
+      this.frames[this.currentFrame].moveLayerDown(n)
+    }
+  }
+
+  moveLayerUp(n){
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.moveLayerUp(n)})
+    } else {
+      this.frames[this.currentFrame].moveLayerUp(n)
+    }
+  }
+
+  mergeLayerDown(n){
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.mergeLayerDown(n)})
+    } else {
+      this.frames[this.currentFrame].mergeLayerDown(n)
+    }
   }
   
   moveLayerUp(n){
@@ -178,6 +218,15 @@ class Sprite {
     }
   }
   
+  deleteLayer(n){
+    log("Deleting Layer: " + n)
+    if(pixelFlux.preferences.preserveLayerContinuity){
+      this.frames.forEach(f=>{f.deleteLayer(n)})
+    } else {
+      this.frames[this.currentFrame].deleteLayer(n)
+    }
+  }
+
   setPixelRGBA(x,y,r,g,b,a){
     this.frames[this.currentFrame].setPixelRGBA(x,y,r,g,b,a)
     this.updateCanvas()

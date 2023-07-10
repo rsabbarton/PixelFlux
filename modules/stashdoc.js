@@ -58,7 +58,7 @@ class stashdoc {
 
   updateJSONFile(filename, action, field, value){
     // TODO: Check for file existance and return appropriate errors
-    var json = JSON.parse(fs.readFileSync(filename))
+    var json = JSON.parse(fs.readFileSync(filename)) || {}
     switch(action){
       case "add":     json[field] = value
                       break

@@ -42,7 +42,7 @@
     },
     {"id": "LAYERS", "display": "Layers", "type": "MENU",
       "menuItems": [
-        {"id": "ADDLAYERCURRENTFRAME", "display": "Add Layer to Current Frame", "type": "CLICKABLE"},
+        {"id": "ADDLAYERCURRENTFRAME", "display": "Add Layer", "type": "CLICKABLE"},
         {"id": "UPLAYERSTACK", "display": "Select Next Layer Up (UP Arrow)", "type": "CLICKABLE"},
         {"id": "DOWNLAYERSTACK", "display": "Select Next Layer Down (DOWN Arrow)", "type": "CLICKABLE"},
         {"id": "null", "display": "<hr>", "type": "SEPARATOR"},

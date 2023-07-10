@@ -744,12 +744,12 @@ class PixelEditor {
         var frame = pixelFlux.sprite.getCurrentFrame()
         var locked = frame.layers[id].locked
         if(locked){
-          frame.layers[id].unlock()
+          this.sprite.unlockLayer(id)
           event.srcElement.classList.add("buttonfeaturedisabled")
           pixelFlux.updateCanvasAndPreview()
           pixelFlux.sprite.pushToUndoHistory()
         } else {
-          frame.layers[id].lock()
+          this.sprite.lockLayer(id)
           event.srcElement.classList.add("buttonfeatureenabled")
           pixelFlux.sprite.pushToUndoHistory()
         }
@@ -789,7 +789,7 @@ class PixelEditor {
       if(i>0){
         mergedown.onclick = (event)=>{
           var id = event.srcElement.zIndex
-          pixelFlux.sprite.getCurrentFrame().mergeLayerDown(id)
+          pixelFlux.sprite.mergeLayerDown(id)
           pixelFlux.sprite.updateCanvasChain()
           pixelFlux.updateCanvasAndPreview()
           pixelFlux.sprite.pushToUndoHistory()
@@ -812,7 +812,7 @@ class PixelEditor {
         movedown.onclick = (event)=>{
           var id = event.srcElement.style.zIndex
           var frame = pixelFlux.sprite.getCurrentFrame()
-          frame.moveLayerDown(~~id)
+          sprite.moveLayerDown(~~id)
           pixelFlux.sprite.updateCanvasChain()
           pixelFlux.updateCanvasAndPreview()
           pixelFlux.sprite.pushToUndoHistory()
@@ -835,7 +835,7 @@ class PixelEditor {
         moveup.onclick = (event)=>{
           var id = event.srcElement.style.zIndex
           var frame = pixelFlux.sprite.getCurrentFrame()
-          frame.moveLayerUp(~~id)
+          sprite.moveLayerUp(~~id)
           pixelFlux.sprite.updateCanvasChain()
           pixelFlux.updateCanvasAndPreview()
           pixelFlux.sprite.pushToUndoHistory()
@@ -854,13 +854,15 @@ class PixelEditor {
       layerdelete.classList.add("layercontrolbutton")
       
       layerdelete.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/deleteicon.png?v=1646784217658)"
-      layerdelete.zIndex = i
+      layerdelete.style.zIndex = i
       layerdelete.onclick = (event)=>{
+        console.log(event)
         var id = event.srcElement.style.zIndex
         var frame = pixelFlux.sprite.getCurrentFrame()
-        frame.deleteLayer(id)
+        sprite.deleteLayer(~~id)
         pixelFlux.sprite.updateCanvasChain()
         pixelFlux.updateCanvasAndPreview()
+        pixelFlux.renderFramesWindow()
         pixelFlux.sprite.pushToUndoHistory()
       }
       layercontrols.appendChild(layerdelete)
