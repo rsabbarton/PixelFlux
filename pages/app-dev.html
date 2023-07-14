@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>PixelFlux</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/pixelfluxicon.png?v=1646003849640"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQX9CSMKF4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QQX9CSMKF4');
+    </script>
+  </head>
+  <body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(response) {
+        let googleToken = {googleToken: response.credential}
+        post("/googleValidate", googleToken)
+        .then((res, rej)=>{
+          siteUser.import(JSON.parse(res))
+        })
+
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "166137424043-3aul3cvcfkuhjriajmpp7p3jt9tdmhm7.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("google-button"),
+          { theme: "outline", size: "small" }  // customization attributes
+        );
+        //google.accounts.id.prompt(); // also display the One Tap dialog
+      }
+    </script>
+
+    <div class="inappaccountinfo" id="accountinfo">
+      <div id="google-button"></div> 
+    </div>
+    <script src="/dev/js/app.js"></script>
+    <script src="/dev/js/account/account.js"></script>
+  
+  </body>  
+</html>
