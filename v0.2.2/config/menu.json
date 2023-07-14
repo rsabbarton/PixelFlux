@@ -48,7 +48,8 @@
         {"id": "null", "display": "<hr>", "type": "SEPARATOR"},
         {"id": "LAYERTOGGLEVISIBLE", "display": "Current: Toggle Visible", "type": "CLICKABLE"},
         {"id": "LAYERTOGGLELOCKED", "display": "Current: Toggle Locked", "type": "CLICKABLE"},
-        {"id": "LAYERCLEAR", "display": "Current: Clear Layer", "type": "CLICKABLE"}
+        {"id": "LAYERCLEAR", "display": "Current: Clear Layer", "type": "CLICKABLE"},
+        {"id": "LAYERREPLICATE", "display": "Current: Replicate Layer to all Frames", "type": "CLICKABLE", "onclick": "pixelflux.sprite.replicateCurrentLayer()"}
         
       ]
     },
