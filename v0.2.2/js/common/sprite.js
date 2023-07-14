@@ -149,7 +149,7 @@ class Sprite {
         //}        
       }
     })
-    
+
   }
 
   setLayerNameAllFrames(layerIndex, name){
@@ -709,6 +709,10 @@ class Layer {
     return rgba
   }
   
+  getPixel(x,y){
+    return this.pixels[(y * this.width) + x]
+  }
+
   setPixelHex(x,y, col, a){
     if(this.locked) return
     if(x<0||x>this.width-1||y<0||y>this.height-1)
