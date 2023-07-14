@@ -133,6 +133,20 @@ class Sprite {
     this.frames.forEach(frame=>{frame.addLayer()})
   }
   
+  replicateCurrentLayer(){
+    let currentLayerId = this.currentLayer
+    let currentFrameId = this.currentFrame
+    let currentLayer = this.getCurrentFrame().getCurrentLayer()
+
+    this.sprite.frames.forEach((f, i, a)=>{
+      if(i!=currentFrameId){
+        if(currentLayerId < f.layers.length){
+          f.layers[currentLayerId].copyFromLayer(currentLayer)
+        }        
+      }
+    })
+  }
+
   setLayerNameAllFrames(layerIndex, name){
     this.frames.forEach(frame=>{
       frame.layers[layerIndex].name = name
