@@ -134,17 +134,22 @@ class Sprite {
   }
   
   replicateCurrentLayer(){
-    let currentLayerId = this.currentLayer
+    let currentLayerId = this.getCurrentFrame().currentLayer
     let currentFrameId = this.currentFrame
     let currentLayer = this.getCurrentFrame().getCurrentLayer()
 
-    this.sprite.frames.forEach((f, i, a)=>{
+    this.frames.forEach((f, i, a)=>{
+      console.log(f, i, a)
       if(i!=currentFrameId){
-        if(currentLayerId < f.layers.length){
+        //if(currentLayerId < f.layers.length){
+          console.log("copying to frame", i)
           f.layers[currentLayerId].copyFromLayer(currentLayer)
-        }        
+          f.updateCanvasChain()
+          this.updateCanvasChain()
+        //}        
       }
     })
+    
   }
 
   setLayerNameAllFrames(layerIndex, name){
