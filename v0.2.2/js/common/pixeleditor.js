@@ -75,7 +75,8 @@ class PixelEditor {
     this.createFramesWindow()
     this.createDebugWindow()
     this.createOpenGallery()
-  
+    this.createPixelBrushWindow()
+
     flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC)
     
   }
@@ -321,6 +322,10 @@ class PixelEditor {
     flux.createWindow("FRAMES", "Frames", 800, 400, 200, 400)
   }
   
+  createPixelBrushWindow(){
+    flux.createWindow("PIXELBRUSH", "Pixel Brush",510,700,400,120)
+  }
+
   objectClicked(id){
     switch (id) {
       case "ADDPRIMARYCOLOUR":

@@ -30,3 +30,29 @@ sprite = The sprite you currently have loaded.  sprite.help() will get you going
         })
     }
 }
+
+
+
+
+
+
+
+// BENCH functions
+function brushTest1(){
+    let b = new PixelBrush()
+    b.load(BRUSH_BASIC)
+    b.paint(sprite,0,0, 10, 10, {r: 255, g:0, b: 0, a: 255}, 0.2)
+    b.paint(sprite,0,0, 11, 11, {r: 255, g:0, b: 0, a: 255}, 0.2)
+    b.paint(sprite,0,0, 12, 12, {r: 255, g:0, b: 0, a: 255}, 0.2)
+    b.paint(sprite,0,0, 13, 14, {r: 255, g:0, b: 0, a: 255}, 0.2)
+    b.paint(sprite,0,0, 15, 16, {r: 255, g:0, b: 0, a: 255}, 0.2)
+    setTimeout(brushTest2, 2000)
+}
+
+function brushTest2(){
+    console.log("Testing darken")
+    let b = new PixelBrush()
+    b.load(BRUSH_BASIC_LIGHTEN)
+    b.paint(sprite,0,0, 12, 12, {r: 255, g:0, b: 0, a: 255}, 0.2)
+    
+}

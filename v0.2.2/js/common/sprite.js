@@ -463,7 +463,7 @@ class Sprite {
 
 
 class Frame {
-  constructor(width, height) {
+  constructor( width, height) {
     this.width = width
     this.height = height
     this.layers = new Array()
