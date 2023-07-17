@@ -2,103 +2,117 @@ const FUNC_SET = 0
 const FUNC_PAINT = 1
 const FUNC_DARKEN = 2
 const FUNC_LIGHTEN = 3
+const FUNC_ERASE = 4
 
 class PixelBrush {
-    constructor(){
+    constructor(width, height, func){
         this.name = ""
-        this.functionArray = new Array()
+        this.func = func
+        this.width = width
+        this.height = height
+        this.opacityArray = new Array()
     }
 
+    loadFromPixelArray(pixelArray){
+
+    }
+
+    loadFromOpacityArray(opacityArray){
+        let pixelCount = this.width * this.height       
+        if(!opacityArray || (this.pixelCount != opacityArray.length)){
+            console.log("opacityArray not provided or does not contain correct number of pixels")
+            this.loadDefaultBrush()
+            return
+        }
+
+        
+    }
+
+    loadDefaultBrush(){
+        this.width = 3
+        this.height = 3
+        this.opacityArray = [0.8, 1, 0.8 , 1, 1, 1, 0.8, 1, 0.8]
+    }
 
     paint(sprite, frameNumber, layerNumber, x, y, color, opacity){
-        this.functionArray.forEach(f=>{
-            f.execute(sprite, frameNumber, layerNumber, x, y, color, opacity)
-        })
-        //sprite.frames[frameNumber].layers[layerNumber].updateCanvas()
+        
+        let offsetX = Math.round(this.width/2)
+        let offsetY = Math.round(this.height/2)
+
+        let frame = sprite.frames[frameNumber]
+        let layer = frame.layers[layerNumber]
+
+        for(let sY = 0; sY < this.height; sY++){
+            for(let sX = 0; sX < this.width; sX++){
+                let oIndex = (sY * this.width) + sX
+                let drawX = x - offsetX + sX
+                let drawY = y - offsetY + sY
+                switch (this.func){
+                    case FUNC_SET:   this.setPixel(layer, drawX, drawY, color.r, color.g, color.b, this.opacityArray[oIndex]*255, opacity); break;
+                    case FUNC_PAINT: this.paintPixel(layer, drawX, drawY, color.r, color.g, color.b, this.opacityArray[oIndex]*255, opacity); break;
+                    case FUNC_DARKEN: break;
+                    case FUNC_LIGTHEN: break;
+                    case FUNC_ERASE: break;
+                }
+            }
+        }
         sprite.updateCanvasChain()
         pixelFlux.updateCanvasAndPreview()
     }
 
-    addPixelFunction(func, relativeX, relativeY, opacity){
-        let pixelFunction = new PixelFunction(
-            func,
-            relativeX,
-            relativeY,
-            opacity
-        )
-        this.functionArray.push(pixelFunction)
-    }
-
-    load(brushJSON){
-        this.name = brushJSON.name
-        brushJSON.functionArray.forEach(f=>{
-            this.addPixelFunction(f.func, f.relativeX, f.relativeY, f.opacity)
-        })
-
-    }
-}
-
-
-class PixelFunction {
-    constructor(func, relativeX, relativeY, opacity){
-        this.func = func
-        this.opacity = opacity
-        this.relativeX = relativeX
-        this.relativeY = relativeY
-    }
-
-    execute (sprite, frameNumber, layerNumber, x, y, color, opacity){
-        
-        let frame = sprite.frames[frameNumber]
-        let layer = frame.layers[layerNumber]
-
-        let w = layer.width
-        let h = layer.height
-        
-        let drawX = x + this.relativeX
-        let drawY = y + this.relativeY
-        
-        let o = opacity * this.opacity
-
-        let pixel = layer.getPixel(x,y)
-
-        //let currentColor = pixel.getRGBA()
-        //console.log(currentColor)
-        switch (this.func){
-            case FUNC_SET: 
-                this.set(layer, drawX, drawY, color.r, color.g, color.b, color.a * opacity * this.opacity) 
-                break
-            case FUNC_PAINT: 
-                this.set(layer, drawX, drawY, color.r, color.g, color.b, color.a * opacity * this.opacity) 
-                break
-            case FUNC_DARKEN: 
-                this.darken(layer, drawX, drawY, this.opacity * (255/color.a) * opacity) 
-                break
-            case FUNC_LIGHTEN: 
-                this.lighten(layer, drawX, drawY, opacity) 
-                break
-        
-        }
-
-    }
-
-    set(layer, drawX, drawY, r, g, b, a){
-        console.log(drawX, drawY, r, g, b, a)
+    setPixel(layer, drawX, drawY, r, g, b, a){
+        //console.log(drawX, drawY, r, g, b, a)
         let pixel = layer.getPixel(drawX, drawY)
         let currentColor = pixel.getRGBA()
         
         layer.setPixelRGBA(drawX, drawY, r, g, b, a)
     }
     
-    paint(layer, drawX, drawY, r, g, b, a){
-        console.log(drawX, drawY, r, g, b, a)
+    paintPixel(layer, drawX, drawY, r, g, b, a, opacity){
         let pixel = layer.getPixel(drawX, drawY)
         let currentColor = pixel.getRGBA()
-        
-        layer.setPixelRGBA(drawX, drawY, r, g, b, bound(a + currentColor.a, 0, 255))
+        let newColor = this.blend(currentColor, {r:r,g:g,b:b,a:a}, opacity)
+        //console.log(newColor)
+        layer.setPixelRGBA(drawX, drawY, newColor.r, newColor.g, newColor.b, newColor.a, 0, 255)
     }
 
-    darken(layer, drawX, drawY, opacity){
+    blend(c1, c2, opacity){
+        
+        c1.r = this.factorTo(c2.r, c1.r, n255(c2.a))
+        c1.g = this.factorTo(c2.g, c1.g, n255(c2.a))
+        c1.b = this.factorTo(c2.b, c1.b, n255(c2.a))
+        
+        let c = {}
+        c.r = this.factorTo(
+            c1.r, 
+            c2.r,
+            opacity
+        )
+        c.g = this.factorTo(
+            c1.g, 
+            c2.g,
+            opacity
+        )
+        c.b = this.factorTo(
+            c1.b, 
+            c2.b,
+            opacity 
+        )
+
+        c.a = 
+            c1.a + (c2.a * opacity)
+        
+
+        c.r = bound(c.r,0,255)
+        c.b = bound(c.b,0,255)
+        c.g = bound(c.g,0,255)
+        c.a = bound(c.a,0,255)
+        //console.log(c1,c2,c)
+        return c
+    }
+
+
+    darkenPixel(layer, drawX, drawY, opacity){
         let pixel = layer.getPixel(drawX, drawY)
         let currentColor = pixel.getRGBA()
         let adjuster = 1 - (opacity)
@@ -108,10 +122,11 @@ class PixelFunction {
             b: bound(currentColor.b * adjuster,0,255),
             a: bound(currentColor.a,0,255)
         }
-        console.log(newColor)
+        //console.log(newColor)
         layer.setPixelRGBA(drawX, drawY, newColor.r, newColor.g, newColor.b, newColor.a)
     }
-    lighten(layer, drawX, drawY, opacity){
+
+    lightenPixel(layer, drawX, drawY, opacity){
         let pixel = layer.getPixel(drawX, drawY)
         let currentColor = pixel.getRGBA()
         let adjuster = (opacity * this.opacity)
@@ -121,14 +136,18 @@ class PixelFunction {
             b: bound(currentColor.b + (adjuster * 255),0,255),
             a: bound(currentColor.a,0,255)
         }
-        console.log(newColor)
+        //console.log(newColor)
         
         layer.setPixelRGBA(drawX, drawY, newColor.r, newColor.g, newColor.b, newColor.a)
     }
 
+    factorTo(o, n, factor){
+        let diff = n - o
+        let f = diff * factor
+        //console.log(o,n,factor,diff,f)
+        return o + f
+    }
 }
-
-
 
 
 

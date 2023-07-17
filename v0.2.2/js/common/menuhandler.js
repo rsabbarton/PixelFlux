@@ -269,6 +269,7 @@ document.addEventListener("menuButtonClicked", (event)=>{
       flux.showWindow("ANIMATIONPREVIEW")
       flux.showWindow("ANIMATIONTOOLS")
       flux.showWindow("FRAMES")
+      flux.showWindow("PIXELBRUSH")
       break
     case "SETBACKGROUNDCOLOR":
       pixelFlux.setBackgroundColour()

@@ -323,7 +323,7 @@ class PixelEditor {
   }
   
   createPixelBrushWindow(){
-    flux.createWindow("PIXELBRUSH", "Pixel Brush",510,700,400,120)
+    flux.createWindow("PIXELBRUSH", "Pixel Brush",510,600,500,120)
   }
 
   objectClicked(id){

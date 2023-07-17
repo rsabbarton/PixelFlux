@@ -31,86 +31,8 @@ var colourPalletContent = "" +
 
 
 const builtInWindowArrangements = {
-  CLASSIC: [
-    {
-        "id": "WORKSPACE",
-        "top": "32px",
-        "left": "146px",
-        "width": "600px",
-        "height": "600px"
-    },
-    {
-        "id": "COLOURPALLET",
-        "top": "296px",
-        "left": "749px",
-        "width": "180px",
-        "height": "284px"
-    },
-    {
-        "id": "TOOLBAR",
-        "top": "32px",
-        "left": "1px",
-        "width": "142px",
-        "height": "600px"
-    },
-    {
-        "id": "PREVIEW",
-        "top": "32px",
-        "left": "932px",
-        "width": "180px",
-        "height": "200px"
-    },
-    {
-        "id": "ANIMATIONPREVIEW",
-        "top": "32px",
-        "left": "1115px",
-        "width": "180px",
-        "height": "200px"
-    },
-    {
-    "id": "FRAMES",
-    "top": "235px",
-    "left": "1115px",
-    "width": "181px",
-    "height": "397px"    
-    },
-    {
-    "id": "ANIMATIONTOOLS",
-    "top": "585px",
-    "left": "749px",
-    "width": "180px",
-    "height": "42px"
-    },
-    {
-        "id": "TOOLOPTIONS",
-        "top": "32px",
-        "left": "749px",
-        "width": "180px",
-        "height": "260px"
-    },
-    {
-        "id": "LAYERS",
-        "top": "235px",
-        "left": "932px",
-        "width": "180px",
-        "height": "396px"
-    },
-    {
-        "id": "DEBUG",
-        "top": "636px",
-        "left": "4px",
-        "width": "500px",
-        "height": "120px"
-    },
-    {
-        "id": "OPENGALLERY",
-        "top": "200px",
-        "left": "200px",
-        "width": "800px",
-        "height": "600px"
-    }
-  ],
-  "WIDE": [
+  CLASSIC: [{"id":"WORKSPACE","top":"32px","left":"146px","width":"600px","height":"600px"},{"id":"COLOURPALLET","top":"296px","left":"749px","width":"180px","height":"284px"},{"id":"TOOLBAR","top":"32px","left":"1px","width":"142px","height":"600px"},{"id":"PREVIEW","top":"32px","left":"932px","width":"180px","height":"200px"},{"id":"ANIMATIONPREVIEW","top":"32px","left":"1115px","width":"180px","height":"200px"},{"id":"ANIMATIONTOOLS","top":"585px","left":"749px","width":"180px","height":"42px"},{"id":"TOOLOPTIONS","top":"32px","left":"749px","width":"180px","height":"260px"},{"id":"LAYERS","top":"235px","left":"932px","width":"180px","height":"396px"},{"id":"FRAMES","top":"235px","left":"1115px","width":"181px","height":"397px"},{"id":"DEBUG","top":"636px","left":"4px","width":"500px","height":"120px"},{"id":"OPENGALLERY","top":"200px","left":"200px","width":"800px","height":"600px"},{"id":"PIXELBRUSH","top":"636px","left":"508px","width":"500px","height":"120px"}],
+  WIDE: [
     {
         "id": "WORKSPACE",
         "top": "131px",

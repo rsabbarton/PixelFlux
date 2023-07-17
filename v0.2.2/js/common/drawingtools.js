@@ -234,7 +234,7 @@ class Pencil {
 class Eraser {
   constructor(sprite){
     this.sprite = sprite
-    this.alpha = 255
+    this.alpha = document.getElementById("COLOUROPACITY").value
     this.enabled = true
     this.toolOptions = "No options for this tool!"
     document.getElementById("TOOLOPTIONSCONTENT").innerHTML = this.toolOptions
@@ -257,23 +257,30 @@ class Eraser {
 
 class Brush {
   constructor(sprite){
+    this.lastX = 0
+    this.lastY = 0
     this.sprite = sprite
-    this.alpha = 255
+    this.alpha = document.getElementById("COLOUROPACITY").value
     this.enabled = true
     this.toolOptions = "No options for this tool!"
     document.getElementById("TOOLOPTIONSCONTENT").innerHTML = this.toolOptions
     
-    this.brush = [[-1,-1],[0,-2],[1,-1],[2,0],[1,1],[0,2],[-1,1],[-2,0]]
+    this.brush = new PixelBrush(3, 3, FUNC_PAINT)
+    this.brush.loadDefaultBrush()
+
   }
   
   down(x,y, pri, sec, btn){
-    var col = pri
-      if(btn == EVENT_MOUSEBUTTON_RIGHT)
-        col = sec
-    this.brush.forEach((p)=>{
-      this.sprite.setPixelHex(x+p[0],y+p[1],col,this.alpha)
-    })
-    
+    this.alpha = document.getElementById("COLOUROPACITY").value
+    let col = pri
+    if(btn == EVENT_MOUSEBUTTON_RIGHT)
+      col = sec
+
+    let color = hex2rgba(col)
+    color.a = 255 // n255(this.alpha)
+    this.brush.paint(sprite, sprite.currentFrame, sprite.getCurrentFrame().currentLayer, x, y, color,n255(this.alpha))
+    this.lastX = x
+    this.lastY = y
   }
   
   up(x,y, pri, sec){
@@ -281,13 +288,16 @@ class Brush {
   }
   
   drag(x1,y1,x2,y2, pri, sec, btn){
+    if(this.lastX == x2 && this.lastY == y2)
+      return
+    
     var col = pri
-      if(btn == EVENT_MOUSEBUTTON_RIGHT)
+    if(btn == EVENT_MOUSEBUTTON_RIGHT)
         col = sec
-    this.brush.forEach((p)=>{
-      this.sprite.setPixelHexInterim(x2+p[0],y2+p[1],col,this.alpha)
-    })
-    this.sprite.updateCanvasChain()
+    
+        let color = hex2rgba(col)
+        color.a = 255 // n255(this.alpha)
+        this.brush.paint(sprite, sprite.currentFrame, sprite.getCurrentFrame().currentLayer, x2, y2, color, n255(this.alpha))
   }
 }
 
