@@ -291,6 +291,9 @@ class Brush {
     if(this.lastX == x2 && this.lastY == y2)
       return
     
+    this.lastX = x2
+    this.lastY = y2
+    
     var col = pri
     if(btn == EVENT_MOUSEBUTTON_RIGHT)
         col = sec
