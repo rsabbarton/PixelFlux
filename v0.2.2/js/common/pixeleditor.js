@@ -1178,6 +1178,15 @@ class PixelEditor {
     
     var container = document.getElementById("OPENGALLERYCONTENT")
     container.innerHTML = ""
+
+    let fileInfoDiv = document.createElement('div')
+    fileInfoDiv.classList.add('file-info')
+    fileInfoDiv.id = 'file-info'
+    fileInfoDiv.innerHTML = "Sprite Name: "
+    container.appendChild(fileInfoDiv)
+        
+
+
     let spanBrowserStore = document.createElement("h3")
     spanBrowserStore.classList.add("load-screen-title")
     spanBrowserStore.innerHTML += "Local Browser Storage"
@@ -1234,7 +1243,10 @@ class PixelEditor {
         }
         
         
-        
+        canvas.onmouseover = (event)=>{
+          console.log(s)
+          document.getElementById("file-info").innerHTML = "Sprite Name: " + event.srcElement.id
+        }
         
         
         div.appendChild(canvas)
@@ -1299,6 +1311,7 @@ class PixelEditor {
               canvas.height = 64
               canvas.classList.add("gallerycanvas")
               canvas.id = spriteId
+              
               //var ctx = canvas.getContext2d()
       
               /* var del = document.createElement("div")
@@ -1340,7 +1353,10 @@ class PixelEditor {
               }
               
               
-              
+              canvas.onmouseover = (event)=>{
+                console.log(s)
+                document.getElementById("file-info").innerHTML = "Sprite Name: " + event.srcElement.id
+              }
               
               
               div.appendChild(canvas)

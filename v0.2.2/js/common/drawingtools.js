@@ -288,11 +288,14 @@ class Brush {
   }
   
   drag(x1,y1,x2,y2, pri, sec, btn){
-    if(this.lastX == x2 && this.lastY == y2)
-      return
     
+    // Check to ensure we do not paint twice on the same square
+    if(this.lastX == x2 && this.lastY == y2){
+      return
+    }
     this.lastX = x2
     this.lastY = y2
+    
     
     var col = pri
     if(btn == EVENT_MOUSEBUTTON_RIGHT)

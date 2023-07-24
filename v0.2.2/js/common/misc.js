@@ -5,6 +5,9 @@ const rand = (max) => {return Math.floor(Math.random() * max)}
 const max = (a,b) => {if(a>b){return a}else{return b}}
 const min = (a,b) => {if(a<b){return a}else{return b}}
 
+const normaliseColor = (color) => {return {r: color.r/255, g: color.g/255, b: color.b/255, a: color.a/255}}
+const denormaliseColor = (color) => {return {r: color.r/255, g: color.g/255, b: color.b/255, a: color.a/255}}
+
 function hex2rgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
@@ -29,6 +32,7 @@ function bound(num, min, max){
   if(num > max) return max
   return num
 }
+
 
 
 function download(dataurl, filename) {

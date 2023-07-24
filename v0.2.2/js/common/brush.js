@@ -47,12 +47,19 @@ class PixelBrush {
                 let oIndex = (sY * this.width) + sX
                 let drawX = x - offsetX + sX
                 let drawY = y - offsetY + sY
-                switch (this.func){
-                    case FUNC_SET:   this.setPixel(layer, drawX, drawY, color.r, color.g, color.b, this.opacityArray[oIndex]*255, opacity); break;
-                    case FUNC_PAINT: this.paintPixel(layer, drawX, drawY, color.r, color.g, color.b, this.opacityArray[oIndex]*255, opacity); break;
-                    case FUNC_DARKEN: break;
-                    case FUNC_LIGTHEN: break;
-                    case FUNC_ERASE: break;
+                
+                if(drawX > -1 &&
+                   drawX < sprite.width &&
+                   drawY > -1 &&
+                   drawY < sprite.height){
+                    switch (this.func){
+                        case FUNC_SET:   this.setPixel(layer, drawX, drawY, color.r, color.g, color.b, this.opacityArray[oIndex]*255, opacity); break;
+                        case FUNC_PAINT: this.paintPixel(layer, drawX, drawY, color.r, color.g, color.b, this.opacityArray[oIndex]*255, opacity); break;
+                        case FUNC_DARKEN: break;
+                        case FUNC_LIGTHEN: break;
+                        case FUNC_ERASE: break;
+                    }
+
                 }
             }
         }
@@ -77,36 +84,29 @@ class PixelBrush {
     }
 
     blend(c1, c2, opacity){
+
+        c1 = normaliseColor(c1)
+        c2 = normaliseColor(c2)
         
-        c1.r = this.factorTo(c2.r, c1.r, n255(c2.a))
-        c1.g = this.factorTo(c2.g, c1.g, n255(c2.a))
-        c1.b = this.factorTo(c2.b, c1.b, n255(c2.a))
+        c1.r = this.factorTo(c2.r, c1.r, c1.a)
+        c1.g = this.factorTo(c2.g, c1.g, c1.a)
+        c1.b = this.factorTo(c2.b, c1.b, c1.a)
         
         let c = {}
-        c.r = this.factorTo(
-            c1.r, 
-            c2.r,
-            opacity
-        )
-        c.g = this.factorTo(
-            c1.g, 
-            c2.g,
-            opacity
-        )
-        c.b = this.factorTo(
-            c1.b, 
-            c2.b,
-            opacity 
-        )
+
+        c.r = this.factorTo(c1.r, c2.r, opacity * c2.a)
+        c.g = this.factorTo(c1.g, c2.g, opacity * c2.a)
+        c.b = this.factorTo(c1.b, c2.b, opacity * c2.a)
+
 
         c.a = 
             c1.a + (c2.a * opacity)
         
 
-        c.r = bound(c.r,0,255)
-        c.b = bound(c.b,0,255)
-        c.g = bound(c.g,0,255)
-        c.a = bound(c.a,0,255)
+        c.r = bound(c.r * 255,0,255)
+        c.b = bound(c.b * 255,0,255)
+        c.g = bound(c.g * 255,0,255)
+        c.a = bound(c.a * 255,0,255)
         //console.log(c1,c2,c)
         return c
     }
@@ -195,4 +195,43 @@ const BRUSH_BASIC_LIGHTEN = {
         {func: FUNC_LIGHTEN, relativeX: 0, relativeY: 1, opacity: 1},
         {func: FUNC_LIGHTEN, relativeX: 1, relativeY: 1, opacity: 0.5},
     ]
+}
+
+
+
+
+
+
+
+class BrushSet {
+    constructor(){
+        this.brushes = new Array()
+        this.currentBrush = false
+        this.currentBrushIndex = false
+
+    }
+
+    loadBrushSet(brushSet){
+        brushSet.forEach(brush=>{
+            let newBrush = new PixelBrush(brush.width, brush.height, FUNC_PAINT)
+            newBrush.loadFromOpacityArray(brush.opacityArray)
+            this.brushes.push(newBrush)
+        })
+    }
+
+    getBrushCount(){
+        return this.brushes.length
+    }
+
+    selectBrush(index){
+        if(index > -1 && index < this.brushes.length){
+            this.currentBrush = this.brushes[index]
+            this.currentBrushIndex = index
+
+        }
+    }
+
+    getCurrentBrush(){
+        return this.currentBrush
+    }
 }
