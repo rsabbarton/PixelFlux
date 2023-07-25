@@ -103,58 +103,58 @@ function post(url, json){
 
 
 
-function doSignup(){
+// function doSignup(){
   
-  var m = document.getElementById("message")
+//   var m = document.getElementById("message")
   
-  var u = {};
-  u.first = document.getElementById("first").value;
-  u.last = document.getElementById("last").value;
-  u.displayname = document.getElementById("displayname").value;
-  u.email = document.getElementById("email").value;
-  u.password = document.getElementById("password").value;
-  var confirmpassword = document.getElementById("confirmpassword").value;
+//   var u = {};
+//   u.first = document.getElementById("first").value;
+//   u.last = document.getElementById("last").value;
+//   u.displayname = document.getElementById("displayname").value;
+//   u.email = document.getElementById("email").value;
+//   u.password = document.getElementById("password").value;
+//   var confirmpassword = document.getElementById("confirmpassword").value;
   
-  if(u.password !== confirmpassword){
-    m.innerHTML = "ERROR: Passwords do not match!  Please try again";
-    return
-  }
+//   if(u.password !== confirmpassword){
+//     m.innerHTML = "ERROR: Passwords do not match!  Please try again";
+//     return
+//   }
   
-  var postData = JSON.stringify(u);
+//   var postData = JSON.stringify(u);
   
   
-  const xhr = new XMLHttpRequest();
-  const url='/signup';
-  xhr.open("POST", url);
-  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xhr.send(postData);
-  xhr.onreadystatechange = (e) => {
-    m.innerHTML = xhr.responseText;
-  }
+//   const xhr = new XMLHttpRequest();
+//   const url='/signup';
+//   xhr.open("POST", url);
+//   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+//   xhr.send(postData);
+//   xhr.onreadystatechange = (e) => {
+//     m.innerHTML = xhr.responseText;
+//   }
 
   
   
-}
+// }
 
 
 
 
-function doSignin(){
+// function doSignin(){
   
-  var m = document.getElementById("message");  
-  var u = {};
+//   var m = document.getElementById("message");  
+//   var u = {};
   
-  u.email = document.getElementById("email").value;
-  u.password = document.getElementById("password").value;
+//   u.email = document.getElementById("email").value;
+//   u.password = document.getElementById("password").value;
   
-  post('/signin', u)
-    .then((r)=>{
-    window.location = "/"
-    console.log(r)
-  },
-          (e)=>{
-    m.innerHTML = "Login Failed";
-  });
+//   post('/signin', u)
+//     .then((r)=>{
+//     window.location = "/"
+//     console.log(r)
+//   },
+//           (e)=>{
+//     m.innerHTML = "Login Failed";
+//   });
   
-}
+// }
 
