@@ -35,6 +35,22 @@ function bound(num, min, max){
 
 
 
+function magnitude3v(x,y,z){
+  let xy = Math.sqrt((x * x) + (y * y))
+  let magnitude = Math.sqrt((xy * xy) + (z * z))
+  return magnitude
+}
+
+function normalise3v(x,y,z){
+  let mag = magnitude3v(x,y,z)
+  x = x / mag
+  y = y / mag
+  z = z / mag
+  return {x: x, y: y, z: z, r: x, g: y, b: z}
+}
+
+
+
 function download(dataurl, filename) {
   const link = document.createElement("a");
   link.href = dataurl;

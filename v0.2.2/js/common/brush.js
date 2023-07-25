@@ -86,11 +86,18 @@ class PixelBrush {
     blend(c1, c2, opacity){
 
         c1 = normaliseColor(c1)
+        c1.mag = magnitude3v(c1.r, c1.g, c1.b)
+        
         c2 = normaliseColor(c2)
+        c2.mag = magnitude3v(c2.r, c2.g, c2.b)
+
         
         c1.r = this.factorTo(c2.r, c1.r, c1.a)
         c1.g = this.factorTo(c2.g, c1.g, c1.a)
         c1.b = this.factorTo(c2.b, c1.b, c1.a)
+        c1.mag = this.factorTo(c2.mag, c1.mag, c1.a)
+
+        let targetMag = c1.mag + ((c2.mag - c1.mag) * opacity)
         
         let c = {}
 
@@ -98,9 +105,15 @@ class PixelBrush {
         c.g = this.factorTo(c1.g, c2.g, opacity * c2.a)
         c.b = this.factorTo(c1.b, c2.b, opacity * c2.a)
 
+        let normalisedVector = normalise3v(c.r, c.g, c.b)
+
+        c.r = normalisedVector.r * targetMag
+        c.g = normalisedVector.g * targetMag
+        c.b = normalisedVector.b * targetMag
 
         c.a = 
             c1.a + (c2.a * opacity)
+        
         
 
         c.r = bound(c.r * 255,0,255)
