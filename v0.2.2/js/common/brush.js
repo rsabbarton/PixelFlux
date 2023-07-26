@@ -1,3 +1,9 @@
+
+//  #######################################################
+//  #
+//  #
+//  #
+//  #######################################################
 const FUNC_SET = 0
 const FUNC_PAINT = 1
 const FUNC_DARKEN = 2
@@ -85,45 +91,87 @@ class PixelBrush {
         layer.setPixelRGBA(drawX, drawY, newColor.r, newColor.g, newColor.b, newColor.a, 0, 255)
     }
 
+    //  #######################################################
+    //  #
+    //  #   Function blend(c1, c2, opacity)
+    //  #
+    //  #   c1 = obj {r: red, g: green, b: blue, a: alpha}
+    //  #       The original or base colour and alpha
+    //  #
+    //  #   c2 = obj {r: red, g: green, b: blue, a: alpha}
+    //  #       The colour to be applied over the base colour
+    //  #
+    //  #   opacity = This is a global opacity.  It governs
+    //  #   then amount of/opacity of c2 when applied over c1
+    //  #
+    //  #######################################################
     blend(c1, c2, opacity){
 
+        // first we normalise the colours.  In this we mean take
+        // rgb as a vector and convert them to a unit vector where
+        // rgb values are between 0 and 1 rather than 0 and 255.
         c1 = normaliseColor(c1)
-        c1.mag = magnitude3v(c1.r, c1.g, c1.b)
-        
         c2 = normaliseColor(c2)
+        
+        // Because we are treating these as vectors we can calculate
+        // the magnitute of the colours which is the distance from the 
+        // origin and equates to the total brightness of all rbg values
+        // combined.
+        c1.mag = magnitude3v(c1.r, c1.g, c1.b)
         c2.mag = magnitude3v(c2.r, c2.g, c2.b)
 
-        
+        // The factorTo function takes the value a and moves it towards
+        // towards value b by a factor of value c.
+        // factorTo(5,10,0.5) will move half way and result in 7.5
+        // In this case we want to determin how much of the original colour
+        // to use.  If the opacity of the original colour is 0 then the original
+        // colour is equal to the new colour.  So we factorTo(new, old, old.opacity)
         c1.r = this.factorTo(c2.r, c1.r, c1.a)
         c1.g = this.factorTo(c2.g, c1.g, c1.a)
         c1.b = this.factorTo(c2.b, c1.b, c1.a)
         c1.mag = this.factorTo(c2.mag, c1.mag, c1.a)
 
+        // Then we work out the target magnitude.  This works out what we 
+        // want the magnitude to be based on two colours with different magnitude.
+        // We want to adjust the magnitude by the opacity of the colour we are applying.
         let targetMag = c1.mag + ((c2.mag - c1.mag) * opacity)
         
+        // Now we have everything we need we can create a NEW colour
+        // that we will return.  This is just an empty object.
         let c = {}
 
+        // First we get the blended colours based on the opacity 
+        // and the alpha values of the colour being applied.
         c.r = this.factorTo(c1.r, c2.r, opacity * c2.a)
         c.g = this.factorTo(c1.g, c2.g, opacity * c2.a)
         c.b = this.factorTo(c1.b, c2.b, opacity * c2.a)
 
+        // Now, we can create a normalised vector (unit vector)
+        // for the new colour.  This would be full brightness.  However,
+        // what we really want is the brightness to be equal to the target
+        // magnitude.
         let normalisedVector = normalise3v(c.r, c.g, c.b)
 
+        // So here we multiply the unit vector of the rgb by the target
+        // magnitude giving us (ALMOST) the final colour.
         c.r = normalisedVector.r * targetMag
         c.g = normalisedVector.g * targetMag
         c.b = normalisedVector.b * targetMag
 
-        c.a = 
-            c1.a + (c2.a * opacity)
-        
-        
+        // Before we are done we have to consider the alpha to be additive 
+        // only so we add the new (opacity adjusted) opacity to the original
+        // opacity of c1
+        c.a = c1.a + (c2.a * opacity)
 
+        // Finally, some edge cases may have a magnitude of > 1 like white
+        // for example.  The math still works but the results need to be bound
+        // to 0-255 when they are output which we do here.
         c.r = bound(c.r * 255,0,255)
         c.b = bound(c.b * 255,0,255)
         c.g = bound(c.g * 255,0,255)
         c.a = bound(c.a * 255,0,255)
-        //console.log(c1,c2,c)
-        return c
+        // then we are done and return the new blended colour object.
+        return c // Whew.
     }
 
 
