@@ -31,13 +31,15 @@ class PixelBrush {
     loadDefaultBrush(){
         this.width = 3
         this.height = 3
-        this.opacityArray = [0.8, 1, 0.8 , 1, 1, 1, 0.8, 1, 0.8]
+        this.opacityArray = [0.8, 1, 0.8, 
+                             1,   1, 1,  
+                             0.8, 1, 0.8]
     }
 
     paint(sprite, frameNumber, layerNumber, x, y, color, opacity){
         
-        let offsetX = Math.round(this.width/2)
-        let offsetY = Math.round(this.height/2)
+        let offsetX = Math.round(this.width/2) - (this.width % 2)
+        let offsetY = Math.round(this.height/2) - (this.height % 2)
 
         let frame = sprite.frames[frameNumber]
         let layer = frame.layers[layerNumber]
