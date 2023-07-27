@@ -11,24 +11,32 @@ const FUNC_LIGHTEN = 3
 const FUNC_ERASE = 4
 
 class PixelBrush {
-    constructor(width, height, func){
+    constructor(c){
         this.name = ""
-        this.func = func
-        this.width = width
-        this.height = height
-        this.opacityArray = new Array()
+        this.func = FUNC_PAINT
+        this.width = false
+        this.height = false
+        this.opacityArray = false
     }
 
-    loadFromPixelArray(pixelArray){
+    loadFromPixelArray(width, heigth, name, pixelArray){
 
     }
 
-    loadFromOpacityArray(opacityArray){
-        let pixelCount = this.width * this.height       
-        if(!opacityArray || (this.pixelCount != opacityArray.length)){
+    loadFromOpacityArray(width, height, name, opacityArray){
+
+        let pixelCount = width * height   
+        
+        if(pixelCount != opacityArray.length){
             console.log("opacityArray not provided or does not contain correct number of pixels")
             this.loadDefaultBrush()
             return
+        } else {
+            this.width = width
+            this.height = height
+            this.name = name
+            this.opacityArray = new Array()
+            opacityArray.forEach(a=>{this.opacityArray.push(a)})
         }
 
         
@@ -276,9 +284,18 @@ class BrushSet {
 
     loadBrushSet(brushSet){
         brushSet.forEach(brush=>{
-            let newBrush = new PixelBrush(brush.width, brush.height, FUNC_PAINT)
-            newBrush.loadFromOpacityArray(brush.opacityArray)
+            console.log(brush)
+            let newBrush = new PixelBrush()
+            newBrush.loadFromOpacityArray(brush.width, brush.height, brush.name, brush.opacityArray)
             this.brushes.push(newBrush)
+        })
+    }
+
+    loadBrushSetFromUrl(url){
+        get(url)
+        .then(json=>{
+            json = JSON.parse(json)
+            this.loadBrushSet(json.brushSet)
         })
     }
 
@@ -297,4 +314,6 @@ class BrushSet {
     getCurrentBrush(){
         return this.currentBrush
     }
+
+
 }
