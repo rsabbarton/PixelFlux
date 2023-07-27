@@ -1177,15 +1177,20 @@ class PixelEditor {
   
   showLoadGallery(){
     
-    var container = document.getElementById("OPENGALLERYCONTENT")
-    container.innerHTML = ""
+    var outercontainer = document.getElementById("OPENGALLERYCONTENT")
+    outercontainer.style.overflowY = "scroll"
+    outercontainer.innerHTML = ""
 
+    let container = document.createElement('div')
+    
     let fileInfoDiv = document.createElement('div')
     fileInfoDiv.classList.add('file-info')
     fileInfoDiv.id = 'file-info'
     fileInfoDiv.innerHTML = "Sprite Name: "
-    container.appendChild(fileInfoDiv)
-        
+    
+    outercontainer.appendChild(fileInfoDiv)
+    outercontainer.appendChild(container)
+    container.style.paddingTop = "32px"    
 
 
     let spanBrowserStore = document.createElement("h3")
@@ -1197,6 +1202,7 @@ class PixelEditor {
       var key = localStorage.key(i)
       var item = JSON.parse(localStorage.getItem(key))
       if(item.isSprite){
+        [item].forEach((item)=>{
         var s = new Sprite(64,64)
         s.loadFromSprite(item.spriteData)
         var div = document.createElement("div")
@@ -1246,7 +1252,7 @@ class PixelEditor {
         
         canvas.onmouseover = (event)=>{
           console.log(s)
-          document.getElementById("file-info").innerHTML = "Sprite Name: " + event.srcElement.id
+          document.getElementById("file-info").innerHTML = "Sprite Name: " + s.name
         }
         
         
@@ -1264,7 +1270,10 @@ class PixelEditor {
           flux.hideWindow("OPENGALLERY")
         }
         s.drawToCanvasId(key, 0,0,64/s.height)
-      } 
+        })
+      
+      }
+    
     
     }
 
@@ -1356,7 +1365,7 @@ class PixelEditor {
               
               canvas.onmouseover = (event)=>{
                 console.log(s)
-                document.getElementById("file-info").innerHTML = "Sprite Name: " + event.srcElement.id
+                document.getElementById("file-info").innerHTML = "Sprite Name: " + s.name
               }
               
               

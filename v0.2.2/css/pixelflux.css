@@ -89,10 +89,14 @@ body {
 
 
 .file-info {
-    font-size: larger;
-    font-weight: bold;
-    margin: 8px;
-    margin-left: 20px;
+  font-size: larger;
+  font-weight: bold;
+  margin: 0px;
+  margin-left: 0px;
+  position: absolute;
+  background: grey;
+  width: 100%;
+  padding: 7px;
 }
 
 
