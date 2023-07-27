@@ -74,9 +74,9 @@ class PixelEditor {
     this.createLayersWindow()
     this.createFramesWindow()
     this.createDebugWindow()
-    this.createOpenGallery()
     this.createPixelBrushWindow()
-
+    this.createOpenGallery()
+    
     flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC)
     
   }
@@ -309,7 +309,10 @@ class PixelEditor {
     
   }
   
-  
+  createPixelBrushWindow(){
+    flux.createWindow("PIXELBRUSH", "Pixel Brush",510,600,500,120)
+  }
+
   createOpenGallery(){
     flux.createWindow("OPENGALLERY", "Your Saved Images", 200, 200, 800, 600)
   }
@@ -322,9 +325,7 @@ class PixelEditor {
     flux.createWindow("FRAMES", "Frames", 800, 400, 200, 400)
   }
   
-  createPixelBrushWindow(){
-    flux.createWindow("PIXELBRUSH", "Pixel Brush",510,600,500,120)
-  }
+  
 
   objectClicked(id){
     switch (id) {
