@@ -1,7 +1,7 @@
 {
-  "name": "hello-express-basic",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "name": "pixelflux",
+  "version": "0.2.2",
+  "description": "Pixel Art creation and editing",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
