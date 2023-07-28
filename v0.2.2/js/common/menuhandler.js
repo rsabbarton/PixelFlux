@@ -82,7 +82,14 @@ document.addEventListener("menuButtonClicked", (event)=>{
       pixelFlux.saveSprite()
       break
     case "SAVEONLINE": 
-      pixelFlux.saveSpriteOnline()
+      if(siteUser.loggedIn){
+        pixelFlux.saveSpriteOnline()
+      } else {
+        flux.showModalMessageBox('Not Logged In', 'Login with your Google Account to access server side features of PixelFlux.', ()=>{
+          google.accounts.id.prompt()
+        })
+      }
+      
       break
       case "DOWNLOAD":
         pixelFlux.setSpriteName().then(()=>{      
@@ -93,7 +100,7 @@ document.addEventListener("menuButtonClicked", (event)=>{
             download(url, pixelFlux.sprite.name + ".png")
         })
         break
-      case "DOWNLOADPIXELFILE": 
+    case "DOWNLOADPIXELFILE": 
       pixelFlux.setSpriteName().then(()=>{
         var url = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pixelFlux.sprite));
         
@@ -104,12 +111,27 @@ document.addEventListener("menuButtonClicked", (event)=>{
       })
       
       break
+      
     case "DOWNLOADSPRITESHEET": 
       pixelFlux.setSpriteName().then(()=>{     
         pixelFlux.sprite.updateSpriteSheetCanvas()
         var dataUrl = pixelFlux.sprite.spriteSheetCanvas.toDataURL("image/png")
         download(dataUrl, pixelFlux.sprite.name + "_spritesheet.png")
       })
+      break
+    case "DOWNLOADGIF":
+      console.log(siteUser) 
+      if(siteUser.loggedIn){
+        pixelFlux.setSpriteName().then(()=>{     
+          pixelFlux.sprite.updateSpriteSheetCanvas()
+          pixelFlux.png2gif()
+        })
+      } else {
+        flux.showModalMessageBox('Not Logged In', 'Login with your Google Account to access server side features of PixelFlux.', ()=>{
+          google.accounts.id.prompt()
+        })
+      }
+      
       break
     case "": break
     case "UNDO": 

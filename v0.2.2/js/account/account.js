@@ -53,6 +53,7 @@ class SiteUser {
         this.email = g.payload.email
         this.displayName = g.payload.given_name
         this.profileImageUrl = g.payload.picture
+        this.loggedIn = true
         document.getElementById("google-button").style.display = "none"       
         this.renderProfileInfo()
     }

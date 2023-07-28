@@ -272,3 +272,10 @@ div.currentlayercontainer:nth-child(n) {
   margin: 7px;
 }
 
+.gifpreviewimg {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+}

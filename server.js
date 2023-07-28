@@ -10,6 +10,9 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const crypto = require("crypto")
 
+const GIFEncoder = require('gif-encoder-2')
+const { createCanvas, loadImage } = require('canvas')
+
 const {OAuth2Client} = require('google-auth-library');
 const oa2client = new OAuth2Client("166137424043-3aul3cvcfkuhjriajmpp7p3jt9tdmhm7.apps.googleusercontent.com");
 
@@ -340,6 +343,103 @@ app.post('/save', (req, res)=>{
 
 })
 
+
+// {
+//    name: "sprite name",
+//    width: int,
+//    height: int,
+//    frameCount: int,
+//    frameRate: int (fps),
+//    png: base64 data URL encoded PNG image
+// }
+
+app.post('/png-sheet-to-gif/*.gif', async (req, res) => {
+
+
+  var token = req.cookies.googleToken ? req.cookies.googleToken : false
+  
+  var e400 = {
+    errorCode: 400,
+    errorMessage: "Sprite ID Not provided in URL Params"
+  }
+
+  var e404 = {
+    errorCode: 404,
+    errorMessage: "Sprite ID Not found"
+  }
+
+  var e403 = {
+    errorCode: 403,
+    errorMessage: "Not Logged In"
+  }
+
+  
+  if(!token){
+    console.log("Token not provided.", req.cookies)
+    res.send(JSON.stringify(e403))
+    return
+  }
+
+  
+
+  verifyGoogleToken(token)
+  .then((tokenResponse)=>{
+
+    var loggedIn = tokenResponse.result
+    var userId = tokenResponse.userId
+
+    let spriteObj = req.body
+    console.log(spriteObj)
+    loadImage(spriteObj.png)
+    .then(spritesheet => {
+
+      const encoder = new GIFEncoder(spriteObj.width, spriteObj.height)
+      encoder.setDelay(1000 / spriteObj.frameRate)
+  
+      encoder.start()
+      
+      for(let frameNumber = 0; frameNumber < spriteObj.frameCount; frameNumber++){
+        let canvas = createCanvas(spriteObj.width, spriteObj.height)
+        let ctx = canvas.getContext('2d')
+  
+        let sx = spriteObj.width * frameNumber
+        let sy = 0
+        let sw = spriteObj.width
+        let sh = spriteObj.height
+        let dx = 0
+        let dy = 0
+        let dw = spriteObj.width
+        let dh = spriteObj.height
+  
+        ctx.drawImage(spritesheet, sx, sy, sw, sh, dx, dy, dw, dh)
+  
+        encoder.addFrame(ctx)
+  
+      }
+  
+  
+      encoder.finish()
+    
+      const buffer = encoder.out.getData()
+  
+      res.setHeader( "Content-Length", buffer.length,)
+      res.setHeader( "Cache-Control", "no-cache")
+      res.setHeader( "Content-Type", "application/json")
+      let responseOBJ = {
+        gifUrl: "/gifs/" + userId + '.gif'
+      }
+  
+      fs.writeFileSync(path.join('./public', 'gifs', userId + '.gif'), buffer)
+  
+      res.send(JSON.stringify(responseOBJ))
+  
+
+
+    })
+    
+  })
+
+})
 
 function loadHTMLPage(page){
   

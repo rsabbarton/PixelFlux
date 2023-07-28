@@ -32,11 +32,14 @@ class FluxUI {
   }
   
   getObjectById(id){
-    this.objectArray.forEach((o)=>{
-      if(o.id == id){
-        return o
+    console.log(id)
+    for(let i = 0; i < this.objectArray.length; i++){
+      if(this.objectArray[i].id == id){
+        //console.log('SUCCESS', o)
+        return this.objectArray[i]
       }
-    })
+    }
+    console.log('end')
   }
   
   showWindow(id){
@@ -210,6 +213,7 @@ class FluxUI {
     this.getObjectById(id).addWindowContent(html)
   }
   appendWindowContent(id, element){
+    console.log(id, element)
     this.getObjectById(id).appendWindowContent(element)
   }
   

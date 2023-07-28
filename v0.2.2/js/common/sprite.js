@@ -17,6 +17,8 @@ class Sprite {
     this.canvas.height = height
     this.context = this.canvas.getContext("2d")
     
+    
+
     this.history = new Array()
     this.redoArray = new Array()
     
