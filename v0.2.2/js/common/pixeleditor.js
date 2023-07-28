@@ -952,7 +952,7 @@ class PixelEditor {
       // FRAME MOVE DOWN BUTTON ---------------------------------------------
       var movedown = document.createElement("div")
       movedown.classList.add("layercontrolbutton")      
-      movedown.style.backgroundImage = `url("${appUrl}resources/icons/downarrow16.png)"
+      movedown.style.backgroundImage = `url(${appUrl}resources/icons/downarrow16.png)`
       movedown.zIndex = i
       if(i<count-1){
         movedown.onclick = (event)=>{
@@ -972,7 +972,7 @@ class PixelEditor {
       var moveup = document.createElement("div")
       moveup.classList.add("layercontrolbutton")
       
-      moveup.style.backgroundImage = `url("${appUrl}resources/icons/uparrow16.png)`
+      moveup.style.backgroundImage = `url(${appUrl}resources/icons/uparrow16.png)`
       moveup.zIndex = i
       if(i>0){
         moveup.onclick = (event)=>{
@@ -993,7 +993,7 @@ class PixelEditor {
       var copy = document.createElement("div")
       copy.classList.add("layercontrolbutton")
       
-      copy.style.backgroundImage = `url("${appUrl}resources/icons/copyframeicon.png)`
+      copy.style.backgroundImage = `url(${appUrl}resources/icons/copyframeicon.png)`
       copy.zIndex = i
       
       copy.onclick = (event)=>{
