@@ -703,7 +703,7 @@ class PixelEditor {
         layervisible.classList.add("buttonfeatureenabled")
       else
         layervisible.classList.add("buttonfeaturedisabled")
-      layervisible.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/showhideicon.png?v=1646784195468)"
+      layervisible.style.backgroundImage = `url(${appUrl}resources/icons/showhideicon.png)`
       layervisible.zIndex = i
       layervisible.onclick = (event)=>{
         var id = event.srcElement.zIndex
@@ -743,7 +743,7 @@ class PixelEditor {
         layerlock.classList.add("buttonfeatureenabled")
       else
         layerlock.classList.add("buttonfeaturedisabled")
-      layerlock.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/padlockicon.png?v=1646784233109)"
+      layerlock.style.backgroundImage = `url(${appUrl}resources/icons/padlockicon.png)`
       layerlock.zIndex = i
       layerlock.onclick = (event)=>{
         var id = event.srcElement.zIndex
@@ -771,7 +771,7 @@ class PixelEditor {
       var layerclear = document.createElement("div")
       layerclear.classList.add("layercontrolbutton")
       
-      layerclear.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/deletelayericon.png?v=1646947314267)"
+      layerclear.style.backgroundImage = `url(${appUrl}resources/icons/deletelayericon.png)`
       layerclear.zIndex = i
       layerclear.onclick = (event)=>{
         var id = event.srcElement.zIndex
@@ -790,7 +790,7 @@ class PixelEditor {
       var mergedown = document.createElement("div")
       mergedown.classList.add("layercontrolbutton")
       
-      mergedown.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/mergedownicon.png?v=1647007923119)"
+      mergedown.style.backgroundImage = `url(${appUrl}resources/icons/mergedownicon.png)`
       mergedown.zIndex = i
       if(i>0){
         mergedown.onclick = (event)=>{
@@ -812,7 +812,7 @@ class PixelEditor {
       var movedown = document.createElement("div")
       movedown.classList.add("layercontrolbutton")
       
-      movedown.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/downarrow16.png?v=1647007664201)"
+      movedown.style.backgroundImage = `url(${appUrl}resources/icons/downarrow16.png)`
       movedown.style.zIndex = i
       if(i>0){
         movedown.onclick = (event)=>{
@@ -835,7 +835,7 @@ class PixelEditor {
       var moveup = document.createElement("div")
       moveup.classList.add("layercontrolbutton")
       
-      moveup.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/uparrow16.png?v=1647007752734)"
+      moveup.style.backgroundImage = `url(${appUrl}resources/icons/uparrow16.png)`
       moveup.style.zIndex = i
       if(i<frame.layers.length - 1){
         moveup.onclick = (event)=>{
@@ -859,7 +859,7 @@ class PixelEditor {
       var layerdelete = document.createElement("div")
       layerdelete.classList.add("layercontrolbutton")
       
-      layerdelete.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/deleteicon.png?v=1646784217658)"
+      layerdelete.style.backgroundImage = `url(${appUrl}resources/icons/deleteicon.png)`
       layerdelete.style.zIndex = i
       layerdelete.onclick = (event)=>{
         console.log(event)
@@ -880,7 +880,7 @@ class PixelEditor {
       var layersettings = document.createElement("div")
       layersettings.classList.add("layercontrolbutton")
       
-      layersettings.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/settingsicon.png?v=1647010901037)"
+      layersettings.style.backgroundImage = `url(${appUrl}resources/icons/settingsicon.png)`
       layersettings.zIndex = i
       layersettings.onclick = (event)=>{
         var id = event.srcElement.zIndex
@@ -920,8 +920,8 @@ class PixelEditor {
       
       var framesideleft = new Image()
       var framesideright = new Image()
-      framesideleft.src = "https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/moviesides.png?v=1647184665621"
-      framesideright.src = "https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/moviesides.png?v=1647184665621"
+      framesideleft.src = appUrl + "resources/icons/moviesides.png"
+      framesideright.src = appUrl + "resources/icons/moviesides.png"
       framesideleft.classList.add("frameside")
       framesideright.classList.add("frameside")
 
@@ -952,7 +952,7 @@ class PixelEditor {
       // FRAME MOVE DOWN BUTTON ---------------------------------------------
       var movedown = document.createElement("div")
       movedown.classList.add("layercontrolbutton")      
-      movedown.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/downarrow16.png?v=1647007664201)"
+      movedown.style.backgroundImage = `url("${appUrl}resources/icons/downarrow16.png)"
       movedown.zIndex = i
       if(i<count-1){
         movedown.onclick = (event)=>{
@@ -972,7 +972,7 @@ class PixelEditor {
       var moveup = document.createElement("div")
       moveup.classList.add("layercontrolbutton")
       
-      moveup.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/uparrow16.png?v=1647007752734)"
+      moveup.style.backgroundImage = `url("${appUrl}resources/icons/uparrow16.png)`
       moveup.zIndex = i
       if(i>0){
         moveup.onclick = (event)=>{
@@ -993,7 +993,7 @@ class PixelEditor {
       var copy = document.createElement("div")
       copy.classList.add("layercontrolbutton")
       
-      copy.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/copyframeicon.png?v=1647521632318)"
+      copy.style.backgroundImage = `url("${appUrl}resources/icons/copyframeicon.png)`
       copy.zIndex = i
       
       copy.onclick = (event)=>{
@@ -1011,7 +1011,7 @@ class PixelEditor {
       var insert = document.createElement("div")
       insert.classList.add("layercontrolbutton")
       
-      insert.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/insertframeicon.png?v=1647179887195)"
+      insert.style.backgroundImage = `url("${appUrl}resources/icons/insertframeicon.png")`
       insert.zIndex = i
       
       insert.onclick = (event)=>{
@@ -1029,7 +1029,7 @@ class PixelEditor {
       var deleteframe = document.createElement("div")
       deleteframe.classList.add("layercontrolbutton")
       
-      deleteframe.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/deleteicon.png?v=1646784217658)"
+      deleteframe.style.backgroundImage = `url("${appUrl}resources/icons/deleteicon.png")`
       deleteframe.zIndex = i
       if(this.sprite.frames.length > 1){
         deleteframe.onclick = (event)=>{
@@ -1227,7 +1227,7 @@ class PixelEditor {
         
         var pallet = document.createElement("img")
         //TODO: Remove CDN.GLITCH.GLOBAL reference 
-        pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
+        pallet.src = appUrl + "resources/icons/palleticonx16.png"
         pallet.classList.add("gallerypalleticon")
         pallet.onclick = (event)=>{
           //var key = event.srcElement.parentElement.firstChild.id
@@ -1238,7 +1238,7 @@ class PixelEditor {
         
         var bg = document.createElement("img")
         //TODO: Remove CDN.GLITCH.GLOBAL reference 
-        bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
+        bg.src = appUrl + "resources/icons/bgicon.png"
         bg.classList.add("gallerybgicon")
         bg.onclick = (event)=>{
           var bgurl = s.canvas.toDataURL()
@@ -1337,7 +1337,7 @@ class PixelEditor {
               
               var pallet = document.createElement("img")
               //TODO: Remove Glitch CDN reference
-              pallet.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/palleticonx16.png?v=1646409849356"
+              pallet.src = appUrl + "resources/icons/palleticonx16.png"
               pallet.classList.add("gallerypalleticon")
               pallet.onclick = (event)=>{
                 //var key = event.srcElement.parentElement.firstChild.id
@@ -1348,7 +1348,7 @@ class PixelEditor {
               
               var bg = document.createElement("img")
               //TODO: Remove Glitch CDN reference
-              bg.src = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bgicon.png?v=1646438995826"
+              bg.src = appUrl + "resources/icons/bgicon.png"
               bg.classList.add("gallerybgicon")
               bg.onclick = (event)=>{
                 //var key = event.srcElement.parentElement.firstChild.id

@@ -275,7 +275,7 @@ class FluxWindow {
     this.width = 0
     this.height = 0
     this.windowContentElement = null
-    this.cornerDraggerUrl = "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/corner-dragger.png?v=1645545876932"
+    this.cornerDraggerUrl = appUrl + "/resources/icons/corner-dragger.png"
     switch (type) {
       case FLUXTYPE_WINDOW_MAIN:
         break

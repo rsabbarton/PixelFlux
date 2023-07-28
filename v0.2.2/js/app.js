@@ -1,6 +1,8 @@
 let DEVPREVIEW = false
+let appUrl = ''
 if(window.location.href.includes('app-dev')) {
   DEVPREVIEW = true
+  appUrl = "/dev/"
 }
 
   
