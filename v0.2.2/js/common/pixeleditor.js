@@ -168,20 +168,20 @@ class PixelEditor {
   
   createToolbarWindow(){
     flux.createWindow("TOOLBAR", "Toolbar", 30, 60, 142, 600)
-    flux.appendToolButton("TOOLBAR", "SELECTION", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/selecttoolicon.png?v=1646391778516")
-    flux.appendToolButton("TOOLBAR", "MOVE", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/movetoolicon.png?v=1646496270969")
-    flux.appendToolButton("TOOLBAR", "PENCIL", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/penciltoolicon.png?v=1646392340306")
-    flux.appendToolButton("TOOLBAR", "ERASER", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/erasertoolicon.png?v=1645743677058")
-    flux.appendToolButton("TOOLBAR", "BRUSH", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/paintbrushicon.png?v=1646392897161")
-    flux.appendToolButton("TOOLBAR", "FLOODFILL", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/bucketfillicon.png?v=1645814640874")
-    flux.appendToolButton("TOOLBAR", "SPRAYCAN", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/spraycanicon.png?v=1646398846481")
-    flux.appendToolButton("TOOLBAR", "STRAIGHTLINE", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/straightlinetoolicon.png?v=1645818533383")
-    flux.appendToolButton("TOOLBAR", "DARKENLIGHTEN", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/lightendarkentoolicon.png?v=1645821671328")
-    flux.appendToolButton("TOOLBAR", "BLEND", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/blendtoolicon.png?v=1646516715472")
-    flux.appendToolButton("TOOLBAR", "SQUARE", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/squaretoolicon.png?v=1646253553688")
-    flux.appendToolButton("TOOLBAR", "FILLEDSQUARE", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/filledsquaretoolicon.png?v=1646324220032")
-    flux.appendToolButton("TOOLBAR", "ELLIPSE", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/ellipsetoolicon.png?v=1646322566795")
-    flux.appendToolButton("TOOLBAR", "FILLEDELLIPSE", "https://cdn.glitch.global/befa0810-9d20-49a3-87ed-eec4eb07f0fb/filledellipsetoolicon.png?v=1646324257923")
+    flux.appendToolButton("TOOLBAR", "SELECTION", appUrl + "resources/icons/selecttoolicon.png")
+    flux.appendToolButton("TOOLBAR", "MOVE", appUrl + "resources/icons/movetoolicon.png")
+    flux.appendToolButton("TOOLBAR", "PENCIL", appUrl + "resources/icons/penciltoolicon.png")
+    flux.appendToolButton("TOOLBAR", "ERASER", appUrl + "resources/icons/erasertoolicon.png")
+    flux.appendToolButton("TOOLBAR", "BRUSH", appUrl + "resources/icons/paintbrushicon.png")
+    flux.appendToolButton("TOOLBAR", "FLOODFILL", appUrl + "resources/icons/bucketfillicon.png")
+    flux.appendToolButton("TOOLBAR", "SPRAYCAN", appUrl + "resources/icons/spraycanicon.png")
+    flux.appendToolButton("TOOLBAR", "STRAIGHTLINE", appUrl + "resources/icons/straightlinetoolicon.png")
+    flux.appendToolButton("TOOLBAR", "DARKENLIGHTEN", appUrl + "resources/icons/lightendarkentoolicon.png")
+    flux.appendToolButton("TOOLBAR", "BLEND", appUrl + "resources/icons/blendtoolicon.png")
+    flux.appendToolButton("TOOLBAR", "SQUARE", appUrl + "resources/icons/squaretoolicon.png")
+    flux.appendToolButton("TOOLBAR", "FILLEDSQUARE", appUrl + "resources/icons/filledsquaretoolicon.png")
+    flux.appendToolButton("TOOLBAR", "ELLIPSE", appUrl + "resources/icons/ellipsetoolicon.png")
+    flux.appendToolButton("TOOLBAR", "FILLEDELLIPSE", appUrl + "resources/icons/filledellipsetoolicon.png")
   }
   
   createPreviewWindow(){
@@ -214,7 +214,7 @@ class PixelEditor {
     // First Frame BUTTON
     var first = document.createElement("div")
     first.classList.add("layercontrolbutton")      
-    first.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/firstframeicon.png?v=1647179461456)"
+    first.style.backgroundImage = `url(${appUrl}resources/icons/firstframeicon.png)`
     first.onclick = (event)=>{
       pixelFlux.sprite.setCurrentFrame(0)
       pixelFlux.sprite.updateCanvasChain()
@@ -226,7 +226,7 @@ class PixelEditor {
     // prev Frame BUTTON
     var prev = document.createElement("div")
     prev.classList.add("layercontrolbutton")      
-    prev.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/previousframeicon.png?v=1647179490247)"
+    prev.style.backgroundImage = `url(${appUrl}resources/icons/previousframeicon.png)`
     prev.onclick = (event)=>{
       pixelFlux.sprite.selectPreviousFrame()
       pixelFlux.sprite.updateCanvasChain()
@@ -238,7 +238,7 @@ class PixelEditor {
     // START ANIMATION BUTTON
     var play = document.createElement("div")
     play.classList.add("layercontrolbutton")      
-    play.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/startanimationicon.png?v=1647180125381)"
+    play.style.backgroundImage = `url(${appUrl}resources/icons/startanimationicon.png)`
     play.onclick = (event)=>{
       pixelFlux.animating = true
       pixelFlux.sprite.updateCanvasChain()
@@ -250,7 +250,7 @@ class PixelEditor {
     // STOP ANIMATION BUTTON
     var stop = document.createElement("div")
     stop.classList.add("layercontrolbutton")      
-    stop.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/stopanimationicon.png?v=1647180069037)"
+    stop.style.backgroundImage = `url(${appUrl}resources/icons/stopanimationicon.png)`
     stop.onclick = (event)=>{
       pixelFlux.animating = true
       pixelFlux.sprite.updateCanvasChain()
@@ -268,7 +268,7 @@ class PixelEditor {
     // next Frame BUTTON
     var next = document.createElement("div")
     next.classList.add("layercontrolbutton")      
-    next.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/nextframeicon.png?v=1647179625045)"
+    next.style.backgroundImage = `url(${appUrl}resources/icons/nextframeicon.png)`
     next.onclick = (event)=>{
       pixelFlux.sprite.selectNextFrame()
       pixelFlux.sprite.updateCanvasChain()
@@ -280,7 +280,7 @@ class PixelEditor {
     // last Frame BUTTON
     var last = document.createElement("div")
     last.classList.add("layercontrolbutton")      
-    last.style.backgroundImage = "url(https://cdn.glitch.global/0ea8c714-b2da-476b-bcef-3909d11dea2b/lastframeicon.png?v=1647179603117)"
+    last.style.backgroundImage = `url(${appUrl}resources/icons/lastframeicon.png)`
     last.onclick = (event)=>{
       pixelFlux.sprite.setCurrentFrame(pixelFlux.sprite.frames.length-1)
       pixelFlux.sprite.updateCanvasChain()
@@ -1226,7 +1226,6 @@ class PixelEditor {
         }
         
         var pallet = document.createElement("img")
-        //TODO: Remove CDN.GLITCH.GLOBAL reference 
         pallet.src = appUrl + "resources/icons/palleticonx16.png"
         pallet.classList.add("gallerypalleticon")
         pallet.onclick = (event)=>{
@@ -1237,7 +1236,6 @@ class PixelEditor {
         }
         
         var bg = document.createElement("img")
-        //TODO: Remove CDN.GLITCH.GLOBAL reference 
         bg.src = appUrl + "resources/icons/bgicon.png"
         bg.classList.add("gallerybgicon")
         bg.onclick = (event)=>{
