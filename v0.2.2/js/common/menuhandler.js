@@ -40,6 +40,11 @@ document.addEventListener("menuButtonClicked", (event)=>{
     case "NEW100X100": 
       pixelFlux.createNewSprite(100,100)
       break
+    case "NEW128X128": 
+      pixelFlux.createNewSprite(128,128)
+      pixelFlux.drawingScale = 4
+      pixelFlux.previewScale = 1
+      break
     case "IMPORT": 
       flux.showModalQuestionWindow("Enter the URL of the image you would like to import: <br> <i>Note: Your current image will be replaced!</i>", "http://", "Import", "Cancel", (response)=>{
         if(response){

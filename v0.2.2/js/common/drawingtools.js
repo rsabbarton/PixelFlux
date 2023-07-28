@@ -397,10 +397,15 @@ class FloodFill {
        pixelFlux.updateCanvasAndPreview()
        //console.log("setting: " + x + "," + y)   
      
-       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x-1,y)},10)
-       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x,y-1)},20)
-       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x+1,y)},30)
-       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x,y+1)},40)
+       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x-1,y)},0.1)
+       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x,y-1)},0.1)
+       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x+1,y)},0.1)
+       setTimeout(()=>{pixelFlux.currentTool.fillPixel(x,y+1)},0.1)
+       
+      // pixelFlux.currentTool.fillPixel(x-1,y)
+      // pixelFlux.currentTool.fillPixel(x,y-1)
+      // pixelFlux.currentTool.fillPixel(x+1,y)
+      // pixelFlux.currentTool.fillPixel(x,y+1)
    }
   
     

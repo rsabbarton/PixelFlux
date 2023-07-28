@@ -60,10 +60,13 @@ document.addEventListener("mousemove", (event)=>{
   var sY = Math.floor((event.layerY - event.movementY - oY - 24) / scale)                                   
   var dX = Math.floor((event.layerX - oX) / scale)                              
   var dY = Math.floor((event.layerY - oY - 24) / scale)
-  
+
+ 
   debug.layerX = dX
   debug.layerY = dY
   
+
+
   // UPDATE MEMORY USAGE INFO IN DEBUG WINDOW
   debug.mSize = window.performance.memory.totalJSHeapSize / 1024
   debug.mUsed = window.performance.memory.usedJSHeapSize / 1024

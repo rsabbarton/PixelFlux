@@ -15,7 +15,7 @@ class Sprite {
     this.canvas = document.createElement("canvas")
     this.canvas.width = width
     this.canvas.height = height
-    this.context = this.canvas.getContext("2d")
+    this.context = this.canvas.getContext("2d", {willReadFrequently: true})
     
     
 
@@ -290,7 +290,7 @@ class Sprite {
   drawToCanvasId(id, x, y, scale){
     this.updateCanvas()
     var canvas = document.getElementById(id)
-    var ctx = canvas.getContext("2d")
+    var ctx = canvas.getContext("2d", {willReadFrequently: true})
     ctx.drawImage(this.canvas, 0, 0, this.width, this.height, 0, 0, this.width * scale, this.height * scale)
   }
   
@@ -341,7 +341,7 @@ class Sprite {
     this.spriteSheetCanvas = document.createElement("canvas")
     this.spriteSheetCanvas.width = w * f
     this.spriteSheetCanvas.height = h
-    var ctx = this.spriteSheetCanvas.getContext("2d")
+    var ctx = this.spriteSheetCanvas.getContext("2d", {willReadFrequently: true})
     
     this.updateCanvasChain()
     
@@ -364,7 +364,7 @@ class Sprite {
     this.canvas = document.createElement("canvas")
     this.canvas.width = source.width
     this.canvas.height = source.height
-    this.context = this.canvas.getContext("2d")
+    this.context = this.canvas.getContext("2d", {willReadFrequently: true})
     
     this.name = source.name
     
@@ -474,7 +474,7 @@ class Frame {
     this.currentLayer = 0
     
     this.canvas = document.createElement("canvas")
-    this.context = this.canvas.getContext("2d")
+    this.context = this.canvas.getContext("2d", {willReadFrequently: true})
   }
   
   setCurrentLayer(n){
@@ -493,7 +493,7 @@ class Frame {
     this.canvas = document.createElement("canvas")
     this.canvas.width = this.width
     this.canvas.height = this.height
-    this.context = this.canvas.getContext("2d")
+    this.context = this.canvas.getContext("2d", {willReadFrequently: true})
     this.updateCanvas()
   }
   
@@ -631,7 +631,7 @@ class Layer {
     this.visible = true
     this.locked = false
     this.canvas = document.createElement("canvas")
-    this.context = this.canvas.getContext("2d")
+    this.context = this.canvas.getContext("2d", {willReadFrequently: true})
     this.pixels = new Array()
     this.initPixelArray()
   }
@@ -700,7 +700,8 @@ class Layer {
     if(this.locked) return
     var i = (y * this.width) + x
     this.pixels[i].setColour(r,g,b,a)
-    this.updateCanvas()
+    this.pixels[i].drawToCanvas(this.context,x,y)
+    //this.updateCanvas()
   }
   
   getPixelRGBA(x,y){
