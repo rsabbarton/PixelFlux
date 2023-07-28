@@ -1471,9 +1471,11 @@ class PixelEditor {
         dlLink.setAttribute('download',pixelFlux.sprite.name)
         dlLink.appendChild(gifPreview)
 
+        document.getElementById('GIFDISPLAYCONTENT').innerHTML = ""
         flux.appendWindowContent('GIFDISPLAY', dlLink)
         document.getElementById('GIFDISPLAYCONTENT').style.height = '100%'
         document.getElementById('GIFDISPLAYCONTENT').style.paddingTop = '40px'
+        flux.addWindowContent('GIFDISPLAY', '<br><br><center>Click to Download</center>')
         gifPreview.onload = (e)=>{
           flux.showWindow('GIFDISPLAY')
         }
