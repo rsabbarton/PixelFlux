@@ -278,7 +278,7 @@ class Brush {
 
     let color = hex2rgba(col)
     color.a = 255 // n255(this.alpha)
-    this.brush.paint(sprite, sprite.currentFrame, sprite.getCurrentFrame().currentLayer, x, y, color,n255(this.alpha))
+    this.brush.paint(this.sprite, this.sprite.currentFrame, this.sprite.getCurrentFrame().currentLayer, x, y, color,n255(this.alpha))
     this.lastX = x
     this.lastY = y
   }
@@ -303,7 +303,7 @@ class Brush {
     
         let color = hex2rgba(col)
         color.a = 255 // n255(this.alpha)
-        this.brush.paint(sprite, sprite.currentFrame, sprite.getCurrentFrame().currentLayer, x2, y2, color, n255(this.alpha))
+        this.brush.paint(this.sprite, this.sprite.currentFrame, this.sprite.getCurrentFrame().currentLayer, x2, y2, color, n255(this.alpha))
   }
 }
 
