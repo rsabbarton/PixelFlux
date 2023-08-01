@@ -9,8 +9,8 @@ const flux = new FluxUI()
 const pixelFlux = new PixelEditor()
 const keyboard = new KeyboardHandler()
 
-var config = {}
-var configUrl = '/config/main.json'
+let config = {}
+let configUrl = '/config/main.json'
 if(DEVPREVIEW) configUrl = '/dev' + configUrl
 get(configUrl)
 .then((json)=>{
@@ -21,16 +21,8 @@ get(configUrl)
 .catch(error=>{
   console.log(error)
 })
-
-  
+ 
 showLoadingAnimation()
-
-
-//constant globals for the scripting engine and automation
-//const app = pixelFlux
-//const sprite = app.sprite
-
-
 
 document.addEventListener("mousedown", (event)=>{
   //console.log(event)
@@ -47,7 +39,6 @@ document.addEventListener("mousedown", (event)=>{
     pixelFlux.toolDown(dX, dY, event.buttons)
   }
 })
-
 document.addEventListener("mouseup", (event)=>{
   var srcElement = document.getElementById("DRAWINGCANVAS")
   
@@ -63,7 +54,6 @@ document.addEventListener("mouseup", (event)=>{
     pixelFlux.toolUp(dX, dY)
   }
 })
-
 document.addEventListener("mousemove", (event)=>{
   var srcElement = event.srcElement
   var scale = pixelFlux.drawingScale
@@ -120,8 +110,6 @@ document.addEventListener("mousemove", (event)=>{
     
   }
 })
-
-
 document.addEventListener("wheel", (event)=>{
   if(event.srcElement.id == "DRAWINGCANVAS"){
     pixelFlux.drawingScale += event.deltaY * -0.01
@@ -139,7 +127,6 @@ document.addEventListener("wheel", (event)=>{
     pixelFlux.updateCanvasAndPreview()
   }
 })
-
 document.addEventListener('paste', function (evt) {
   const clipboardItems = evt.clipboardData.items
   const items = [].slice.call(clipboardItems).filter(function (item) {
@@ -173,9 +160,9 @@ document.addEventListener('paste', function (evt) {
   console.log(img.src)
   
 });
-
-// Prevent right-click default action when using app
-window.addEventListener("contextmenu", e => e.preventDefault());
+window.addEventListener("contextmenu", e => {
+  e.preventDefault()
+});
 
    
 
