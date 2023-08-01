@@ -5,19 +5,32 @@ if(window.location.href.includes('app-dev')) {
   appUrl = "/dev/"
 }
 
+const flux = new FluxUI()
+const pixelFlux = new PixelEditor()
+const keyboard = new KeyboardHandler()
+
+var config = {}
+var configUrl = '/config/main.json'
+if(DEVPREVIEW) configUrl = '/dev' + configUrl
+get(configUrl)
+.then((json)=>{
+  config = JSON.parse(json)
+  pixelFlux.init(hideLoadingAnimation)
+  setTimeout(flux.menu.onClickCallback("SHOWALL"))
+}) 
+.catch(error=>{
+  console.log(error)
+})
+
   
 showLoadingAnimation()
 
-const flux = new FluxUI()
-const pixelFlux = new PixelEditor()
 
 //constant globals for the scripting engine and automation
-const app = pixelFlux
-const sprite = app.sprite
+//const app = pixelFlux
+//const sprite = app.sprite
 
-pixelFlux.init(hideLoadingAnimation)
 
-setTimeout(flux.menu.onClickCallback("SHOWALL"))
 
 document.addEventListener("mousedown", (event)=>{
   //console.log(event)
@@ -127,8 +140,6 @@ document.addEventListener("wheel", (event)=>{
   }
 })
 
-
-
 document.addEventListener('paste', function (evt) {
   const clipboardItems = evt.clipboardData.items
   const items = [].slice.call(clipboardItems).filter(function (item) {
@@ -166,13 +177,7 @@ document.addEventListener('paste', function (evt) {
 // Prevent right-click default action when using app
 window.addEventListener("contextmenu", e => e.preventDefault());
 
-const keyboard = new KeyboardHandler()
-var config = {}
-var configUrl = '/config/main.json'
-if(DEVPREVIEW) configUrl = '/dev' + configUrl
-get(configUrl).then((json)=>{
-  config = JSON.parse(json)
-})    
+   
 
 
 
