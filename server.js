@@ -229,7 +229,7 @@ app.get('/load', (req, res)=>{
 
   if(!token){
     console.log("Token not provided.", req.cookies)
-    res.send("Token Not Set")
+    res.send(JSON.stringify({error: 403, message: "Token Not Set"}))
     return
   }
 
@@ -279,7 +279,7 @@ app.post('/save', (req, res)=>{
 
   if(!token){
     console.log("Token not provided.", req.cookies)
-    res.send("Token Not Set")
+    res.send(JSON.stringify({error: 403, message: "Token Not Set"}))
     return
   }
 
@@ -393,7 +393,7 @@ app.post('/png-sheet-to-gif/*.gif', async (req, res) => {
     loadImage(spriteObj.png)
     .then(spritesheet => {
 
-      const encoder = new GIFEncoder(spriteObj.width, spriteObj.height)
+      const encoder = new GIFEncoder(spriteObj.width, spriteObj.height, 'octree', true)
       encoder.setDelay(1000 / spriteObj.frameRate)
   
       encoder.start()
@@ -532,7 +532,7 @@ app.get('/user-preferences', (req, res) => {
   var token = req.cookies.googleToken ? req.cookies.googleToken : false
   if(!token){
     console.log("Token not provided.", req.cookies)
-    res.send("Token Not Set")
+    res.send(JSON.stringify({error: 403, message: "Token Not Set"}))
     return
   }
   verifyGoogleToken(token)

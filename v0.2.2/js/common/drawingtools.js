@@ -57,7 +57,11 @@ document.addEventListener("toolButtonClicked", (event)=>{
       log("Filled Ellipse Tool Selected")
       pixelFlux.currentTool = new FilledEllipse(pixelFlux.sprite)
       break
-    
+    case "PLUGIN":
+      log("Plugin Tool Selected")
+      pixelFlux.currentTool = new Plugin(pixelFlux.sprite)
+      break
+          
   }
 })
 
@@ -767,5 +771,41 @@ class FilledEllipse {
     ctx.fill()
     ctx.restore()
     this.sprite.updateCanvasChain()
+  }
+}
+
+
+
+class Plugin {
+  constructor(sprite){
+    this.sprite = sprite
+    this.alpha = 255
+    this.enabled = true
+    
+    this.toolOptions = "Left Click - Primary<br>Right Click - Secondary<br>Middle Click - Erase"
+    document.getElementById("TOOLOPTIONSCONTENT").innerHTML = this.toolOptions
+  }
+  
+  down(x,y, pri, sec, btn){
+
+    let rightClick = false
+    if(btn == 2)
+      rightClick = true
+  
+    //if(pixelFlux.inSelection(x,y))
+    this.automationPlugin.run(x,y,pri,sec,rightClick)
+  }
+  
+  up(x,y, pri, sec){
+    
+  }
+  
+  drag(x1,y1,x2,y2, pri, sec, btn){
+    var col = pri
+    if(btn == 2)
+      col = sec
+    
+    //if(pixelFlux.inSelection(x2,y2))
+    this.automationPlugin.run(x2,y2,pri,sec,rightClick)
   }
 }

@@ -4,11 +4,12 @@
 
 
 
-class Plugin {
+class AutomationPlugin {
     constructor(name){
         this.name = name
         this.description = ""
         this.sourceCode = ""
+        this.function = false
         console.log(`
 You have created a new plugin.  Welcome to the wonderful world of pixelflux scripting! Here are a few pointers to help you along the way.
             
@@ -19,7 +20,12 @@ sprite = The sprite you currently have loaded.  sprite.help() will get you going
     }
 
     run (){
-        console.log(eval(this.sourceCode))
+        if(this.function){
+            console.log(eval(this.sourceCode))
+        } else {
+            console.log(this.function())
+        }
+        
     }
 
     loadSourceFromURL(url){
@@ -60,24 +66,3 @@ function brushTest2(){
 }
 
 
-function png2gif(){
-    let dataUrl = sprite.spriteSheetCanvas.toDataURL("image/png")
-    let data = {
-        name: "Test Sprite Conversion",
-        width: sprite.width,
-        height: sprite.height,
-        backgroundColor: "#330000",
-        transparent: true,
-        frameCount: sprite.frames.length,
-        frameRate: sprite.fps,
-        png: dataUrl
-    }
-    
-    post('/png-sheet-to-gif', data)
-    .then(result => {
-        console.log(result)
-    })
-    .catch(error=>{
-        console.error(error)
-    })
-}

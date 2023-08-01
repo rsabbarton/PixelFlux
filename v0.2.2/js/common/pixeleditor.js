@@ -53,8 +53,11 @@ class PixelEditor {
   setupUI(){
     flux.createFullScreenUI()
     let menuUrl = "/config/menu.json"
-    if(DEVPREVIEW) menuUrl = "/dev" + menuUrl
-    console.log(DEVPREVIEW)
+    if(DEVPREVIEW){
+      menuUrl = "/dev" + menuUrl
+      console.log("You are using the PixelFlux Developer Preview")
+      console.log("Version: ", config.version)
+    }
     console.log("LOADING MENU: ", menuUrl)
     flux.loadMenu(menuUrl, (id)=>{
       const postEvent = new CustomEvent('menuButtonClicked', { detail: {srcElementId: id}})
@@ -183,6 +186,7 @@ class PixelEditor {
     flux.appendToolButton("TOOLBAR", "FILLEDSQUARE", appUrl + "resources/icons/filledsquaretoolicon.png")
     flux.appendToolButton("TOOLBAR", "ELLIPSE", appUrl + "resources/icons/ellipsetoolicon.png")
     flux.appendToolButton("TOOLBAR", "FILLEDELLIPSE", appUrl + "resources/icons/filledellipsetoolicon.png")
+    flux.appendToolButton("TOOLBAR", "PLUGIN", appUrl + "resources/icons/plugin-icon.png")
   }
   
   createPreviewWindow(){

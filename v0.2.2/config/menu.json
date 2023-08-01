@@ -15,10 +15,10 @@
             {"id": "NEW9X9", "display": "New Brush - 9x9", "type": "CLICKABLE"},
             {"id": "NEW16X16", "display": "New Sprite - 16x16 (favicon)", "type": "CLICKABLE"},
             {"id": "NEW32X32", "display": "New Sprite - 32x32", "type": "CLICKABLE"},
+            {"id": "NEW44X44", "display": "New Sprite - 44x44 (Common Emoji)", "type": "CLICKABLE"},
             {"id": "NEW48X48", "display": "New Sprite - 48x48", "type": "CLICKABLE"},
             {"id": "NEW64X64", "display": "New Sprite - 64x64", "type": "CLICKABLE"},
-            {"id": "NEW100X100", "display": "New Sprite - 100x100", "type": "CLICKABLE"},
-            {"id": "NEW128X128", "display": "New Sprite - 128x128 (Slack Emoji)", "type": "CLICKABLE"}
+            {"id": "NEW100X100", "display": "New Sprite - 100x100", "type": "CLICKABLE"}            
           ]},
         {"id": "OPEN", "display": "Open", "type": "CLICKABLE"},
         {"id": "OPENPIXEL", "display": "Open .pixel file", "type": "SUBMENU",
