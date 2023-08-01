@@ -8,6 +8,7 @@ if(window.location.href.includes('app-dev')) {
 const flux = new FluxUI()
 const pixelFlux = new PixelEditor()
 const keyboard = new KeyboardHandler()
+let plugin
 
 let config = {}
 let configUrl = '/config/main.json'

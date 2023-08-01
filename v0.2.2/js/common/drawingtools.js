@@ -787,25 +787,25 @@ class Plugin {
   }
   
   down(x,y, pri, sec, btn){
-
+    let action = "DOWN"
     let rightClick = false
     if(btn == 2)
       rightClick = true
   
-    //if(pixelFlux.inSelection(x,y))
-    this.automationPlugin.run(x,y,pri,sec,rightClick)
+    this.automationPlugin.run(x,y,pri,sec,rightClick,action)
   }
   
   up(x,y, pri, sec){
-    
+    let action = "UP"
+    this.automationPlugin.run(x2,y2,pri,sec,rightClick,action)
   }
   
   drag(x1,y1,x2,y2, pri, sec, btn){
-    var col = pri
+    let action = "DRAG"
+    let rightClick = false
     if(btn == 2)
-      col = sec
+      rightClick = true
     
-    //if(pixelFlux.inSelection(x2,y2))
-    this.automationPlugin.run(x2,y2,pri,sec,rightClick)
+    this.automationPlugin.run(x2,y2,pri,sec,rightClick,action)
   }
 }
