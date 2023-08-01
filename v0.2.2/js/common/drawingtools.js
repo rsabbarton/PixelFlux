@@ -781,8 +781,8 @@ class Plugin {
     this.sprite = sprite
     this.alpha = 255
     this.enabled = true
-    
-    this.toolOptions = "Left Click - Primary<br>Right Click - Secondary<br>Middle Click - Erase"
+    this.automationPlugin = new AutomationPlugin()
+    this.toolOptions = ""
     document.getElementById("TOOLOPTIONSCONTENT").innerHTML = this.toolOptions
   }
   

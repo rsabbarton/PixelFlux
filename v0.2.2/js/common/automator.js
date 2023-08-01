@@ -5,8 +5,8 @@
 
 
 class AutomationPlugin {
-    constructor(name){
-        this.name = name
+    constructor(){
+        this.name = ""
         this.description = ""
         this.sourceCode = ""
         this.function = false
@@ -19,21 +19,21 @@ sprite = The sprite you currently have loaded.  sprite.help() will get you going
 `)
     }
 
-    run (){
-        if(this.function){
-            console.log(eval(this.sourceCode))
-        } else {
-            console.log(this.function())
-        }
-        
+    run (x,y,pri,sec,rightClick){
+        this.function(x,y,pri,sec,rightClick)
     }
 
     loadSourceFromURL(url){
         get(url)
         .then(r=>{
             this.sourceCode = r
+            this.function = eval(r)
             this.ready = true
         })
+    }
+
+    load(script){
+        this.function = eval(script)
     }
 }
 
