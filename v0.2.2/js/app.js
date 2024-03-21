@@ -1,18 +1,16 @@
 let DEVPREVIEW = false
 let appUrl = '/v0.2.2/'
-if(window.location.href.includes('app-dev')) {
-  DEVPREVIEW = true
-  appUrl = "/dev/"
-}
+
+
 
 const flux = new FluxUI()
 const pixelFlux = new PixelEditor()
 const keyboard = new KeyboardHandler()
+
 let plugin
 
 let config = {}
 let configUrl = './config/main.json'
-if(DEVPREVIEW) configUrl = '/dev' + configUrl
 get(configUrl)
 .then((json)=>{
   config = JSON.parse(json)
