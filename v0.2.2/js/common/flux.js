@@ -279,7 +279,7 @@ class FluxWindow {
     this.width = 0
     this.height = 0
     this.windowContentElement = null
-    this.cornerDraggerUrl = appUrl + "/resources/icons/corner-dragger.png"
+    this.cornerDraggerUrl = appUrl + "resources/icons/corner-dragger.png"
     switch (type) {
       case FLUXTYPE_WINDOW_MAIN:
         break
