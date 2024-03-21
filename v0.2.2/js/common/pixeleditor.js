@@ -52,12 +52,7 @@ class PixelEditor {
   
   setupUI(){
     flux.createFullScreenUI()
-    let menuUrl = "/config/menu.json"
-    if(DEVPREVIEW){
-      menuUrl = "/dev" + menuUrl
-      console.log("You are using the PixelFlux Developer Preview")
-      console.log("Version: ", config.version)
-    }
+    let menuUrl = "./config/menu.json"
     console.log("LOADING MENU: ", menuUrl)
     flux.loadMenu(menuUrl, (id)=>{
       const postEvent = new CustomEvent('menuButtonClicked', { detail: {srcElementId: id}})
