@@ -104,7 +104,7 @@ hr {
 }
 
 .flux-windowchequered {
-  background-image: url("/resources/icons/workspace-background.png");
+  background-image: url("./resources/icons/workspace-background.png");
   background-color: #ffffff;
   background-blend-mode: multiply;
 }
