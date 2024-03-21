@@ -14,7 +14,7 @@ let configUrl = './config/main.json'
 fetch(configUrl)
 .then(response=>{response.json()
 .then((json)=>{
-  config = JSON.parse(json)
+  config = json
   pixelFlux.init(hideLoadingAnimation)
   setTimeout(flux.menu.onClickCallback("SHOWALL"))
 })})
