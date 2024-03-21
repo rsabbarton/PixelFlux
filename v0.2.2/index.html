@@ -14,38 +14,31 @@
       gtag('js', new Date());
       gtag('config', 'G-QQX9CSMKF4');
     </script>
-  <script src='/js/common/automator.js'></script><script src='/js/common/brush.js'></script><script src='/js/common/canvasplus.js'></script><script src='/js/common/contentrenderer.js'></script><script src='/js/common/drawingtools.js'></script><script src='/js/common/flux.js'></script><script src='/js/common/fluxstore.js'></script><script src='/js/common/keyboardinputhandler.js'></script><script src='/js/common/loadinganimation.js'></script><script src='/js/common/logger.js'></script><script src='/js/common/menuhandler.js'></script><script src='/js/common/misc.js'></script><script src='/js/common/net.js'></script><script src='/js/common/pixeleditor.js'></script><script src='/js/common/sprite.js'></script><script src='/js/common/spritesheetrenderer.js'></script><script src='/js/common/windowcontentdef.js'></script><link rel='stylesheet' href='/css/docs.css'><link rel='stylesheet' href='/css/fluxui.css'><link rel='stylesheet' href='/css/pixelflux.css'><link rel='stylesheet' href='/css/site.css'></head>
-  <body>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script>
-      function handleCredentialResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential);
-        let googleToken = {googleToken: response.credential}
-        post("/googleValidate", googleToken)
-        .then((res, rej)=>{
-          console.log(res)
-          siteUser.import(JSON.parse(res))
-        })
-
-      }
-      window.onload = function () {
-        google.accounts.id.initialize({
-          client_id: "166137424043-3aul3cvcfkuhjriajmpp7p3jt9tdmhm7.apps.googleusercontent.com",
-          callback: handleCredentialResponse
-        });
-        google.accounts.id.renderButton(
-          document.getElementById("google-button"),
-          { theme: "outline", size: "small" }  // customization attributes
-        );
-        //google.accounts.id.prompt(); // also display the One Tap dialog
-      }
-    </script>
-
-    <div class="inappaccountinfo" id="accountinfo">
-      <div id="google-button"></div> 
-    </div>
-    <script src="/dev/js/app.js"></script>
-    <script src="/dev/js/account/account.js"></script>
+  <script src='./js/common/automator.js'></script>
+  <script src='./js/common/brush.js'></script>
+  <script src='./js/common/canvasplus.js'></script>
+  <script src='./js/common/contentrenderer.js'></script>
+  <script src='./js/common/drawingtools.js'></script>
+  <script src='./js/common/flux.js'></script>
+  <script src='./js/common/fluxstore.js'></script>
+  <script src='./js/common/keyboardinputhandler.js'></script>
+  <script src='/js/common/loadinganimation.js'></script>
+  <script src='/js/common/logger.js'></script>
+  <script src='/js/common/menuhandler.js'></script>
+  <script src='/js/common/misc.js'></script>
+  <script src='/js/common/net.js'></script>
+  <script src='/js/common/pixeleditor.js'></script>
+  <script src='/js/common/sprite.js'></script>
+  <script src='/js/common/spritesheetrenderer.js'></script>
+  <script src='/js/common/windowcontentdef.js'></script>
   
+  <link rel='stylesheet' href='/css/docs.css'>
+  <link rel='stylesheet' href='/css/fluxui.css'>
+  <link rel='stylesheet' href='/css/pixelflux.css'>
+  <link rel='stylesheet' href='/css/site.css'></head>
+  
+  <body>
+    <script src="/dev/js/app.js"></script>
+    <script src="/dev/js/account/account.js"></script> 
   </body>  
 </html>
