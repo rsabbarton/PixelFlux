@@ -173,7 +173,7 @@ class PixelEditor {
     flux.appendToolButton("TOOLBAR", "FILLEDSQUARE", appUrl + "resources/icons/filledsquaretoolicon.png")
     flux.appendToolButton("TOOLBAR", "ELLIPSE", appUrl + "resources/icons/ellipsetoolicon.png")
     flux.appendToolButton("TOOLBAR", "FILLEDELLIPSE", appUrl + "resources/icons/filledellipsetoolicon.png")
-    flux.appendToolButton("TOOLBAR", "PLUGIN", appUrl + "resources/icons/plugin-icon.png")
+    //flux.appendToolButton("TOOLBAR", "PLUGIN", appUrl + "resources/icons/plugin-icon.png")
   }
   
   createPreviewWindow(){
