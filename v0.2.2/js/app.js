@@ -11,7 +11,7 @@ const keyboard = new KeyboardHandler()
 let plugin
 
 let config = {}
-let configUrl = '/config/main.json'
+let configUrl = './config/main.json'
 if(DEVPREVIEW) configUrl = '/dev' + configUrl
 get(configUrl)
 .then((json)=>{
