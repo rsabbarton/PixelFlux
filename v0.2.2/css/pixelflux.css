@@ -201,7 +201,7 @@ div.currentlayercontainer:nth-child(n) {
 .editlayername {
   display: inline-block;
   cursor: pointer;
-  background-image: url("/resources/icons/editicon.png");
+  background-image: url("../resources/icons/editicon.png");
   width: 16px;
   height: 12px;
 }
