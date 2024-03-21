@@ -31,7 +31,7 @@ class PixelEditor {
     // DO INIT STUFF AND THEN CALLBACK THEN START EDITOR
     this.setupUI()
     this.addEventListeners()
-    this.loadUserPreferences()
+    //this.loadUserPreferences()
     .then((prefs)=>{
       callback()
       this.start()
