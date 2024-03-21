@@ -1,7 +1,7 @@
 {
   "type": "MAIN",
   "menuItems": [
-    {"id": "PIXELFLUX", "display": "<img class='siteicon' src='/resources/icons/pixelfluxicon.png'> PixelFlux", "type": "MENU",
+    {"id": "PIXELFLUX", "display": "<img class='siteicon' src='./resources/icons/pixelfluxicon.png'> PixelFlux", "type": "MENU",
       "menuItems":[
         {"id": "HOMEPAGE", "display": "PixelFlux Home", "type":"CLICKABLE"},
         {"id": "FORUM", "display": "PixelFlux Forum", "type":"CLICKABLE"}
