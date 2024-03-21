@@ -11,12 +11,13 @@ let plugin
 
 let config = {}
 let configUrl = './config/main.json'
-get(configUrl)
+fetch(configUrl)
+.then(response=>{response.json()
 .then((json)=>{
   config = JSON.parse(json)
   pixelFlux.init(hideLoadingAnimation)
   setTimeout(flux.menu.onClickCallback("SHOWALL"))
-}) 
+})})
 .catch(error=>{
   console.log(error)
 })
