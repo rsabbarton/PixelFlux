@@ -1,5 +1,5 @@
 let DEVPREVIEW = false
-let appUrl = '/v0.2.2/'
+let appUrl = '/PixelFlux/v0.2.2/'
 
 
 
