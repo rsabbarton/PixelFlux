@@ -26,7 +26,6 @@
             {"id": "OPENPIXELFILE", "display": "", "type": "FILESELECT"}
         ]},
         {"id": "SAVE", "display": "Save in Browser (local)", "type": "CLICKABLE"},
-        {"id": "SAVEONLINE", "display": "Save to PixelFlux.me", "type": "CLICKABLE"},
         {"id": "DOWNLOAD", "display": "Download .png file (current frame)", "type": "CLICKABLE"},
         {"id": "DOWNLOADPIXELFILE", "display": "Download .pixel file (all frames)", "type": "CLICKABLE"},
         {"id": "DOWNLOADGIF", "display": "Download animated .gif file", "type": "CLICKABLE"},
