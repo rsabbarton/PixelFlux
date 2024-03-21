@@ -518,21 +518,6 @@ class PixelEditor {
   }
 
 
-  loadUserPreferences(){
-    return new Promise ((resolve, reject)=>{
-      get("/user-preferences")
-      .then(result=>{
-        let prefs = JSON.parse(result)
-        this.preferences = prefs
-        resolve(prefs)
-      })
-      .catch(error=>{
-        reject(error)
-      })
-    })
-  }
-
-
   importPaletteFile(){
 
 
