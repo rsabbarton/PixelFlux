@@ -2,7 +2,7 @@ document.addEventListener("menuButtonClicked", (event)=>{
   var srcElementId = event.detail.srcElementId
   switch (srcElementId) {
     case "HOMEPAGE":
-      window.open("https://pixelflux.me")
+      window.open("https://github.com/rsabbarton/PixelFlux/")
       break
     case "FORUM":
       window.open("https://github.com/rsabbarton/PixelFlux/discussions")
@@ -410,8 +410,8 @@ document.addEventListener("menuButtonClicked", (event)=>{
           `
       flux.showModalMessageBox('About PixelFlux', aboutInfo, ()=>{})
       break
-    case "TODOLIST": window.open("/content?type=task"); break;
-    case "KNOWNISSUES": window.open("/content?type=task"); break;
-    case "LOADHELPPAGES": window.open("/content?type=tutorial"); break;
+    case "TODOLIST": window.open("https://github.com/rsabbarton/PixelFlux/issues"); break;
+    case "KNOWNISSUES": window.open("https://github.com/rsabbarton/PixelFlux/issues"); break;
+    case "LOADHELPPAGES": window.open("https://github.com/rsabbarton/PixelFlux/wiki"); break;
   }
 })
