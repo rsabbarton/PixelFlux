@@ -2,7 +2,7 @@
 html, body {
   margin: 0px;
   padding: 0px;
-  background: #9c8d80;
+  background: var(--body-background-color);
   width: 100%;
   height: 100%;
 }
@@ -15,7 +15,7 @@ div#google-button {
 
 
 .flux-menucontainer {
-  background-color: darkslategrey;
+  background-color: var(--mid-bg-color);
 }
 
 .flux-menucontainer:after {
@@ -45,13 +45,13 @@ div#google-button {
   padding: 3px;
   padding-left: 10px;
   padding-right: 15px;
-  color: white;
-  background-color: darkslategrey;
+  color: var(--text-color);
+  background-color: var(--dark-bg-color);
 
 }
 
 .flux-menuitem:hover {
-  color: green;
+  color: var(--highlight-text-color);
 }
 
 .flux-menuseparator {
@@ -64,7 +64,7 @@ hr {
 .flux-windowcontainer {
   position: absolute;
   padding: 0px;
-  background-color: slategrey;
+  background-color: var(--mid-bg-color);
   border-style: solid;
   border-width: 1px;
   overflow: hidden;
@@ -76,7 +76,7 @@ hr {
   padding: 2px;
   padding-left: 4px;
   color: white;
-  background-color: darkslategrey;
+  background-color: var(--dark-bg-color);
 }
 
 .flux-windowclosebutton {

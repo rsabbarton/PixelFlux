@@ -1,0 +1,13 @@
+:root {
+    --doc-bg-color: white;
+    --light-bg-color: lightgrey;
+    --mid-bg-color: grey;
+    --dark-bg-color: darkslategrey;
+    --highlight-bg-color: darkcyan;
+    --highlight-text-color: green;
+    --text-color: black;
+    --light-bg-selected: lightgreen;
+    --scrollbar-color: blue;
+    --body-background-color: snow;
+    --border-color: black;
+}
