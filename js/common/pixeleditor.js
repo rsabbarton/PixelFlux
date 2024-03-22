@@ -68,7 +68,7 @@ class PixelEditor {
     this.createOpenGallery()
     this.createGifDisplayWindow()
     
-    flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC)
+    flux.restoreWindowArrangement(builtInWindowArrangements.NEOCLASSIC)
     
   }
   

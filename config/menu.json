@@ -110,6 +110,7 @@
         {"id": "ARRANGE", "display": "Arrange Windows", "type": "SUBMENU",
          "menuItems": [
         {"id": "ARRANGECLASSIC", "display": "Arrange Windows - Classic", "type": "CLICKABLE"},
+        {"id": "ARRANGENEOCLASSIC", "display": "Arrange Windows - Neoclassic", "type": "CLICKABLE"},
         {"id": "ARRANGEWIDE", "display": "Arrange Windows - Wide", "type": "CLICKABLE"},
         {"id": "ARRANGETILECREATOR", "display": "Arrange Windows - Tile Creator", "type": "CLICKABLE"},
         {"id": "SAVEWINDOWARRANGEMENT", "display": "Save Window Arrangement", "type": "CLICKABLE"},
