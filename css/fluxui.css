@@ -70,6 +70,7 @@ hr {
   border-style: solid;
   border-width: 1px;
   overflow: hidden;
+  border-radius: 7px;
 }
 
 .flux-windowtitlebar {
