@@ -16,12 +16,11 @@ div#google-button {
 
 
 .flux-menucontainer {
-  background-color: black;
+  
 }
 
 .flux-menucontainer:after {
-  background-color: black;
-  opacity: 50%;
+
 }
 
 .flux-clickable {
