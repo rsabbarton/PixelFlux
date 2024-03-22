@@ -1,13 +1,15 @@
 :root {
-    --doc-bg-color: white;
+    --doc-bg-color: darkkhaki;
     --light-bg-color: lightgrey;
-    --mid-bg-color: grey;
+    --mid-bg-color: rgb(180, 157, 157);
     --dark-bg-color: darkslategrey;
     --highlight-bg-color: darkcyan;
     --highlight-text-color: green;
     --text-color: black;
     --light-bg-selected: lightgreen;
     --scrollbar-color: blue;
-    --body-background-color: snow;
+    --body-background-color: rgb(35, 35, 122);
     --border-color: black;
+    --window-title-bar-bg: dimgrey;
+    
 }

@@ -46,12 +46,13 @@ div#google-button {
   padding-left: 10px;
   padding-right: 15px;
   color: var(--text-color);
-  background-color: var(--dark-bg-color);
+  background-color: var(--mid-bg-color);
 
 }
 
 .flux-menuitem:hover {
   color: var(--highlight-text-color);
+  background-color: var(--dark-bg-color);
 }
 
 .flux-menuseparator {
@@ -75,20 +76,20 @@ hr {
   width: 100%;
   padding: 2px;
   padding-left: 4px;
-  color: white;
-  background-color: var(--dark-bg-color);
+  color: var(--text-color);
+  background-color: var(--window-title-bar-bg);
 }
 
 .flux-windowclosebutton {
   position: absolute;
   top: 0px;
   right: 0px;
-  color: grey;
+  color: var(--text-color);
   margin-right: 5px;
 }
 
 .flux-windowclosebutton:hover {
-  color: white;
+  color: var(--highlight-text-color);
 }
 
 .flux-windowresizeicon {
@@ -186,7 +187,7 @@ input[type="text"]{
 }
 
 .flux-colourpickercontainer {
-  color: white;
+  color: var(--text-color);
 }
 
 .flux-label {
