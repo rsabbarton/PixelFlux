@@ -305,6 +305,10 @@ document.addEventListener("menuButtonClicked", (event)=>{
       pixelFlux.toggleTilePreview()
       break
     case "ARRANGECLASSIC": 
+      flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC)
+      pixelFlux.resizeContentCanvases()
+      break
+    case "ARRANGENEOCLASSIC": 
       flux.restoreWindowArrangement(builtInWindowArrangements.NEOCLASSIC)
       pixelFlux.resizeContentCanvases()
       break
