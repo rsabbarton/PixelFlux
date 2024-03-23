@@ -3,7 +3,7 @@
     --light-bg-color: lightgrey;
     --mid-bg-color: rgb(180, 157, 157);
     --dark-bg-color: darkslategrey;
-    --highlight-bg-color: darkcyan;
+    --highlight-bg-color: none;
     --highlight-text-color: green;
     --text-color: black;
     --light-bg-selected: lightgreen;

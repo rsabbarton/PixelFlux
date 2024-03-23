@@ -86,17 +86,9 @@ document.addEventListener("menuButtonClicked", (event)=>{
     case "SAVE": 
       pixelFlux.saveSprite()
       break
-    case "SAVEONLINE": 
-      if(siteUser.loggedIn){
-        pixelFlux.saveSpriteOnline()
-      } else {
-        flux.showModalMessageBox('Not Logged In', 'Login with your Google Account to access server side features of PixelFlux.', ()=>{
-          google.accounts.id.prompt()
-        })
-      }
-      
+    case "SAVEONLINE":    
       break
-      case "DOWNLOAD":
+    case "DOWNLOAD":
         pixelFlux.setSpriteName().then(()=>{      
           var url = pixelFlux.sprite.canvas.toDataURL("image/png")
           if(pixelFlux.sprite.name.length == 0)
@@ -125,17 +117,6 @@ document.addEventListener("menuButtonClicked", (event)=>{
       })
       break
     case "DOWNLOADGIF":
-      console.log(siteUser) 
-      if(siteUser.loggedIn){
-        pixelFlux.setSpriteName().then(()=>{     
-          pixelFlux.sprite.updateSpriteSheetCanvas()
-          pixelFlux.png2gif()
-        })
-      } else {
-        flux.showModalMessageBox('Not Logged In', 'Login with your Google Account to access server side features of PixelFlux.', ()=>{
-          google.accounts.id.prompt()
-        })
-      }
       
       break
     case "": break

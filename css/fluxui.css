@@ -15,7 +15,7 @@ div#google-button {
 
 
 .flux-menucontainer {
-  background-color: var(--mid-bg-color);
+  background-color: var(--light-bg-color);
 }
 
 .flux-menucontainer:after {
@@ -46,13 +46,11 @@ div#google-button {
   padding-left: 10px;
   padding-right: 15px;
   color: var(--text-color);
-  background-color: var(--mid-bg-color);
-
+  background-color: var(--light-bg-color);
 }
 
 .flux-menuitem:hover {
   color: var(--highlight-text-color);
-  background-color: var(--dark-bg-color);
 }
 
 .flux-menuseparator {
