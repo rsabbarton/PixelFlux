@@ -1417,36 +1417,36 @@ class PixelEditor {
   }
   
 
-  png2gif(){
-    pixelFlux.sprite.updateSpriteSheetCanvas()
+  downloadGif(){
+    this.sprite.updateCanvasChain()
     
-    let dataUrl = sprite.spriteSheetCanvas.toDataURL("image/png")
-    let data = {
-        name: "Test Sprite Conversion",
-        width: sprite.width,
-        height: sprite.height,
-        backgroundColor: "#330000",
-        transparent: true,
-        frameCount: sprite.frames.length,
-        frameRate: sprite.fps,
-        png: dataUrl
-    }
+    log("Starting GIF create process")
     
-    post('/png-sheet-to-gif/' + pixelFlux.sprite.name + "_animated.gif", data)
-    .then(result => {
+    var gif = new GIF({
+      workers: 2,
+      quality: 10,
+      workerScript: "./js/common/gif.worker.js",
+      width: this.sprite.width,
+      height: this.sprite.height,
+      transparent: true
+    });
+    
+    this.sprite.frames.forEach((frame)=>{
+      gif.addFrame(frame.canvas, {delay: 1000/14})
+    })
+    
+    gif.on('finished', function(blob) {
         let gifLoaded = false
-        let gifUrl = JSON.parse(result).gifUrl
+        let gifUrl = URL.createObjectURL(blob)
         if(gifUrl) gifLoaded = true
         console.log(gifUrl)
         let gifPreview = new Image()
         gifPreview.src = gifUrl
-        gifPreview.classList.add('gifpreviewimg')
-        
+        gifPreview.classList.add('gifpreviewimg')       
         let dlLink = document.createElement('a')
         dlLink.href = gifUrl
         dlLink.setAttribute('download',pixelFlux.sprite.name)
         dlLink.appendChild(gifPreview)
-
         document.getElementById('GIFDISPLAYCONTENT').innerHTML = ""
         flux.appendWindowContent('GIFDISPLAY', dlLink)
         document.getElementById('GIFDISPLAYCONTENT').style.height = '100%'
@@ -1455,11 +1455,10 @@ class PixelEditor {
         gifPreview.onload = (e)=>{
           flux.showWindow('GIFDISPLAY')
         }
-        
-    })
-    .catch(error=>{
-        console.error(error)
-    })
+    });
+    
+    gif.render();
+
   }
 }
 
