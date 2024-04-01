@@ -1419,13 +1419,16 @@ class PixelEditor {
 
   downloadGif(){
     this.sprite.updateCanvasChain()
-    this.sprite.updateCanvasAndPreview()
-
+    
     log("Starting GIF create process")
     
     var gif = new GIF({
       workers: 2,
-      quality: 10
+      quality: 10,
+      workerScript: "./js/common/gif.worker.js",
+      width: this.sprite.width,
+      height: this.sprite.height,
+      transparent: true
     });
     
     this.sprite.frames.forEach((frame)=>{
@@ -1433,34 +1436,28 @@ class PixelEditor {
     })
     
     gif.on('finished', function(blob) {
-      window.open(URL.createObjectURL(blob));
+        let gifLoaded = false
+        let gifUrl = URL.createObjectURL(blob)
+        if(gifUrl) gifLoaded = true
+        console.log(gifUrl)
+        let gifPreview = new Image()
+        gifPreview.src = gifUrl
+        gifPreview.classList.add('gifpreviewimg')       
+        let dlLink = document.createElement('a')
+        dlLink.href = gifUrl
+        dlLink.setAttribute('download',pixelFlux.sprite.name)
+        dlLink.appendChild(gifPreview)
+        document.getElementById('GIFDISPLAYCONTENT').innerHTML = ""
+        flux.appendWindowContent('GIFDISPLAY', dlLink)
+        document.getElementById('GIFDISPLAYCONTENT').style.height = '100%'
+        document.getElementById('GIFDISPLAYCONTENT').style.paddingTop = '40px'
+        flux.addWindowContent('GIFDISPLAY', '<br><br><center>Click to Download</center>')
+        gifPreview.onload = (e)=>{
+          flux.showWindow('GIFDISPLAY')
+        }
     });
     
     gif.render();
-
-
-    // post('/png-sheet-to-gif/' + pixelFlux.sprite.name + "_animated.gif", data)
-    // .then(result => {
-    //     let gifLoaded = false
-    //     let gifUrl = JSON.parse(result).gifUrl
-    //     if(gifUrl) gifLoaded = true
-    //     console.log(gifUrl)
-    //     let gifPreview = new Image()
-    //     gifPreview.src = gifUrl
-    //     gifPreview.classList.add('gifpreviewimg')       
-    //     let dlLink = document.createElement('a')
-    //     dlLink.href = gifUrl
-    //     dlLink.setAttribute('download',pixelFlux.sprite.name)
-    //     dlLink.appendChild(gifPreview)
-    //     document.getElementById('GIFDISPLAYCONTENT').innerHTML = ""
-    //     flux.appendWindowContent('GIFDISPLAY', dlLink)
-    //     document.getElementById('GIFDISPLAYCONTENT').style.height = '100%'
-    //     document.getElementById('GIFDISPLAYCONTENT').style.paddingTop = '40px'
-    //     flux.addWindowContent('GIFDISPLAY', '<br><br><center>Click to Download</center>')
-    //     gifPreview.onload = (e)=>{
-    //       flux.showWindow('GIFDISPLAY')
-    //     }     
-    // })
 
   }
 }
