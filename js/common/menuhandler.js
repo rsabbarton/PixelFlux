@@ -117,7 +117,9 @@ document.addEventListener("menuButtonClicked", (event)=>{
       })
       break
     case "DOWNLOADGIF":
-      
+      pixelFlux.updateCanvasAndPreview()
+      pixelFlux.updateCanvasChain()
+      pixelFlux.downloadGIF()
       break
     case "": break
     case "UNDO": 
