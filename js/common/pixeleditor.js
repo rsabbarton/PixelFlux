@@ -1418,6 +1418,9 @@ class PixelEditor {
   
 
   downloadgif(){
+    this.sprite.updateCanvasChain()
+    this.sprite.updateCanvasAndPreview()
+    
     log("Starting GIF create process")
     
     var gif = new GIF({
