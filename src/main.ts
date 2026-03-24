@@ -1,23 +1,13 @@
 
-import App from './modules/app.ts';
+import PixelFlux from './pixelflux.ts';
 
 
-const PixelFlux = new App();
+const app = new PixelFlux();
+app.init();
 
 
 
 
-let outputString: string = "Hello, World!";
-console.log(outputString);
-const concatString: string = outputString + " Welcome to TypeScript!";
-console.log(concatString);  
-
-const outputDiv: HTMLDivElement | null = document.getElementById("output") as HTMLDivElement;
-if (outputDiv) {
-    outputDiv.textContent = concatString;
-} else {
-    console.error("Output div not found!");
-}       
 
 
 
