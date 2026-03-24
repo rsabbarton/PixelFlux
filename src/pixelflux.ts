@@ -1,4 +1,4 @@
-import { applyNamedTheme, applyTheme, createTheme, type ColorVariables } from './styles/style.ts';
+import { applyNamedTheme, applyTheme, createTheme, type ColorVariables } from './style.ts';
 
 export default class PixelFlux {
 
