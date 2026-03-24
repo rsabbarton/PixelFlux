@@ -1,13 +1,8 @@
 
-let divApp: HTMLDivElement | null = document.getElementById("app") as HTMLDivElement;
-if (!divApp) {
-    console.error("App div not found!");
-} else {
-    divApp = document.createElement("div") as HTMLDivElement;
-    divApp.textContent = "Hello, World!";
-    document.body.appendChild(divApp);
-}
+import App from './modules/app.ts';
 
+
+const PixelFlux = new App();
 
 
 
