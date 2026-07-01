@@ -1,9 +1,21 @@
-let DEVPREVIEW = false;
-let appUrl = "/";
+export const DEVPREVIEW = true;
+export const appUrl = "/";
 
-const flux = new FluxUI();
-const pixelFlux = new PixelEditor();
-const keyboard = new KeyboardHandler();
+import { FluxUI } from "./common/fluxui.ts";
+import { PixelEditor } from "./common/pixeleditor.js";
+import { KeyboardHandler } from "./common/keyboardinputhandler.js";
+import { Sprite } from "./common/sprite.js";
+import { addToolButtonEventListeners } from "./common/drawingtools.js";
+
+import { debug, log } from "./common/logger.js";
+
+import { addMenuHandler } from "./common/menuhandler.js";
+
+export const flux = new FluxUI();
+export const pixelFlux = new PixelEditor(flux);
+export const keyboard = new KeyboardHandler();
+addMenuHandler();
+addToolButtonEventListeners();
 
 let plugin;
 
@@ -13,19 +25,23 @@ fetch(configUrl)
   .then((response) => {
     response.json().then((json) => {
       config = json;
-      pixelFlux.init(hideLoadingAnimation);
-      setTimeout(flux.menu.onClickCallback("SHOWALL"));
+      log("Config loaded from " + configUrl);
+      console.log(flux);
+      pixelFlux.init(() => {});
+      setTimeout(() => {
+        flux.menu.onClickCallback("SHOWALL");
+      }, 2000);
     });
   })
   .catch((error) => {
     console.log(error);
   });
 
-showLoadingAnimation();
+//showLoadingAnimation();
 
 document.addEventListener("mousedown", (event) => {
-  //console.log(event)
-  var srcElement = event.srcElement;
+  log(event);
+  var srcElement = event.target;
   if (srcElement.matches(".drawingcanvas")) {
     srcElement.classList.add("isdrawing");
     var scale = pixelFlux.drawingScale;
@@ -62,7 +78,7 @@ document.addEventListener("mouseup", (event) => {
   }
 });
 document.addEventListener("mousemove", (event) => {
-  var srcElement = event.srcElement;
+  var srcElement = event.target;
   var scale = pixelFlux.drawingScale;
   var oX =
     srcElement.clientWidth / 2 -
@@ -124,17 +140,17 @@ document.addEventListener("mousemove", (event) => {
   }
 });
 document.addEventListener("wheel", (event) => {
-  if (event.srcElement.id == "DRAWINGCANVAS") {
+  if (event.target.id == "DRAWINGCANVAS") {
     pixelFlux.drawingScale += event.deltaY * -0.01;
     log("Drawing Window Scale set to: " + pixelFlux.drawingScale);
     pixelFlux.updateCanvasAndPreview();
   }
-  if (event.srcElement.id == "PREVIEWCANVAS") {
+  if (event.target.id == "PREVIEWCANVAS") {
     pixelFlux.previewScale += event.deltaY * -0.01;
     log("Preview Window Scale set to: " + pixelFlux.previewScale);
     pixelFlux.updateCanvasAndPreview();
   }
-  if (event.srcElement.id == "ANIMATIONPREVIEWCANVAS") {
+  if (event.target.id == "ANIMATIONPREVIEWCANVAS") {
     pixelFlux.animationPreviewScale += event.deltaY * -0.01;
     log("Preview Window Scale set to: " + pixelFlux.animationPreviewScale);
     pixelFlux.updateCanvasAndPreview();
@@ -157,7 +173,7 @@ document.addEventListener("paste", function (evt) {
   const img = new Image();
 
   img.onload = (event) => {
-    var img = event.srcElement;
+    var img = event.target;
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
