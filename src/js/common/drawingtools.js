@@ -5,6 +5,11 @@ import { hex2rgba, hex2rgb, bound, n255, rand } from "./misc.js";
 import { AutomationPlugin } from "./automator.js";
 import { pixelFlux, keyboard } from "../app.js";
 import { VK_SHIFT } from "./keyboardinputhandler.js";
+import {
+  EVENT_MOUSEBUTTON_RIGHT,
+  EVENT_MOUSEBUTTON_LEFT,
+  EVENT_MOUSEBUTTON_MIDDLE,
+} from "./fluxui.js";
 
 export function addToolButtonEventListeners() {
   document.addEventListener("toolButtonClicked", (event) => {
