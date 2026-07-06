@@ -2,11 +2,8 @@ import { appUrl } from "../app.js";
 import { Sprite } from "./sprite.js";
 import { log, debug } from "./logger.js";
 import { VK_Z, VK_R, VK_LEFT, VK_RIGHT } from "./keyboardinputhandler.js";
-import {
-  colourPalletContent,
-  builtInWindowArrangements,
-  builtInColourPallets,
-} from "./windowcontentdef.js";
+import { colourPalletContent, builtInColourPallets } from "./colourpallets.js";
+import { builtInWindowArrangements } from "./windowarrangements.js";
 
 export class PixelEditor {
   constructor(ui) {

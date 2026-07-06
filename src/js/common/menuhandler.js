@@ -2,6 +2,8 @@ import { log } from "./logger.js";
 import { download } from "./misc.js";
 import { pixelFlux, flux } from "../app.js";
 import { config, DEVPREVIEW } from "../app.js";
+import { builtInWindowArrangements } from "./windowarrangements.js";
+import { builtInColourPallets } from "./colourpallets.js";
 
 export function addMenuHandler() {
   document.addEventListener("menuButtonClicked", (event) => {
