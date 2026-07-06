@@ -194,6 +194,10 @@ export function addMenuHandler() {
         pixelFlux.sprite.updateCanvasChain();
         pixelFlux.updateCanvasAndPreview();
         break;
+      case "LAYERREPLICATE":
+        pixelFlux.sprite.replicateCurrentLayer();
+        pixelFlux.renderLayersWindow();
+        break;
       case "":
         break;
       case "":
@@ -256,6 +260,36 @@ export function addMenuHandler() {
       case "STARTANIMATION":
         pixelFlux.animating = true;
         pixelFlux.renderAnimationPreview();
+        break;
+      case "1FPS":
+        pixelFlux.setFramerate(1);
+        break;
+      case "2FPS":
+        pixelFlux.setFramerate(2);
+        break;
+      case "4FPS":
+        pixelFlux.setFramerate(4);
+        break;
+      case "6FPS":
+        pixelFlux.setFramerate(6);
+        break;
+      case "7FPS":
+        pixelFlux.setFramerate(7);
+        break;
+      case "12FPS":
+        pixelFlux.setFramerate(12);
+        break;
+      case "14FPS":
+        pixelFlux.setFramerate(14);
+        break;
+      case "24FPS":
+        pixelFlux.setFramerate(24);
+        break;
+      case "28FPS":
+        pixelFlux.setFramerate(28);
+        break;
+      case "30FPS":
+        pixelFlux.setFramerate(30);
         break;
       case "STOPANIMATION":
         pixelFlux.animating = false;
