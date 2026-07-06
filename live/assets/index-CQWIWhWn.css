@@ -1,0 +1,601 @@
+:root {
+    --doc-bg-color: darkkhaki;
+    --light-bg-color: lightgrey;
+    --mid-bg-color: rgb(180, 157, 157);
+    --dark-bg-color: darkslategrey;
+    --highlight-bg-color: none;
+    --highlight-text-color: green;
+    --text-color: black;
+    --light-bg-selected: lightgreen;
+    --scrollbar-color: blue;
+    --body-background-color: rgb(35, 35, 122);
+    --border-color: black;
+    --window-title-bar-bg: dimgrey;
+    
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background: var(--body-background-color);
+  width: 100%;
+  height: 100%;
+}
+
+
+div#google-button {
+  margin-top: 4px;
+  margin-right: 4px;
+}
+
+
+.flux-menucontainer {
+  background-color: var(--light-bg-color);
+}
+
+.flux-menucontainer:after {
+
+}
+
+.flux-clickable {
+  cursor: pointer;
+}
+
+.flux-menu {
+  display: inline-block;
+
+}
+.flux-submenu {
+  position: absolute;
+
+}
+
+.flux-sidemenu {
+  position: relative;
+
+}
+
+.flux-menuitem {
+  border: "none";
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 15px;
+  color: var(--text-color);
+  background-color: var(--light-bg-color);
+}
+
+.flux-menuitem:hover {
+  color: var(--highlight-text-color);
+}
+
+.flux-menuseparator {
+  height: 12px;
+}
+hr {
+  margin: 0px;
+}
+
+.flux-windowcontainer {
+  position: absolute;
+  padding: 0px;
+  background-color: var(--mid-bg-color);
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  border-radius: 7px 7px 0px 7px;
+}
+
+.flux-windowtitlebar {
+  width: 100%;
+  padding: 2px;
+  padding-left: 4px;
+  color: var(--text-color);
+  background-color: var(--window-title-bar-bg);
+}
+
+.flux-windowclosebutton {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: var(--text-color);
+  margin-right: 5px;
+}
+
+.flux-windowclosebutton:hover {
+  color: var(--highlight-text-color);
+}
+
+.flux-windowresizeicon {
+  
+}
+
+.flux-windowcontent {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  
+}
+
+.flux-windowchequered {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAE1JREFUWEft1sEJACAMQ9F2CsEV3H+TukJBBFeoQ+TQy889EN4pHhFlQtaYQtvMGYAAAggggAAC7QJ1n/QH9kntDzAAAQQQQAABBLoFPnGKpUFlvgkrAAAAAElFTkSuQmCC");
+  background-color: #ffffff;
+  background-blend-mode: multiply;
+}
+
+.flux-windowmoving {
+  border-color: red;
+}
+
+.flux-windowsizing {
+  border-color: blue;
+}
+
+
+.flux-dimmer {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  background-color: #261111;
+  opacity: 50%;
+  position: absolute;
+  top: 0px;
+  
+}
+
+.flux-messagebox {
+  position: sticky;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  z-index: 100;
+}
+
+.flux-messageboxmessage {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 80%;
+  color: white;
+  font-weight: bold;
+}
+
+.flux-messageyesbutton {
+  margin: 20px;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  width: 100px;
+}
+
+.flux-messagenobutton {
+  margin: 20px;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  width: 100px;
+}
+
+
+input[type="text"]{
+  margin: 30px;
+    width: 80%;
+    font-family: sans-serif;
+    font-size: large;
+    padding: 5px;
+}
+
+.flux-inline {
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 3px;
+}
+
+.flux-colourpicker {
+  padding: 0px;
+  border: none;
+  border-radius: 4px;
+  border-style: none;
+  margin: 8px;
+}
+
+.flux-colourpickercontainer {
+  color: var(--text-color);
+}
+
+.flux-label {
+  display: inline-block;
+  padding: 3px;
+  vertical-align: text-bottom;
+}
+
+
+.flux-palletcolour {
+  border: 1px;
+  border-style: solid;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  
+}
+
+.flux-slidercontainer {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.flux-slider {
+  opacity: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  outline: none;
+  appearance: none;
+  height: 8px;
+  transition: opacity .2s;
+  border-radius: 5px;
+  outline: 1px;
+  outline-color: black;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.flux-slider:hover {
+  opacity: 100%;
+}
+
+.flux-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 10px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: blue; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+}
+
+.flux-opacitylabel {
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.flux-toolbarbutton {
+  width: 42px;
+  height: 42px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 4px;
+  margin-left: 4px;
+  vertical-align: bottom;
+  background-size: cover;
+}
+
+.flux-toolbarbutton:hover {
+  border-color: yellow;
+}
+.flux-toolselected {
+  border-color: #00ff00;
+}
+
+
+
+.flux-debuginfo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  color: #00ff00;
+  font-size: x-small;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: monospace;
+}
+
+
+.flux-fileselect {
+  display: block;
+  border: 2px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 3px;
+  width: 100%;
+  background-color: blue;
+  color: white;
+}
+
+
+.flux-select {
+  margin: 30px;
+    width: 80%;
+    font-family: sans-serif;
+    font-size: large;
+    padding: 5px;
+}
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+body {
+  font-family: sans-serif;
+}
+
+.siteicon {
+  line-height: 0px;
+  vertical-align: top;
+}
+
+.inappaccountinfo {
+  position:absolute;
+  right: 0px;
+  height: 40px;
+  text-align: right;
+  padding: 1px;
+}
+
+.inappaccountinfo > a {
+  line-height: 30px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.inappaccountinfo > span > a {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+.inappaccountinfo > span > span {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.inappaccountinfo > span > img {
+  width: 30px;
+  height: 30px;
+  margin-left: 0px;
+  margin-right: 20px;
+  text-decoration: none;
+  line-height: 0px;
+  vertical-align: middle;
+}
+
+
+
+.drawingcanvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.sprayradiuslabel {
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+
+.gallerydiv {
+  display: inline-block;
+  margin: 10px;
+  width: 74px;
+  height: 74px;
+}
+
+.gallerycanvas {
+  width: 64px;
+  height: 64px;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+}
+
+
+.file-info {
+  font-size: larger;
+  font-weight: bold;
+  margin: 0px;
+  margin-left: 0px;
+  position: absolute;
+  background: grey;
+  width: 100%;
+  padding: 7px;
+}
+
+
+.gallerydelete {
+  color: red;
+    position: relative;
+    top: -76px;
+    right: -57px;
+    background-color: black;
+    border-radius: 10px;
+    width: 12px;
+    padding: 3px;
+    cursor: pointer;
+    font-size: xx-small;
+    font-weight: bold;
+    display: inline;
+}
+
+.gallerypalleticon {
+    position: relative;
+    top: -75px;
+    right: 5px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.gallerybgicon {
+    position: relative;
+    top: -75px;
+    right: 4px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.load-screen-title {
+    margin: 4px;
+    color: black;
+    background: darkgray;
+    height: 36px;
+}
+
+#COLOURPALLETSTORE {
+  overflow-y: scroll;
+  height: 125px;
+  line-height: 0px;
+}
+
+
+#TOOLOPTIONSCONTENT {
+  margin: 3px;
+}
+
+
+
+.layercontainer { 
+  background-color: #999988;
+  padding: 0px;
+  line-height: 0px;  
+}
+
+div.layercontainer:nth-child(odd) { 
+  background-color: #998899;
+}
+
+div.currentlayercontainer:nth-child(n) {
+  background-color: green;
+}
+
+.layerwindowcanvas {
+  margin: 0px;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-top-style: none;
+  border-left-style: none;
+  border-width: 1px;
+  display: inline-block;
+}
+
+.layerinfo {
+  display: inline-block;
+  height: 32px;
+  vertical-align: top;
+  padding: 2px;
+}
+
+.layername {
+  font-family: sans-serif;
+  font-size: xx-small;
+  display: inline-block;
+  width: 120px;
+  vertical-align: top;
+  border-style: solid;
+  height: 12px;
+  border-width: 1px;
+  line-height: 11px;
+  padding-left: 3px;
+  overflow: hidden;
+  color: white;
+  border-color: black;
+}
+
+.editlayername {
+  display: inline-block;
+  cursor: pointer;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKJJREFUOE/d0r0JAkEQhuHnAmtRMDMw18AKjAWrkDNRGxAswcQytBYrUVZu4JD7WTVzkmVg33e/3dnCj1V8wV8xD+5TwQOJifXV5FZAYxwxSElyBQFPUGJZJclKEPAIZ0wDTtH7EgQ8xBard6ZLUIc3WDcd2CaIUaXYC5za0rYJ0unpse64dF21K8EMt/qnaZp3CPbYVRsOSH1W9U2hV/IHgifGshYRwliz1wAAAABJRU5ErkJggg==");
+  width: 16px;
+  height: 12px;
+}
+
+.editlayername:hover {
+  background-color: yellow;
+  border-radius: 6px;
+}
+
+
+.layercontrols {
+  
+}
+
+.layercontrolbutton {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-top: 1px;
+  margin-left: 1px;
+  border-radius: 6px;
+}
+
+.layercontrolbutton:hover {
+  background-color: yellow; 
+}
+
+
+.buttonfeatureenabled {
+  background-color: #00ff00;
+}
+
+.buttonfeaturedisabled {
+ background-color: none;
+}
+
+
+.currentframenumber {
+    display: inline-block;
+    height: 18px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: x-small;
+    line-height: 11px;
+    width: 72px;
+    text-align: center;
+    margin: 0px;
+    vertical-align: top;
+}
+
+
+
+.framecontainer {
+  line-height: 0px;
+  border-bottom: 1px solid;
+}
+
+.framecontainercurrent {
+  background-color: green;
+}
+
+.frametools {
+  display: inline-block;
+  vertical-align: top;
+  margin: 7px;
+}
+
+.gifpreviewimg {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+}

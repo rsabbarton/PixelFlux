@@ -24,7 +24,8 @@
   "scripts": {
     "dev": "vite ./src",
     "build": "./scripts/build.sh",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "./scripts/deploy.sh"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
