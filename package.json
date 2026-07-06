@@ -1,5 +1,6 @@
 {
   "name": "pixelflux",
+  "type": "module",
   "version": "v0.2.5",
   "description": "PixelFlux is a browser-based pixel art application for creating, animating, and exporting sprite assets for games and websites.",
   "author": "rsabbarton",

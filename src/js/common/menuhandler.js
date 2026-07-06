@@ -1,6 +1,7 @@
 import { log } from "./logger.js";
 import { download } from "./misc.js";
 import { pixelFlux, flux } from "../app.js";
+import { config, DEVPREVIEW } from "../app.js";
 
 export function addMenuHandler() {
   document.addEventListener("menuButtonClicked", (event) => {
@@ -468,6 +469,7 @@ export function addMenuHandler() {
       case "ABOUTPIXELFLUX":
         let aboutInfo = `
             Version: ${config.version}<br>
+            Build: ${config.build}<br>
             Release Date: ${config.releaseDate}<br>
             Developer Preview: ${DEVPREVIEW}<br>
             .pixel Filespec: v2.0.0<br>

@@ -19,7 +19,7 @@ addToolButtonEventListeners();
 
 let plugin;
 
-let config = {};
+export let config = {};
 let configUrl = "./config/main.json";
 fetch(configUrl)
   .then((response) => {

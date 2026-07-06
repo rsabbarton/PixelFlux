@@ -27,13 +27,13 @@ sprite = The sprite you currently have loaded.  sprite.help() will get you going
   loadSourceFromURL(url) {
     get(url).then((r) => {
       this.sourceCode = r;
-      this.function = eval(r);
+      this.function = window.eval(r);
       this.ready = true;
     });
   }
 
   load(script) {
-    this.function = eval(script);
+    this.function = window.eval(script);
   }
 }
 
