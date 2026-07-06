@@ -48,7 +48,7 @@ function log$1(str) {
 	var entry = Date.now() + " - " + str;
 	debug.events.push(entry);
 	printlog();
-	console.log(entry);
+	if (DEVPREVIEW) console.log(entry);
 }
 function printlog() {
 	var out = "Mouse position: " + debug.mouseX + "," + debug.mouseY + " - src: " + debug.srcElementId + " - Elem Coords: " + debug.elementX + "," + debug.elementY + "<br>Layer position: " + debug.layerX + "," + debug.layerY + " - Debug Counter: " + debug.counter + "<br>Memory Total: " + debug.mSize + " - Memory Used: " + debug.mUsed + "<br>";
@@ -309,7 +309,7 @@ var FluxWindow = class {
 		this.width = 0;
 		this.height = 0;
 		this.windowContentElement = null;
-		this.cornerDraggerUrl = "/resources/icons/corner-dragger.png";
+		this.cornerDraggerUrl = appUrl + "resources/icons/corner-dragger.png";
 		switch (type) {
 			case 0: break;
 			case 1:
@@ -1720,19 +1720,19 @@ var PixelEditor = class {
 	}
 	createToolbarWindow() {
 		this.flux.createWindow("TOOLBAR", "Toolbar", 30, 60, 142, 600);
-		this.flux.appendToolButton("TOOLBAR", "SELECTION", "/resources/icons/selecttoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "MOVE", "/resources/icons/movetoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "PENCIL", "/resources/icons/penciltoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "ERASER", "/resources/icons/erasertoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "FLOODFILL", "/resources/icons/bucketfillicon.png");
-		this.flux.appendToolButton("TOOLBAR", "SPRAYCAN", "/resources/icons/spraycanicon.png");
-		this.flux.appendToolButton("TOOLBAR", "STRAIGHTLINE", "/resources/icons/straightlinetoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "DARKENLIGHTEN", "/resources/icons/lightendarkentoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "BLEND", "/resources/icons/blendtoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "SQUARE", "/resources/icons/squaretoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "FILLEDSQUARE", "/resources/icons/filledsquaretoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "ELLIPSE", "/resources/icons/ellipsetoolicon.png");
-		this.flux.appendToolButton("TOOLBAR", "FILLEDELLIPSE", "/resources/icons/filledellipsetoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "SELECTION", appUrl + "resources/icons/selecttoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "MOVE", appUrl + "resources/icons/movetoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "PENCIL", appUrl + "resources/icons/penciltoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "ERASER", appUrl + "resources/icons/erasertoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "FLOODFILL", appUrl + "resources/icons/bucketfillicon.png");
+		this.flux.appendToolButton("TOOLBAR", "SPRAYCAN", appUrl + "resources/icons/spraycanicon.png");
+		this.flux.appendToolButton("TOOLBAR", "STRAIGHTLINE", appUrl + "resources/icons/straightlinetoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "DARKENLIGHTEN", appUrl + "resources/icons/lightendarkentoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "BLEND", appUrl + "resources/icons/blendtoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "SQUARE", appUrl + "resources/icons/squaretoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "FILLEDSQUARE", appUrl + "resources/icons/filledsquaretoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "ELLIPSE", appUrl + "resources/icons/ellipsetoolicon.png");
+		this.flux.appendToolButton("TOOLBAR", "FILLEDELLIPSE", appUrl + "resources/icons/filledellipsetoolicon.png");
 	}
 	createPreviewWindow() {
 		this.flux.createWindow("PREVIEW", "Preview", 900, 60, 180, 200);
@@ -1759,7 +1759,7 @@ var PixelEditor = class {
 		var container = document.getElementById("ANIMATIONTOOLSCONTENT");
 		var first = document.createElement("div");
 		first.classList.add("layercontrolbutton");
-		first.style.backgroundImage = `url(/resources/icons/firstframeicon.png)`;
+		first.style.backgroundImage = `url(${appUrl}resources/icons/firstframeicon.png)`;
 		first.onclick = (event) => {
 			pixelFlux.sprite.setCurrentFrame(0);
 			pixelFlux.sprite.updateCanvasChain();
@@ -1768,7 +1768,7 @@ var PixelEditor = class {
 		container.appendChild(first);
 		var prev = document.createElement("div");
 		prev.classList.add("layercontrolbutton");
-		prev.style.backgroundImage = `url(/resources/icons/previousframeicon.png)`;
+		prev.style.backgroundImage = `url(${appUrl}resources/icons/previousframeicon.png)`;
 		prev.onclick = (event) => {
 			pixelFlux.sprite.selectPreviousFrame();
 			pixelFlux.sprite.updateCanvasChain();
@@ -1777,7 +1777,7 @@ var PixelEditor = class {
 		container.appendChild(prev);
 		var play = document.createElement("div");
 		play.classList.add("layercontrolbutton");
-		play.style.backgroundImage = `url(/resources/icons/startanimationicon.png)`;
+		play.style.backgroundImage = `url(${appUrl}resources/icons/startanimationicon.png)`;
 		play.onclick = (event) => {
 			pixelFlux.animating = true;
 			pixelFlux.sprite.updateCanvasChain();
@@ -1786,7 +1786,7 @@ var PixelEditor = class {
 		container.appendChild(play);
 		var stop = document.createElement("div");
 		stop.classList.add("layercontrolbutton");
-		stop.style.backgroundImage = `url(/resources/icons/stopanimationicon.png)`;
+		stop.style.backgroundImage = `url(${appUrl}resources/icons/stopanimationicon.png)`;
 		stop.onclick = (event) => {
 			pixelFlux.animating = true;
 			pixelFlux.sprite.updateCanvasChain();
@@ -1799,7 +1799,7 @@ var PixelEditor = class {
 		container.appendChild(currentframe);
 		var next = document.createElement("div");
 		next.classList.add("layercontrolbutton");
-		next.style.backgroundImage = `url(/resources/icons/nextframeicon.png)`;
+		next.style.backgroundImage = `url(${appUrl}resources/icons/nextframeicon.png)`;
 		next.onclick = (event) => {
 			pixelFlux.sprite.selectNextFrame();
 			pixelFlux.sprite.updateCanvasChain();
@@ -1808,7 +1808,7 @@ var PixelEditor = class {
 		container.appendChild(next);
 		var last = document.createElement("div");
 		last.classList.add("layercontrolbutton");
-		last.style.backgroundImage = `url(/resources/icons/lastframeicon.png)`;
+		last.style.backgroundImage = `url(${appUrl}resources/icons/lastframeicon.png)`;
 		last.onclick = (event) => {
 			pixelFlux.sprite.setCurrentFrame(pixelFlux.sprite.frames.length - 1);
 			pixelFlux.sprite.updateCanvasChain();
@@ -2093,7 +2093,7 @@ var PixelEditor = class {
 			layervisible.classList.add("layercontrolbutton");
 			if (frame.layers[i].visible) layervisible.classList.add("buttonfeatureenabled");
 			else layervisible.classList.add("buttonfeaturedisabled");
-			layervisible.style.backgroundImage = `url(/resources/icons/showhideicon.png)`;
+			layervisible.style.backgroundImage = `url(${appUrl}resources/icons/showhideicon.png)`;
 			layervisible.zIndex = i;
 			layervisible.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2118,7 +2118,7 @@ var PixelEditor = class {
 			layerlock.classList.add("layercontrolbutton");
 			if (frame.layers[i].locked) layerlock.classList.add("buttonfeatureenabled");
 			else layerlock.classList.add("buttonfeaturedisabled");
-			layerlock.style.backgroundImage = `url(/resources/icons/padlockicon.png)`;
+			layerlock.style.backgroundImage = `url(${appUrl}resources/icons/padlockicon.png)`;
 			layerlock.zIndex = i;
 			layerlock.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2138,7 +2138,7 @@ var PixelEditor = class {
 			layercontrols.appendChild(layerlock);
 			var layerclear = document.createElement("div");
 			layerclear.classList.add("layercontrolbutton");
-			layerclear.style.backgroundImage = `url(/resources/icons/deletelayericon.png)`;
+			layerclear.style.backgroundImage = `url(${appUrl}resources/icons/deletelayericon.png)`;
 			layerclear.zIndex = i;
 			layerclear.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2150,7 +2150,7 @@ var PixelEditor = class {
 			layercontrols.appendChild(layerclear);
 			var mergedown = document.createElement("div");
 			mergedown.classList.add("layercontrolbutton");
-			mergedown.style.backgroundImage = `url(/resources/icons/mergedownicon.png)`;
+			mergedown.style.backgroundImage = `url(${appUrl}resources/icons/mergedownicon.png)`;
 			mergedown.zIndex = i;
 			if (i > 0) mergedown.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2163,7 +2163,7 @@ var PixelEditor = class {
 			layercontrols.appendChild(mergedown);
 			var movedown = document.createElement("div");
 			movedown.classList.add("layercontrolbutton");
-			movedown.style.backgroundImage = `url(/resources/icons/downarrow16.png)`;
+			movedown.style.backgroundImage = `url(${appUrl}resources/icons/downarrow16.png)`;
 			movedown.style.zIndex = i;
 			if (i > 0) movedown.onclick = (event) => {
 				var id = event.srcElement.style.zIndex;
@@ -2177,7 +2177,7 @@ var PixelEditor = class {
 			layercontrols.appendChild(movedown);
 			var moveup = document.createElement("div");
 			moveup.classList.add("layercontrolbutton");
-			moveup.style.backgroundImage = `url(/resources/icons/uparrow16.png)`;
+			moveup.style.backgroundImage = `url(${appUrl}resources/icons/uparrow16.png)`;
 			moveup.style.zIndex = i;
 			if (i < frame.layers.length - 1) moveup.onclick = (event) => {
 				var id = event.srcElement.style.zIndex;
@@ -2192,7 +2192,7 @@ var PixelEditor = class {
 			layercontrols.appendChild(moveup);
 			var layerdelete = document.createElement("div");
 			layerdelete.classList.add("layercontrolbutton");
-			layerdelete.style.backgroundImage = `url(/resources/icons/deleteicon.png)`;
+			layerdelete.style.backgroundImage = `url(${appUrl}resources/icons/deleteicon.png)`;
 			layerdelete.style.zIndex = i;
 			layerdelete.onclick = (event) => {
 				console.log(event);
@@ -2207,7 +2207,7 @@ var PixelEditor = class {
 			layercontrols.appendChild(layerdelete);
 			var layersettings = document.createElement("div");
 			layersettings.classList.add("layercontrolbutton");
-			layersettings.style.backgroundImage = `url(/resources/icons/settingsicon.png)`;
+			layersettings.style.backgroundImage = `url(${appUrl}resources/icons/settingsicon.png)`;
 			layersettings.zIndex = i;
 			layersettings.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2233,8 +2233,8 @@ var PixelEditor = class {
 			var i = frameNumber;
 			var framesideleft = new Image();
 			var framesideright = new Image();
-			framesideleft.src = "/resources/icons/moviesides.png";
-			framesideright.src = "/resources/icons/moviesides.png";
+			framesideleft.src = appUrl + "resources/icons/moviesides.png";
+			framesideright.src = appUrl + "resources/icons/moviesides.png";
 			framesideleft.classList.add("frameside");
 			framesideright.classList.add("frameside");
 			var framecontainer = document.createElement("div");
@@ -2256,7 +2256,7 @@ var PixelEditor = class {
 			frametools.classList.add("frametools");
 			var movedown = document.createElement("div");
 			movedown.classList.add("layercontrolbutton");
-			movedown.style.backgroundImage = `url(/resources/icons/downarrow16.png)`;
+			movedown.style.backgroundImage = `url(${appUrl}resources/icons/downarrow16.png)`;
 			movedown.zIndex = i;
 			if (i < count - 1) movedown.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2269,7 +2269,7 @@ var PixelEditor = class {
 			frametools.appendChild(movedown);
 			var moveup = document.createElement("div");
 			moveup.classList.add("layercontrolbutton");
-			moveup.style.backgroundImage = `url(/resources/icons/uparrow16.png)`;
+			moveup.style.backgroundImage = `url(${appUrl}resources/icons/uparrow16.png)`;
 			moveup.zIndex = i;
 			if (i > 0) moveup.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2282,7 +2282,7 @@ var PixelEditor = class {
 			frametools.appendChild(moveup);
 			var copy = document.createElement("div");
 			copy.classList.add("layercontrolbutton");
-			copy.style.backgroundImage = `url(/resources/icons/copyframeicon.png)`;
+			copy.style.backgroundImage = `url(${appUrl}resources/icons/copyframeicon.png)`;
 			copy.zIndex = i;
 			copy.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2294,7 +2294,7 @@ var PixelEditor = class {
 			frametools.appendChild(copy);
 			var insert = document.createElement("div");
 			insert.classList.add("layercontrolbutton");
-			insert.style.backgroundImage = `url("/resources/icons/insertframeicon.png")`;
+			insert.style.backgroundImage = `url("${appUrl}resources/icons/insertframeicon.png")`;
 			insert.zIndex = i;
 			insert.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2306,7 +2306,7 @@ var PixelEditor = class {
 			frametools.appendChild(insert);
 			var deleteframe = document.createElement("div");
 			deleteframe.classList.add("layercontrolbutton");
-			deleteframe.style.backgroundImage = `url("/resources/icons/deleteicon.png")`;
+			deleteframe.style.backgroundImage = `url("${appUrl}resources/icons/deleteicon.png")`;
 			deleteframe.zIndex = i;
 			if (this.sprite.frames.length > 1) deleteframe.onclick = (event) => {
 				var id = event.srcElement.zIndex;
@@ -2455,14 +2455,14 @@ var PixelEditor = class {
 					event.srcElement.parentElement.remove();
 				};
 				var pallet = document.createElement("img");
-				pallet.src = "/resources/icons/palleticonx16.png";
+				pallet.src = appUrl + "resources/icons/palleticonx16.png";
 				pallet.classList.add("gallerypalleticon");
 				pallet.onclick = (event) => {
 					pixelFlux.importPalletFromSprite(s);
 					flux.hideWindow("OPENGALLERY");
 				};
 				var bg = document.createElement("img");
-				bg.src = "/resources/icons/bgicon.png";
+				bg.src = appUrl + "resources/icons/bgicon.png";
 				bg.classList.add("gallerybgicon");
 				bg.onclick = (event) => {
 					var bgurl = s.canvas.toDataURL();
@@ -2521,14 +2521,14 @@ var PixelEditor = class {
 						canvas.classList.add("gallerycanvas");
 						canvas.id = spriteId;
 						var pallet = document.createElement("img");
-						pallet.src = "/resources/icons/palleticonx16.png";
+						pallet.src = appUrl + "resources/icons/palleticonx16.png";
 						pallet.classList.add("gallerypalleticon");
 						pallet.onclick = (event) => {
 							pixelFlux.importPalletFromSprite(s);
 							flux.hideWindow("OPENGALLERY");
 						};
 						var bg = document.createElement("img");
-						bg.src = "/resources/icons/bgicon.png";
+						bg.src = appUrl + "resources/icons/bgicon.png";
 						bg.classList.add("gallerybgicon");
 						bg.onclick = (event) => {
 							var bgurl = s.canvas.toDataURL();
@@ -3769,7 +3769,7 @@ function addMenuHandler() {
             Version: ${config.version}<br>
             Build: ${config.build}<br>
             Release Date: ${config.releaseDate}<br>
-            Developer Preview: true<br>
+            Developer Preview: ${DEVPREVIEW}<br>
             .pixel Filespec: v2.0.0<br>
             <br>
             &copy; Richard Sabbarton
@@ -3791,6 +3791,13 @@ function addMenuHandler() {
 }
 //#endregion
 //#region src/js/app.js
+var DEVPREVIEW = true;
+var uri = "/";
+if (window.location.href.indexOf("/PixelFlux") > -1) {
+	uri = "/PixelFlux/";
+	DEVPREVIEW = false;
+}
+var appUrl = uri;
 var flux$1 = new FluxUI();
 var pixelFlux$1 = new PixelEditor(flux$1);
 var keyboard = new KeyboardHandler();
@@ -3921,4 +3928,4 @@ window.addEventListener("contextmenu", (e) => {
 });
 //#endregion
 
-//# sourceMappingURL=index-D8vLS4tx.js.map
+//# sourceMappingURL=index-CSVn0kLQ.js.map

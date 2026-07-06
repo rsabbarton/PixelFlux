@@ -1,5 +1,10 @@
-export const DEVPREVIEW = true;
-export const appUrl = "/";
+export let DEVPREVIEW = true;
+let uri = "/";
+if (window.location.href.indexOf("/PixelFlux") > -1) {
+  uri = "/PixelFlux/";
+  DEVPREVIEW = false;
+}
+export const appUrl = uri;
 
 import { FluxUI } from "./common/fluxui.ts";
 import { PixelEditor } from "./common/pixeleditor.js";
