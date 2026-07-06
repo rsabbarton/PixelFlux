@@ -1,6 +1,6 @@
 {
   "name": "pixelflux",
-  "version": "1.0.0",
+  "version": "0.2.5",
   "description": "PixelFlux is a browser-based pixel art application for creating, animating, and exporting sprite assets for games and websites.",
   "author": "rsabbarton",
   "license": "MIT",
@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "dev": "vite ./src",
-    "build": "./build.sh",
+    "build": "./scripts/build.sh",
     "preview": "vite preview"
   },
   "devDependencies": {
