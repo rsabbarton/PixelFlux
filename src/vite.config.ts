@@ -8,5 +8,12 @@ export default {
     //allowJs: true,
     //target: "esnext",
     sourcemap: true,
+    include: [
+      "config/**/*",
+      "css/**/*",
+      "js/**/",
+      "index.html",
+      "resources/**/*",
+    ],
   },
 };
