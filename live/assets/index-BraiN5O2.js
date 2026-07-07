@@ -41,6 +41,9 @@ logocontainer.appendChild(loadingMessageElement);
 function showLoadingAnimation() {
 	logo1.src = appUrl + "resources/icons/loading-clockwise.png";
 	logo2.src = appUrl + "resources/icons/loading-anticlockwise.png";
+	console.log(appUrl);
+	console.log(logo1.src);
+	console.log(logo2.src);
 	logocontainer.style.width = window.innerWidth + "px";
 	logocontainer.style.height = window.innerHeight + "px";
 	logocontainer.style.position = "absolute";
@@ -4254,4 +4257,4 @@ window.addEventListener("contextmenu", (e) => {
 });
 //#endregion
 
-//# sourceMappingURL=index-DFRfNC4A.js.map
+//# sourceMappingURL=index-BraiN5O2.js.map
