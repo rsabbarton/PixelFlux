@@ -5,16 +5,17 @@ if (window.location.href.indexOf("/PixelFlux") > -1) {
   DEVPREVIEW = false;
 }
 export const appUrl = uri;
+import {
+  showLoadingAnimation,
+  hideLoadingAnimation,
+} from "./common/loadinganimation.js";
+showLoadingAnimation();
 
 import { FluxUI } from "./common/fluxui.ts";
 import { PixelEditor } from "./common/pixeleditor.js";
 import { KeyboardHandler } from "./common/keyboardinputhandler.js";
 import { Sprite } from "./common/sprite.js";
 import { addToolButtonEventListeners } from "./common/drawingtools.js";
-import {
-  showLoadingAnimation,
-  hideLoadingAnimation,
-} from "./common/loadinganimation.js";
 
 import { debug, log } from "./common/logger.js";
 
@@ -46,8 +47,6 @@ fetch(configUrl)
   .catch((error) => {
     console.log(error);
   });
-
-showLoadingAnimation();
 
 document.addEventListener("mousedown", (event) => {
   log(event);

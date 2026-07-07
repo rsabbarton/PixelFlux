@@ -1,10 +1,7 @@
-//https://www.dropbox.com/s/zrivr51bl39vzog/arrow-anticlockwise.png?raw=1
-//https://www.dropbox.com/s/o8xf24nta7w7qj6/arrow-clockwise.png?raw=1
+import { appUrl } from "../app.js";
 
 var logo1 = document.createElement("img");
-logo1.src = "../resources/icons/loading-clockwise.png";
 var logo2 = document.createElement("img");
-logo2.src = "../resources/icons/loading-anticlockwise.png";
 var logocontainer = document.createElement("div");
 var showingLoadingAnimation = false;
 var loadingMessage = "Loading...";
@@ -13,6 +10,8 @@ loadingMessageElement.innerHTML = loadingMessage;
 logocontainer.appendChild(loadingMessageElement);
 
 export function showLoadingAnimation() {
+  logo1.src = appUrl + "resources/icons/loading-clockwise.png";
+  logo2.src = appUrl + "resources/icons/loading-anticlockwise.png";
   logocontainer.style.width = window.innerWidth + "px";
   logocontainer.style.height = window.innerHeight + "px";
   logocontainer.style.position = "absolute";
