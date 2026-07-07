@@ -11,6 +11,10 @@ import { PixelEditor } from "./common/pixeleditor.js";
 import { KeyboardHandler } from "./common/keyboardinputhandler.js";
 import { Sprite } from "./common/sprite.js";
 import { addToolButtonEventListeners } from "./common/drawingtools.js";
+import {
+  showLoadingAnimation,
+  hideLoadingAnimation,
+} from "./common/loadinganimation.js";
 
 import { debug, log } from "./common/logger.js";
 
@@ -34,6 +38,7 @@ fetch(configUrl)
       console.log(flux);
       pixelFlux.init(() => {});
       setTimeout(() => {
+        hideLoadingAnimation();
         flux.menu.onClickCallback("SHOWALL");
       }, 2000);
     });
@@ -42,7 +47,7 @@ fetch(configUrl)
     console.log(error);
   });
 
-//showLoadingAnimation();
+showLoadingAnimation();
 
 document.addEventListener("mousedown", (event) => {
   log(event);

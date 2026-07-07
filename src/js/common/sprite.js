@@ -1,5 +1,6 @@
 import { hex2rgba, hex2rgb, bound, n255, rand } from "./misc.js";
 import { pixelFlux } from "../app.js";
+import { debug, log } from "./logger.js";
 
 import { VK_SHIFT } from "./keyboardinputhandler.js";
 
