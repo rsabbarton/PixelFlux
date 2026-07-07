@@ -3623,9 +3623,9 @@ var Plugin = class {
 //#endregion
 //#region src/js/common/loadinganimation.js
 var logo1 = document.createElement("img");
-logo1.src = "../../resources/icons/loading-clockwise.png";
+logo1.src = "../resources/icons/loading-clockwise.png";
 var logo2 = document.createElement("img");
-logo2.src = "../../resources/icons/loading-anticlockwise.png";
+logo2.src = "../resources/icons/loading-anticlockwise.png";
 var logocontainer = document.createElement("div");
 var showingLoadingAnimation = false;
 var loadingMessage = "Loading...";
@@ -4254,4 +4254,4 @@ window.addEventListener("contextmenu", (e) => {
 });
 //#endregion
 
-//# sourceMappingURL=index-CuYFSXYg.js.map
+//# sourceMappingURL=index-DXECDzb5.js.map
