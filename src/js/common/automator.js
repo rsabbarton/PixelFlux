@@ -3,7 +3,7 @@
 // application context
 
 import { PixelBrush } from "./brush.js";
-import { get } from "./net.js";
+import { get } from "./net.ts";
 
 export class AutomationPlugin {
   constructor() {

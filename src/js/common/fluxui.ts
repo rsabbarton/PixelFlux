@@ -1,7 +1,7 @@
 import { appUrl } from "../app.js";
 // import { DEVPREVIEW } from "../app.js";
 import { debug, log, printlog } from "./logger.js";
-import { get } from "./net.js";
+import { get } from "./net.ts";
 
 export class FluxUI {
   objectArray: any[];
@@ -462,7 +462,7 @@ class Menu {
   loadMenu(jsonUrl: string) {
     get(jsonUrl).then((json) => {
       json = JSON.parse(json);
-      this.create(json, this.menuContainer);
+      this.create(json as any, this.menuContainer);
       document.body.appendChild(this.menuContainer);
     });
   }
