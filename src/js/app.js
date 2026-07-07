@@ -8,7 +8,7 @@ export const appUrl = uri;
 import {
   showLoadingAnimation,
   hideLoadingAnimation,
-} from "./common/loadinganimation.js";
+} from "./common/loadinganimation.ts";
 showLoadingAnimation();
 
 import { FluxUI } from "./common/fluxui.ts";

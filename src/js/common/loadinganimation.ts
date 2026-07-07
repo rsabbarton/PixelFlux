@@ -1,21 +1,17 @@
 import { appUrl } from "../app.js";
 
-var logo1 = document.createElement("img");
-var logo2 = document.createElement("img");
-var logocontainer = document.createElement("div");
-var showingLoadingAnimation = false;
-var loadingMessage = "Loading...";
-var loadingMessageElement = document.createElement("div");
+const logo1: HTMLImageElement = document.createElement("img");
+const logo2: HTMLImageElement = document.createElement("img");
+const logocontainer: HTMLDivElement = document.createElement("div");
+let showingLoadingAnimation = false;
+const loadingMessage = "Loading...";
+const loadingMessageElement: HTMLDivElement = document.createElement("div");
 loadingMessageElement.innerHTML = loadingMessage;
 logocontainer.appendChild(loadingMessageElement);
 
-export function showLoadingAnimation() {
+export function showLoadingAnimation(): void {
   logo1.src = appUrl + "resources/icons/loading-clockwise.png";
   logo2.src = appUrl + "resources/icons/loading-anticlockwise.png";
-
-  console.log(appUrl);
-  console.log(logo1.src);
-  console.log(logo2.src);
 
   logocontainer.style.width = window.innerWidth + "px";
   logocontainer.style.height = window.innerHeight + "px";
@@ -37,14 +33,17 @@ export function showLoadingAnimation() {
   updateLogoRotation();
 
   showingLoadingAnimation = true;
-  document.body.appendChild(logocontainer);
-  document.body.appendChild(logo1);
-  document.body.appendChild(logo2);
+  const body = document.body;
+  if (body) {
+    body.appendChild(logocontainer);
+    body.appendChild(logo1);
+    body.appendChild(logo2);
+  }
 
   updateLogoRotation();
 }
 
-export function updateLogoRotation() {
+export function updateLogoRotation(): void {
   logo1.style.position = "absolute";
   logo1.style.left = window.innerWidth / 2 - logo1.width / 2 + "px";
   logo1.style.top = window.innerHeight / 2 - logo1.height / 2 + "px";
@@ -57,11 +56,16 @@ export function updateLogoRotation() {
   logo2.style.transform = "rotate(" + Date.now() / -2 / 1000 + "turn)";
   logo2.style.zIndex = "100";
 
-  loadingMessageElement.style.opacity = 0.5 + 0.5 * Math.sin(Date.now() / 1000);
-  if (showingLoadingAnimation) setTimeout(updateLogoRotation, 1000 / 60);
+  loadingMessageElement.style.opacity = String(
+    0.5 + 0.5 * Math.sin(Date.now() / 1000),
+  );
+  if (showingLoadingAnimation) {
+    setTimeout(updateLogoRotation, 1000 / 60);
+  }
 }
 
-export function hideLoadingAnimation() {
+export function hideLoadingAnimation(): void {
+  showingLoadingAnimation = false;
   logocontainer.remove();
   logo1.remove();
   logo2.remove();
