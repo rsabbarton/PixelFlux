@@ -7,6 +7,10 @@ var logo2 = document.createElement("img");
 logo2.src = "../../resources/icons/loading-anticlockwise.png";
 var logocontainer = document.createElement("div");
 var showingLoadingAnimation = false;
+var loadingMessage = "Loading...";
+var loadingMessageElement = document.createElement("div");
+loadingMessageElement.innerHTML = loadingMessage;
+logocontainer.appendChild(loadingMessageElement);
 
 export function showLoadingAnimation() {
   logocontainer.style.width = window.innerWidth + "px";
@@ -19,15 +23,12 @@ export function showLoadingAnimation() {
   logocontainer.style.fontSize = "20px";
   logocontainer.style.fontFamily = "monospace";
   logocontainer.style.textAlign = "center";
-  logocontainer.style.paddingTop =
-    window.innerHeight / 2 + logo1.height * 2 + "px";
+  logocontainer.style.paddingTop = window.innerHeight / 2 + 64 + "px";
   logocontainer.style.pointerEvents = "none";
   logocontainer.style.userSelect = "none";
   logocontainer.style.cursor = "wait";
   logocontainer.style.zIndex = "50";
   logocontainer.style.opacity = "0.9";
-
-  logocontainer.innerHTML = "<b><code>Loading...</code></b>";
 
   updateLogoRotation();
 
@@ -52,6 +53,7 @@ export function updateLogoRotation() {
   logo2.style.transform = "rotate(" + Date.now() / -2 / 1000 + "turn)";
   logo2.style.zIndex = "100";
 
+  loadingMessageElement.style.opacity = 0.5 + 0.5 * Math.sin(Date.now() / 1000);
   if (showingLoadingAnimation) setTimeout(updateLogoRotation, 1000 / 60);
 }
 
