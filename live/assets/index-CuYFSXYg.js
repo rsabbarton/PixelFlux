@@ -44,7 +44,7 @@ var debug = {
 	mMax: 0,
 	events: ["DEBUG STARTED", "Use LOG(string) to log information here..."]
 };
-function log$1(str) {
+function log(str) {
 	var entry = Date.now() + " - " + str;
 	debug.events.push(entry);
 	printlog();
@@ -60,18 +60,18 @@ function printlog() {
 	if (dst) dst.innerHTML = out + evtlog;
 }
 //#endregion
-//#region src/js/common/net.js
+//#region src/js/common/net.ts
 function get$1(url) {
 	return new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
 		xhr.open("GET", url);
 		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		xhr.send(null);
-		xhr.onreadystatechange = (e) => {
-			if (e.currentTarget.readyState == 4) resolve(xhr.responseText);
+		xhr.onreadystatechange = () => {
+			if (xhr.readyState === 4) resolve(xhr.responseText);
 		};
-		xhr.onerror = (e) => {
-			reject(e);
+		xhr.onerror = () => {
+			reject(/* @__PURE__ */ new Error("Network request failed"));
 		};
 	});
 }
@@ -90,7 +90,7 @@ var FluxUI = class {
 		this.config = null;
 		this.menu = null;
 		addUIEventListeners();
-		log$1("FluxUI constructor finished!");
+		log("FluxUI constructor finished!");
 	}
 	init() {}
 	createFullScreenUI() {
@@ -355,7 +355,7 @@ var FluxWindow = class {
 		document.body.appendChild(windowContainer);
 	}
 	getContentElement() {
-		log$1("Getting Content Element");
+		log("Getting Content Element");
 		return this.windowContentElement;
 	}
 	setWindowContent(htmlString) {
@@ -551,6 +551,8 @@ function addUIEventListeners() {
 }
 //#endregion
 //#region src/js/common/misc.js
+var rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map((n) => parseInt(n, 10).toString(16).padStart(2, "0")).join("")}`;
+var rgb2intArray = (rgb) => rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map((n) => n);
 var n255 = (n) => {
 	return n * (1 / 255);
 };
@@ -579,7 +581,7 @@ function bound$1(num, min, max) {
 	if (num > max) return max;
 	return num;
 }
-function download$1(dataurl, filename) {
+function download(dataurl, filename) {
 	const link = document.createElement("a");
 	link.href = dataurl;
 	link.download = filename;
@@ -1259,9 +1261,276 @@ var Pixel = class {
 	}
 };
 //#endregion
-//#region src/js/common/windowcontentdef.js
+//#region src/js/common/colourpallets.js
 var colourPalletContent = "<div class='flux-colourpickercontainer'><input type='color' class='flux-colourpicker' id='PRIMARYCOLOURPICKER' value='#ff0000'><div class='flux-label'>Primary</div> <div class='flux-clickable flux-inline' id='ADDPRIMARYCOLOUR' onclick='pixelFlux.objectClicked(\"ADDPRIMARYCOLOUR\")'> + </div></div><div class='flux-colourpickercontainer'><input type='color' class='flux-colourpicker' id='SECONDARYCOLOURPICKER' value='#00ff00'><div class='flux-label'>Secondary</div> <div class='flux-clickable flux-inline' id='ADDSECONDARYCOLOUR' onclick='pixelFlux.objectClicked(\"ADDSECONDARYCOLOUR\")'> + </div></div><div class='flux-slidercontainer'><input type='range' min='1' max='255' value='255' class='flux-slider' id='COLOUROPACITY'></div><div class='flux-label flux-opacitylabel'>Opacity</div><div id='COLOURPALLETSTORE'></div>";
-var builtInWindowArrangements$1 = {
+var builtInColourPallets = {
+	DEFAULT: [
+		"rgb(248, 238, 229)",
+		"rgb(235, 157, 134)",
+		"rgb(255, 0, 0)",
+		"rgb(118, 35, 2)",
+		"rgb(71, 34, 3)",
+		"rgb(192, 226, 151)",
+		"rgb(43, 255, 0)",
+		"rgb(50, 88, 2)",
+		"rgb(41, 46, 3)",
+		"rgb(169, 180, 224)",
+		"rgb(0, 8, 255)",
+		"rgb(18, 36, 71)",
+		"rgb(233, 172, 245)",
+		"rgb(255, 0, 247)",
+		"rgb(102, 32, 89)",
+		"rgb(54, 35, 39)",
+		"rgb(248, 196, 184)",
+		"rgb(255, 123, 0)",
+		"rgb(249, 228, 197)",
+		"rgb(251, 217, 131)",
+		"rgb(255, 221, 0)",
+		"rgb(87, 85, 3)"
+	],
+	WOODLANDJOURNEY: [
+		"rgb(31, 36, 10)",
+		"rgb(57, 87, 28)",
+		"rgb(165, 140, 39)",
+		"rgb(239, 172, 40)",
+		"rgb(239, 216, 161)",
+		"rgb(171, 92, 28)",
+		"rgb(24, 63, 57)",
+		"rgb(239, 105, 47)",
+		"rgb(239, 183, 117)",
+		"rgb(165, 98, 67)",
+		"rgb(119, 52, 33)",
+		"rgb(114, 65, 19)",
+		"rgb(42, 29, 13)",
+		"rgb(57, 42, 28)",
+		"rgb(104, 76, 60)",
+		"rgb(146, 126, 106)",
+		"rgb(39, 100, 104)",
+		"rgb(239, 58, 12)",
+		"rgb(69, 35, 13)",
+		"rgb(60, 159, 156)",
+		"rgb(155, 26, 10)",
+		"rgb(54, 23, 12)",
+		"rgb(85, 15, 10)",
+		"rgb(48, 15, 10)"
+	],
+	PASTELDREAMS: [
+		"rgb(171, 255, 221)",
+		"rgb(147, 219, 189)",
+		"rgb(146, 218, 188)",
+		"rgb(130, 194, 193)",
+		"rgb(114, 169, 182)",
+		"rgb(114, 170, 182)",
+		"rgb(91, 132, 154)",
+		"rgb(243, 208, 164)",
+		"rgb(242, 181, 145)",
+		"rgb(227, 170, 154)",
+		"rgb(208, 157, 157)",
+		"rgb(209, 157, 160)",
+		"rgb(184, 136, 158)",
+		"rgb(183, 136, 158)",
+		"rgb(86, 173, 140)",
+		"rgb(71, 137, 136)",
+		"rgb(255, 155, 145)",
+		"rgb(255, 107, 118)",
+		"rgb(255, 104, 116)",
+		"rgb(232, 94, 119)",
+		"rgb(196, 81, 126)",
+		"rgb(247, 157, 142)",
+		"rgb(225, 70, 213)",
+		"rgb(190, 58, 215)",
+		"rgb(187, 58, 217)",
+		"rgb(168, 54, 212)",
+		"rgb(134, 41, 208)",
+		"rgb(130, 41, 209)",
+		"rgb(255, 253, 134)",
+		"rgb(211, 211, 150)",
+		"rgb(208, 207, 160)",
+		"rgb(177, 178, 163)",
+		"rgb(149, 150, 172)",
+		"rgb(169, 194, 187)",
+		"rgb(150, 150, 171)",
+		"rgb(108, 118, 179)",
+		"rgb(80, 88, 159)",
+		"rgb(79, 86, 161)",
+		"rgb(250, 190, 9)",
+		"rgb(251, 172, 11)",
+		"rgb(237, 153, 27)",
+		"rgb(235, 151, 28)",
+		"rgb(199, 124, 62)",
+		"rgb(167, 103, 61)",
+		"rgb(255, 143, 55)",
+		"rgb(255, 125, 42)",
+		"rgb(255, 91, 20)",
+		"rgb(224, 77, 58)",
+		"rgb(192, 65, 78)"
+	],
+	HIGHCONTRAST: [
+		"rgb(185, 34, 0)",
+		"rgb(175, 69, 81)",
+		"rgb(197, 155, 250)",
+		"rgb(155, 110, 205)",
+		"rgb(171, 123, 81)",
+		"rgb(133, 88, 249)",
+		"rgb(148, 119, 163)",
+		"rgb(2, 1, 2)",
+		"rgb(52, 34, 14)",
+		"rgb(185, 125, 0)",
+		"rgb(87, 52, 196)",
+		"rgb(140, 231, 255)",
+		"rgb(159, 161, 156)",
+		"rgb(162, 161, 200)",
+		"rgb(148, 30, 0)",
+		"rgb(200, 133, 44)",
+		"rgb(120, 73, 136)",
+		"rgb(235, 191, 147)",
+		"rgb(201, 157, 136)",
+		"rgb(222, 180, 210)",
+		"rgb(70, 56, 123)",
+		"rgb(140, 98, 41)",
+		"rgb(228, 223, 229)",
+		"rgb(229, 213, 184)",
+		"rgb(234, 195, 97)",
+		"rgb(127, 92, 0)",
+		"rgb(27, 21, 53)",
+		"rgb(162, 167, 247)",
+		"rgb(98, 83, 62)",
+		"rgb(128, 106, 98)",
+		"rgb(17, 92, 6)",
+		"rgb(92, 58, 0)",
+		"rgb(136, 42, 36)",
+		"rgb(14, 76, 63)",
+		"rgb(194, 169, 72)",
+		"rgb(192, 192, 192)",
+		"rgb(182, 0, 0)",
+		"rgb(60, 94, 24)",
+		"rgb(220, 70, 57)",
+		"rgb(173, 67, 0)",
+		"rgb(164, 155, 109)",
+		"rgb(227, 181, 249)",
+		"rgb(130, 129, 244)",
+		"rgb(191, 126, 192)",
+		"rgb(58, 120, 253)",
+		"rgb(90, 46, 40)",
+		"rgb(30, 10, 89)",
+		"rgb(46, 164, 249)",
+		"rgb(23, 93, 245)",
+		"rgb(6, 34, 15)",
+		"rgb(95, 55, 231)",
+		"rgb(69, 40, 156)",
+		"rgb(165, 117, 123)",
+		"rgb(121, 137, 116)",
+		"rgb(166, 16, 45)",
+		"rgb(136, 78, 215)",
+		"rgb(98, 117, 84)",
+		"rgb(146, 189, 107)",
+		"rgb(243, 159, 1)",
+		"rgb(234, 186, 65)",
+		"rgb(219, 0, 52)",
+		"rgb(242, 155, 109)",
+		"rgb(201, 199, 149)",
+		"rgb(0, 164, 214)",
+		"rgb(91, 48, 75)",
+		"rgb(169, 119, 244)",
+		"rgb(92, 11, 8)",
+		"rgb(255, 115, 83)",
+		"rgb(238, 94, 118)",
+		"rgb(0, 185, 251)",
+		"rgb(24, 56, 105)",
+		"rgb(74, 112, 214)",
+		"rgb(208, 122, 101)",
+		"rgb(104, 98, 218)",
+		"rgb(34, 15, 146)",
+		"rgb(103, 0, 83)",
+		"rgb(165, 0, 149)",
+		"rgb(220, 0, 196)",
+		"rgb(59, 40, 57)",
+		"rgb(74, 96, 175)",
+		"rgb(130, 0, 2)",
+		"rgb(34, 11, 201)",
+		"rgb(15, 129, 0)",
+		"rgb(30, 105, 132)",
+		"rgb(203, 100, 39)",
+		"rgb(0, 171, 0)",
+		"rgb(139, 153, 0)",
+		"rgb(241, 153, 56)",
+		"rgb(239, 27, 0)",
+		"rgb(50, 125, 51)",
+		"rgb(74, 157, 180)",
+		"rgb(255, 222, 153)",
+		"rgb(170, 136, 34)",
+		"rgb(61, 87, 56)"
+	],
+	CYBERPUNKNEON: [
+		"rgb(0, 0, 0)",
+		"rgb(101, 167, 222)",
+		"rgb(102, 89, 81)",
+		"rgb(104, 210, 227)",
+		"rgb(108, 134, 195)",
+		"rgb(109, 105, 111)",
+		"rgb(11, 87, 145)",
+		"rgb(133, 165, 225)",
+		"rgb(140, 112, 196)",
+		"rgb(143, 102, 165)",
+		"rgb(152, 72, 169)",
+		"rgb(153, 22, 114)",
+		"rgb(159, 150, 191)",
+		"rgb(178, 106, 211)",
+		"rgb(197, 64, 195)",
+		"rgb(220, 120, 231)",
+		"rgb(24, 66, 108)",
+		"rgb(244, 159, 243)",
+		"rgb(27, 26, 52)",
+		"rgb(41, 107, 164)",
+		"rgb(42, 112, 195)",
+		"rgb(47, 75, 156)",
+		"rgb(55, 74, 126)",
+		"rgb(59, 37, 46)",
+		"rgb(64, 2, 55)",
+		"rgb(64, 60, 96)",
+		"rgb(71, 158, 209)",
+		"rgb(78, 128, 199)",
+		"rgb(81, 100, 162)",
+		"rgb(95, 57, 38)",
+		"rgb(97, 29, 106)",
+		"rgb(97, 73, 129)"
+	],
+	DRAGONFIRE: [
+		"rgb(100, 80, 98)",
+		"rgb(109, 73, 55)",
+		"rgb(117, 7, 0)",
+		"rgb(135, 106, 115)",
+		"rgb(142, 60, 25)",
+		"rgb(144, 99, 23)",
+		"rgb(145, 98, 55)",
+		"rgb(147, 29, 7)",
+		"rgb(164, 126, 146)",
+		"rgb(175, 68, 42)",
+		"rgb(175, 76, 3)",
+		"rgb(178, 132, 99)",
+		"rgb(178, 46, 12)",
+		"rgb(180, 102, 40)",
+		"rgb(20, 0, 2)",
+		"rgb(210, 162, 47)",
+		"rgb(225, 143, 93)",
+		"rgb(230, 141, 17)",
+		"rgb(236, 196, 78)",
+		"rgb(236, 90, 34)",
+		"rgb(236, 96, 3)",
+		"rgb(238, 186, 108)",
+		"rgb(245, 182, 45)",
+		"rgb(251, 238, 67)",
+		"rgb(253, 240, 117)",
+		"rgb(48, 35, 53)",
+		"rgb(53, 22, 22)",
+		"rgb(79, 60, 66)",
+		"rgb(83, 9, 8)",
+		"rgb(93, 40, 26)"
+	]
+};
+//#endregion
+//#region src/js/common/windowarrangements.js
+var builtInWindowArrangements = {
 	CLASSIC: [
 		{
 			id: "WORKSPACE",
@@ -1609,7 +1878,7 @@ var PixelEditor = class {
 		this.addEventListeners();
 		callback();
 		this.start();
-		log$1("PixelFlux Editor Initialised - Version 0.1.0");
+		log("PixelFlux Editor Initialised - Version 0.1.0");
 	}
 	start() {
 		this.sprite.updateCanvasChain();
@@ -1622,9 +1891,9 @@ var PixelEditor = class {
 		this.flux.loadMenu(menuUrl, (id) => {
 			const postEvent = new CustomEvent("menuButtonClicked", { detail: { srcElementId: id } });
 			document.dispatchEvent(postEvent);
-			log$1("MENU ID: " + id + " CLICKED");
+			log("MENU ID: " + id + " CLICKED");
 		});
-		log$1("Calling Create Workspace Window");
+		log("Calling Create Workspace Window");
 		this.createWorkspaceWindow();
 		this.createColourPalletWindow();
 		this.createToolbarWindow();
@@ -1638,7 +1907,7 @@ var PixelEditor = class {
 		this.createPixelBrushWindow();
 		this.createOpenGallery();
 		this.createGifDisplayWindow();
-		this.flux.restoreWindowArrangement(builtInWindowArrangements$1.NEOCLASSIC);
+		this.flux.restoreWindowArrangement(builtInWindowArrangements.NEOCLASSIC);
 	}
 	addEventListeners() {
 		document.addEventListener("fluxWindowResize", (event) => {
@@ -1702,7 +1971,7 @@ var PixelEditor = class {
 		this.tilePreview = !this.tilePreview;
 	}
 	createWorkspaceWindow() {
-		log$1("Calling Create Workspace Window");
+		log("Calling Create Workspace Window");
 		this.flux.createWindow("WORKSPACE", "Workspace", 200, 60, 600, 620);
 		var container = document.getElementById("WORKSPACECONTENT");
 		var canvas = document.createElement("canvas");
@@ -1712,7 +1981,7 @@ var PixelEditor = class {
 		container.appendChild(canvas);
 	}
 	createColourPalletWindow() {
-		log$1("Calling Create Colour Pallet Window");
+		log("Calling Create Colour Pallet Window");
 		this.flux.createWindow("COLOURPALLET", "Colour Pallet", 900, 550, 190, 280);
 		var container = document.getElementById("COLOURPALLETCONTENT");
 		container.innerHTML = colourPalletContent;
@@ -2326,7 +2595,7 @@ var PixelEditor = class {
 		});
 	}
 	toolDown(x, y, button) {
-		log$1("TOOL DOWN: " + x + ", " + y + ", " + button);
+		log("TOOL DOWN: " + x + ", " + y + ", " + button);
 		if (this.currentTool.enabled) {
 			if (x < 0 || y < 0 || x > this.sprite.width - 1 || y > this.sprite.height - 1) return;
 			this.sprite.pushToUndoHistory();
@@ -2579,7 +2848,7 @@ var PixelEditor = class {
 	}
 	downloadGif() {
 		this.sprite.updateCanvasChain();
-		log$1("Starting GIF create process");
+		log("Starting GIF create process");
 		var gif = new GIF({
 			workers: 2,
 			quality: 10,
@@ -2777,63 +3046,63 @@ function addToolButtonEventListeners() {
 	document.addEventListener("toolButtonClicked", (event) => {
 		switch (event.detail.srcElement.id) {
 			case "SELECTION":
-				log$1("Selection Tool Selected");
+				log("Selection Tool Selected");
 				pixelFlux$1.currentTool = new Selection(pixelFlux$1.sprite);
 				break;
 			case "MOVE":
-				log$1("Move Tool Selected");
+				log("Move Tool Selected");
 				pixelFlux$1.currentTool = new Move(pixelFlux$1.sprite);
 				break;
 			case "PENCIL":
-				log$1("Pencil Tool Selected");
+				log("Pencil Tool Selected");
 				pixelFlux$1.currentTool = new Pencil(pixelFlux$1.sprite);
 				break;
 			case "ERASER":
-				log$1("Eraser Tool Selected");
+				log("Eraser Tool Selected");
 				pixelFlux$1.currentTool = new Eraser(pixelFlux$1.sprite);
 				break;
 			case "BRUSH":
-				log$1("Brush Tool Selected");
+				log("Brush Tool Selected");
 				pixelFlux$1.currentTool = new Brush(pixelFlux$1.sprite);
 				break;
 			case "SPRAYCAN":
-				log$1("Spray Can Tool Selected");
+				log("Spray Can Tool Selected");
 				pixelFlux$1.currentTool = new SprayCan(pixelFlux$1.sprite);
 				break;
 			case "FLOODFILL":
-				log$1("Flood Fill Tool Selected");
+				log("Flood Fill Tool Selected");
 				pixelFlux$1.currentTool = new FloodFill(pixelFlux$1.sprite);
 				break;
 			case "DARKENLIGHTEN":
-				log$1("Darken Lighten Tool Selected");
+				log("Darken Lighten Tool Selected");
 				pixelFlux$1.currentTool = new DarkenLighten(pixelFlux$1.sprite);
 				break;
 			case "BLEND":
-				log$1("Blend Tool Selected");
+				log("Blend Tool Selected");
 				pixelFlux$1.currentTool = new Blend(pixelFlux$1.sprite);
 				break;
 			case "STRAIGHTLINE":
-				log$1("Straight Line Tool Selected");
+				log("Straight Line Tool Selected");
 				pixelFlux$1.currentTool = new StraightLine(pixelFlux$1.sprite);
 				break;
 			case "SQUARE":
-				log$1("Square Tool Selected");
+				log("Square Tool Selected");
 				pixelFlux$1.currentTool = new Square(pixelFlux$1.sprite);
 				break;
 			case "FILLEDSQUARE":
-				log$1("Filled Square Tool Selected");
+				log("Filled Square Tool Selected");
 				pixelFlux$1.currentTool = new FilledSquare(pixelFlux$1.sprite);
 				break;
 			case "ELLIPSE":
-				log$1("Ellipse Tool Selected");
+				log("Ellipse Tool Selected");
 				pixelFlux$1.currentTool = new Ellipse(pixelFlux$1.sprite);
 				break;
 			case "FILLEDELLIPSE":
-				log$1("Filled Ellipse Tool Selected");
+				log("Filled Ellipse Tool Selected");
 				pixelFlux$1.currentTool = new FilledEllipse(pixelFlux$1.sprite);
 				break;
 			case "PLUGIN":
-				log$1("Plugin Tool Selected");
+				log("Plugin Tool Selected");
 				pixelFlux$1.currentTool = new Plugin(pixelFlux$1.sprite);
 				break;
 		}
@@ -3352,10 +3621,65 @@ var Plugin = class {
 	}
 };
 //#endregion
+//#region src/js/common/loadinganimation.js
+var logo1 = document.createElement("img");
+logo1.src = "../../resources/icons/loading-clockwise.png";
+var logo2 = document.createElement("img");
+logo2.src = "../../resources/icons/loading-anticlockwise.png";
+var logocontainer = document.createElement("div");
+var showingLoadingAnimation = false;
+var loadingMessage = "Loading...";
+var loadingMessageElement = document.createElement("div");
+loadingMessageElement.innerHTML = loadingMessage;
+logocontainer.appendChild(loadingMessageElement);
+function showLoadingAnimation() {
+	logocontainer.style.width = window.innerWidth + "px";
+	logocontainer.style.height = window.innerHeight + "px";
+	logocontainer.style.position = "absolute";
+	logocontainer.style.top = "0px";
+	logocontainer.style.left = "0px";
+	logocontainer.style.backgroundColor = "darkslategray";
+	logocontainer.style.color = "orange";
+	logocontainer.style.fontSize = "20px";
+	logocontainer.style.fontFamily = "monospace";
+	logocontainer.style.textAlign = "center";
+	logocontainer.style.paddingTop = window.innerHeight / 2 + 64 + "px";
+	logocontainer.style.pointerEvents = "none";
+	logocontainer.style.userSelect = "none";
+	logocontainer.style.cursor = "wait";
+	logocontainer.style.zIndex = "50";
+	logocontainer.style.opacity = "0.9";
+	updateLogoRotation();
+	showingLoadingAnimation = true;
+	document.body.appendChild(logocontainer);
+	document.body.appendChild(logo1);
+	document.body.appendChild(logo2);
+	updateLogoRotation();
+}
+function updateLogoRotation() {
+	logo1.style.position = "absolute";
+	logo1.style.left = window.innerWidth / 2 - logo1.width / 2 + "px";
+	logo1.style.top = window.innerHeight / 2 - logo1.height / 2 + "px";
+	logo1.style.transform = "rotate(" + Date.now() / 2 / 1e3 + "turn)";
+	logo1.style.zIndex = "90";
+	logo2.style.position = "absolute";
+	logo2.style.left = window.innerWidth / 2 - logo2.width / 2 + "px";
+	logo2.style.top = window.innerHeight / 2 - logo2.height / 2 + "px";
+	logo2.style.transform = "rotate(" + Date.now() / -2 / 1e3 + "turn)";
+	logo2.style.zIndex = "100";
+	loadingMessageElement.style.opacity = .5 + .5 * Math.sin(Date.now() / 1e3);
+	if (showingLoadingAnimation) setTimeout(updateLogoRotation, 1e3 / 60);
+}
+function hideLoadingAnimation() {
+	logocontainer.remove();
+	logo1.remove();
+	logo2.remove();
+}
+//#endregion
 //#region src/js/common/menuhandler.js
 function addMenuHandler() {
 	document.addEventListener("menuButtonClicked", (event) => {
-		log$1("MenuHandler: menuButtonClicked - " + event.detail.srcElementId);
+		log("MenuHandler: menuButtonClicked - " + event.detail.srcElementId);
 		switch (event.detail.srcElementId) {
 			case "HOMEPAGE":
 				window.open("https://github.com/rsabbarton/PixelFlux/");
@@ -3402,7 +3726,7 @@ function addMenuHandler() {
 				pixelFlux$1.previewScale = 3;
 				break;
 			case "IMPORT":
-				flux$1.showModalQuestionWindow("Enter the URL of the image you would like to import: <br> <i>Note: Your current image will be replaced!</i>", "http://", "Import", "Cancel", (response) => {
+				flux.showModalQuestionWindow("Enter the URL of the image you would like to import: <br> <i>Note: Your current image will be replaced!</i>", "http://", "Import", "Cancel", (response) => {
 					if (response) pixelFlux$1.sprite.loadFromURL(response, () => {
 						pixelFlux$1.updateCanvasAndPreview();
 					});
@@ -3414,7 +3738,7 @@ function addMenuHandler() {
 			case "OPENPIXELFILE":
 				var selector = document.getElementById("OPENPIXELFILEFILESELECT");
 				selector.onchange = (e) => {
-					log$1("Opening: " + selector.value);
+					log("Opening: " + selector.value);
 					selector.value;
 					var file = selector.files[0];
 					if (file) {
@@ -3442,21 +3766,21 @@ function addMenuHandler() {
 			case "DOWNLOAD":
 				pixelFlux$1.setSpriteName().then(() => {
 					var url = pixelFlux$1.sprite.canvas.toDataURL("image/png");
-					if (pixelFlux$1.sprite.name.length == 0) download$1(url, "pixelFlux-download.png");
-					else download$1(url, pixelFlux$1.sprite.name + ".png");
+					if (pixelFlux$1.sprite.name.length == 0) download(url, "pixelFlux-download.png");
+					else download(url, pixelFlux$1.sprite.name + ".png");
 				});
 				break;
 			case "DOWNLOADPIXELFILE":
 				pixelFlux$1.setSpriteName().then(() => {
 					var url = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pixelFlux$1.sprite));
-					if (pixelFlux$1.sprite.name.length == 0) download$1(url, "pixelFlux-download.pixel");
-					else download$1(url, pixelFlux$1.sprite.name + ".pixel");
+					if (pixelFlux$1.sprite.name.length == 0) download(url, "pixelFlux-download.pixel");
+					else download(url, pixelFlux$1.sprite.name + ".pixel");
 				});
 				break;
 			case "DOWNLOADSPRITESHEET":
 				pixelFlux$1.setSpriteName().then(() => {
 					pixelFlux$1.sprite.updateSpriteSheetCanvas();
-					download$1(pixelFlux$1.sprite.spriteSheetCanvas.toDataURL("image/png"), pixelFlux$1.sprite.name + "_spritesheet.png");
+					download(pixelFlux$1.sprite.spriteSheetCanvas.toDataURL("image/png"), pixelFlux$1.sprite.name + "_spritesheet.png");
 				});
 				break;
 			case "DOWNLOADGIF":
@@ -3605,63 +3929,63 @@ function addMenuHandler() {
 			case "": break;
 			case "": break;
 			case "ICONSIZEMICRO":
-				flux$1.setToolButtonSize(24);
+				flux.setToolButtonSize(24);
 				break;
 			case "ICONSIZESMALL":
-				flux$1.setToolButtonSize(32);
+				flux.setToolButtonSize(32);
 				break;
 			case "ICONSIZEMEDIUM":
-				flux$1.setToolButtonSize(42);
+				flux.setToolButtonSize(42);
 				break;
 			case "ICONSIZELARGE":
-				flux$1.setToolButtonSize(64);
+				flux.setToolButtonSize(64);
 				break;
 			case "": break;
 			case "": break;
 			case "SHOWTOOLOPTIONS":
-				flux$1.showWindow("TOOLOPTIONS");
+				flux.showWindow("TOOLOPTIONS");
 				break;
 			case "SHOWPREVIEW":
-				flux$1.showWindow("PREVIEW");
+				flux.showWindow("PREVIEW");
 				break;
 			case "SHOWANIMATIONPREVIEW":
-				flux$1.showWindow("ANIMATIONPREVIEW");
+				flux.showWindow("ANIMATIONPREVIEW");
 				break;
 			case "SHOWANIMATIONTOOLS":
-				flux$1.showWindow("ANIMATIONTOOLS");
+				flux.showWindow("ANIMATIONTOOLS");
 				break;
 			case "SHOWANIMATIONFRAMES":
-				flux$1.showWindow("FRAMES");
+				flux.showWindow("FRAMES");
 				break;
 			case "SHOWWORKSPACE":
-				flux$1.showWindow("WORKSPACE");
+				flux.showWindow("WORKSPACE");
 				break;
 			case "SHOWCOLOURPALLET":
-				flux$1.showWindow("COLOURPALLET");
+				flux.showWindow("COLOURPALLET");
 				break;
 			case "SHOWTOOLBAR":
-				flux$1.showWindow("TOOLBAR");
+				flux.showWindow("TOOLBAR");
 				break;
 			case "SHOWLAYERS":
-				flux$1.showWindow("LAYERS");
+				flux.showWindow("LAYERS");
 				break;
 			case "SHOWDEBUG":
-				flux$1.showWindow("DEBUG");
+				flux.showWindow("DEBUG");
 				break;
 			case "SHOWALL":
-				log$1("MenuHandler: SHOWALL");
-				flux$1.showWindow("WORKSPACE");
-				flux$1.showWindow("PREVIEW");
-				flux$1.showWindow("COLOURPALLET");
-				flux$1.showWindow("TOOLBAR");
-				flux$1.showWindow("TOOLOPTIONS");
-				flux$1.showWindow("DEBUG");
-				flux$1.showWindow("LAYERS");
-				flux$1.showWindow("ANIMATIONPREVIEW");
-				flux$1.showWindow("ANIMATIONTOOLS");
-				flux$1.showWindow("FRAMES");
-				flux$1.showWindow("PIXELBRUSH");
-				log$1("MenuHandler: SHOWALL - Complete");
+				log("MenuHandler: SHOWALL");
+				flux.showWindow("WORKSPACE");
+				flux.showWindow("PREVIEW");
+				flux.showWindow("COLOURPALLET");
+				flux.showWindow("TOOLBAR");
+				flux.showWindow("TOOLOPTIONS");
+				flux.showWindow("DEBUG");
+				flux.showWindow("LAYERS");
+				flux.showWindow("ANIMATIONPREVIEW");
+				flux.showWindow("ANIMATIONTOOLS");
+				flux.showWindow("FRAMES");
+				flux.showWindow("PIXELBRUSH");
+				log("MenuHandler: SHOWALL - Complete");
 				break;
 			case "SETBACKGROUNDCOLOR":
 				pixelFlux$1.setBackgroundColour();
@@ -3670,29 +3994,29 @@ function addMenuHandler() {
 				pixelFlux$1.toggleTilePreview();
 				break;
 			case "ARRANGECLASSIC":
-				flux$1.restoreWindowArrangement(builtInWindowArrangements.CLASSIC);
+				flux.restoreWindowArrangement(builtInWindowArrangements.CLASSIC);
 				pixelFlux$1.resizeContentCanvases();
 				break;
 			case "ARRANGENEOCLASSIC":
-				flux$1.restoreWindowArrangement(builtInWindowArrangements.NEOCLASSIC);
+				flux.restoreWindowArrangement(builtInWindowArrangements.NEOCLASSIC);
 				pixelFlux$1.resizeContentCanvases();
 				break;
 			case "ARRANGEWIDE":
-				flux$1.restoreWindowArrangement(builtInWindowArrangements.WIDE);
+				flux.restoreWindowArrangement(builtInWindowArrangements.WIDE);
 				pixelFlux$1.resizeContentCanvases();
 				break;
 			case "ARRANGETILECREATOR":
-				flux$1.restoreWindowArrangement(builtInWindowArrangements.TILECREATOR);
+				flux.restoreWindowArrangement(builtInWindowArrangements.TILECREATOR);
 				pixelFlux$1.tilePreview = true;
 				pixelFlux$1.resizeContentCanvases();
 				break;
 			case "SAVEWINDOWARRANGEMENT":
-				var arrangement = flux$1.getWindowArrangement();
+				var arrangement = flux.getWindowArrangement();
 				localStorage.setItem("arrangement", JSON.stringify(arrangement));
 				break;
 			case "RESTOREWINDOWARRANGEMENT":
 				var arrangement = JSON.parse(localStorage.getItem("arrangement"));
-				flux$1.restoreWindowArrangement(arrangement);
+				flux.restoreWindowArrangement(arrangement);
 				break;
 			case "": break;
 			case "": break;
@@ -3732,7 +4056,7 @@ function addMenuHandler() {
 			case "IMPORTPALETTEFILE":
 				var selector = document.getElementById("IMPORTPALETTEFILEFILESELECT");
 				selector.onchange = (e) => {
-					log$1("Importing: " + selector.value);
+					log("Importing: " + selector.value);
 					selector.value;
 					var file = selector.files[0];
 					if (file) {
@@ -3775,7 +4099,7 @@ function addMenuHandler() {
             &copy; Richard Sabbarton
 
             `;
-				flux$1.showModalMessageBox("About PixelFlux", aboutInfo, () => {});
+				flux.showModalMessageBox("About PixelFlux", aboutInfo, () => {});
 				break;
 			case "TODOLIST":
 				window.open("https://github.com/rsabbarton/PixelFlux/issues");
@@ -3798,8 +4122,8 @@ if (window.location.href.indexOf("/PixelFlux") > -1) {
 	DEVPREVIEW = false;
 }
 var appUrl = uri;
-var flux$1 = new FluxUI();
-var pixelFlux$1 = new PixelEditor(flux$1);
+var flux = new FluxUI();
+var pixelFlux$1 = new PixelEditor(flux);
 var keyboard = new KeyboardHandler();
 addMenuHandler();
 addToolButtonEventListeners();
@@ -3808,18 +4132,20 @@ var configUrl = "./config/main.json";
 fetch(configUrl).then((response) => {
 	response.json().then((json) => {
 		config = json;
-		log$1("Config loaded from " + configUrl);
-		console.log(flux$1);
+		log("Config loaded from " + configUrl);
+		console.log(flux);
 		pixelFlux$1.init(() => {});
 		setTimeout(() => {
-			flux$1.menu.onClickCallback("SHOWALL");
+			hideLoadingAnimation();
+			flux.menu.onClickCallback("SHOWALL");
 		}, 2e3);
 	});
 }).catch((error) => {
 	console.log(error);
 });
+showLoadingAnimation();
 document.addEventListener("mousedown", (event) => {
-	log$1(event);
+	log(event);
 	var srcElement = event.target;
 	if (srcElement.matches(".drawingcanvas")) {
 		srcElement.classList.add("isdrawing");
@@ -3886,17 +4212,17 @@ document.addEventListener("mousemove", (event) => {
 document.addEventListener("wheel", (event) => {
 	if (event.target.id == "DRAWINGCANVAS") {
 		pixelFlux$1.drawingScale += event.deltaY * -.01;
-		log$1("Drawing Window Scale set to: " + pixelFlux$1.drawingScale);
+		log("Drawing Window Scale set to: " + pixelFlux$1.drawingScale);
 		pixelFlux$1.updateCanvasAndPreview();
 	}
 	if (event.target.id == "PREVIEWCANVAS") {
 		pixelFlux$1.previewScale += event.deltaY * -.01;
-		log$1("Preview Window Scale set to: " + pixelFlux$1.previewScale);
+		log("Preview Window Scale set to: " + pixelFlux$1.previewScale);
 		pixelFlux$1.updateCanvasAndPreview();
 	}
 	if (event.target.id == "ANIMATIONPREVIEWCANVAS") {
 		pixelFlux$1.animationPreviewScale += event.deltaY * -.01;
-		log$1("Preview Window Scale set to: " + pixelFlux$1.animationPreviewScale);
+		log("Preview Window Scale set to: " + pixelFlux$1.animationPreviewScale);
 		pixelFlux$1.updateCanvasAndPreview();
 	}
 });
@@ -3906,7 +4232,7 @@ document.addEventListener("paste", function(evt) {
 		return item.type.indexOf("image") !== -1;
 	});
 	if (items.length === 0) return;
-	log$1("Processing image from Clipboard...");
+	log("Processing image from Clipboard...");
 	const blob = items[0].getAsFile();
 	const img = new Image();
 	img.onload = (event) => {
@@ -3928,4 +4254,4 @@ window.addEventListener("contextmenu", (e) => {
 });
 //#endregion
 
-//# sourceMappingURL=index-CSVn0kLQ.js.map
+//# sourceMappingURL=index-CuYFSXYg.js.map
