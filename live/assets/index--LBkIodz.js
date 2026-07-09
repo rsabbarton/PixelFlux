@@ -29,7 +29,7 @@
 	}
 })();
 //#endregion
-//#region src/js/common/loadinganimation.js
+//#region src/js/common/loadinganimation.ts
 var logo1 = document.createElement("img");
 var logo2 = document.createElement("img");
 var logocontainer = document.createElement("div");
@@ -41,9 +41,6 @@ logocontainer.appendChild(loadingMessageElement);
 function showLoadingAnimation() {
 	logo1.src = appUrl + "resources/icons/loading-clockwise.png";
 	logo2.src = appUrl + "resources/icons/loading-anticlockwise.png";
-	console.log(appUrl);
-	console.log(logo1.src);
-	console.log(logo2.src);
 	logocontainer.style.width = window.innerWidth + "px";
 	logocontainer.style.height = window.innerHeight + "px";
 	logocontainer.style.position = "absolute";
@@ -62,9 +59,12 @@ function showLoadingAnimation() {
 	logocontainer.style.opacity = "0.9";
 	updateLogoRotation();
 	showingLoadingAnimation = true;
-	document.body.appendChild(logocontainer);
-	document.body.appendChild(logo1);
-	document.body.appendChild(logo2);
+	const body = document.body;
+	if (body) {
+		body.appendChild(logocontainer);
+		body.appendChild(logo1);
+		body.appendChild(logo2);
+	}
 	updateLogoRotation();
 }
 function updateLogoRotation() {
@@ -78,10 +78,11 @@ function updateLogoRotation() {
 	logo2.style.top = window.innerHeight / 2 - logo2.height / 2 + "px";
 	logo2.style.transform = "rotate(" + Date.now() / -2 / 1e3 + "turn)";
 	logo2.style.zIndex = "100";
-	loadingMessageElement.style.opacity = .5 + .5 * Math.sin(Date.now() / 1e3);
+	loadingMessageElement.style.opacity = String(.5 + .5 * Math.sin(Date.now() / 1e3));
 	if (showingLoadingAnimation) setTimeout(updateLogoRotation, 1e3 / 60);
 }
 function hideLoadingAnimation() {
+	showingLoadingAnimation = false;
 	logocontainer.remove();
 	logo1.remove();
 	logo2.remove();
@@ -646,10 +647,11 @@ function download(dataurl, filename) {
 	link.click();
 }
 //#endregion
-//#region src/js/common/keyboardinputhandler.js
+//#region src/js/common/keyboardinputhandler.ts
 var KeyboardHandler = class {
+	keys;
 	constructor() {
-		this.keys = new Array();
+		this.keys = [];
 		this.initKeyboardHandler();
 	}
 	initKeyboardHandler() {
@@ -661,7 +663,7 @@ var KeyboardHandler = class {
 		});
 	}
 	isDown(keyCode) {
-		return this.keys[keyCode];
+		return this.keys[keyCode] ?? false;
 	}
 };
 //#endregion
@@ -4257,4 +4259,4 @@ window.addEventListener("contextmenu", (e) => {
 });
 //#endregion
 
-//# sourceMappingURL=index-BraiN5O2.js.map
+//# sourceMappingURL=index--LBkIodz.js.map
