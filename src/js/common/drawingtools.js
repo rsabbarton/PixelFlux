@@ -4,7 +4,7 @@ import { PixelBrush, FUNC_PAINT } from "./brush.js";
 import { hex2rgba, hex2rgb, bound, n255, rand } from "./misc.js";
 import { AutomationPlugin } from "./automator.js";
 import { pixelFlux, keyboard } from "../app.js";
-import { VK_SHIFT } from "./keyboardinputhandler.js";
+import { VK_SHIFT } from "./keyboardinputhandler.ts";
 import {
   EVENT_MOUSEBUTTON_RIGHT,
   EVENT_MOUSEBUTTON_LEFT,

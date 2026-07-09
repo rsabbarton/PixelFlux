@@ -13,7 +13,7 @@ showLoadingAnimation();
 
 import { FluxUI } from "./common/fluxui.ts";
 import { PixelEditor } from "./common/pixeleditor.js";
-import { KeyboardHandler } from "./common/keyboardinputhandler.js";
+import { KeyboardHandler } from "./common/keyboardinputhandler.ts";
 import { Sprite } from "./common/sprite.js";
 import { addToolButtonEventListeners } from "./common/drawingtools.js";
 

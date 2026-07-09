@@ -3,7 +3,7 @@ import { Sprite } from "./sprite.js";
 import { log, debug } from "./logger.js";
 import { flux } from "../app.js";
 import { download, rgb2hex, rgb2intArray } from "./misc.js";
-import { VK_Z, VK_R, VK_LEFT, VK_RIGHT } from "./keyboardinputhandler.js";
+import { VK_Z, VK_R, VK_LEFT, VK_RIGHT } from "./keyboardinputhandler.ts";
 import { colourPalletContent, builtInColourPallets } from "./colourpallets.js";
 import { builtInWindowArrangements } from "./windowarrangements.js";
 

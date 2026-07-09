@@ -1,21 +1,23 @@
 export class KeyboardHandler {
+  private keys: boolean[];
+
   constructor() {
-    this.keys = new Array();
+    this.keys = [];
     this.initKeyboardHandler();
   }
 
-  initKeyboardHandler() {
-    document.addEventListener("keydown", (event) => {
+  private initKeyboardHandler(): void {
+    document.addEventListener("keydown", (event: KeyboardEvent) => {
       this.keys[event.keyCode] = true;
     });
-    document.addEventListener("keyup", (event) => {
+    document.addEventListener("keyup", (event: KeyboardEvent) => {
       this.keys[event.keyCode] = false;
       // console.log(event.keyCode)
     });
   }
 
-  isDown(keyCode) {
-    return this.keys[keyCode];
+  public isDown(keyCode: number): boolean {
+    return this.keys[keyCode] ?? false;
   }
 }
 
